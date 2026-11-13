@@ -2,8 +2,6 @@
 
 Maqueta estática del laboratorio SENA. Contiene 82 páginas HTML con formularios, estados y registros ilustrativos. No requiere instalación ni compilación; abre `Frontend/index.html` en el navegador. El panel se encuentra en `Frontend/features/dashboard/pages/index.html`.
 
-## Arquitectura híbrida por funcionalidad
-
 ## Flujo de trabajo con Git
 
 `master` es la rama principal y contiene la versión aceptada. `frontend/estructura-hibrida` es la rama de trabajo actual. Las ramas de Git no forman carpetas ni subramas: sus cambios se incorporan a la principal mediante una pull request.
@@ -15,7 +13,7 @@ Maqueta estática del laboratorio SENA. Contiene 82 páginas HTML con formulario
 
 El cambio de rama principal no bloquea por sí solo los commits directos a `master`. El flujo acordado es enviar las modificaciones mediante pull requests y dejar su fusión al usuario.
 
-## Organización del frontend
+## Arquitectura híbrida por funcionalidad
 
 La organización combina módulos del dominio con recursos transversales. Cada funcionalidad agrupa sus pantallas y, cuando los necesita, sus propios estilos y recursos.
 
