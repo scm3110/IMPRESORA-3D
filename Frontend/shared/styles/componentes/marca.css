@@ -1,0 +1,28 @@
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  text-decoration: none;
+  font-weight: 650;
+  color: var(--tinta);
+  line-height: 1.25;
+}
+.marca img {
+  width: 2.9rem;
+  height: auto;
+}
+.marca > span {
+  border-left: 1px solid var(--borde-control);
+  padding-left: .75rem;
+}
+.marca small {
+  display: block;
+  color: var(--suave);
+  font-size: .75rem;
+  font-weight: 400;
+}
+.icono {
+  width: 1.12rem;
+  height: 1.12rem;
+  flex: none;
+}

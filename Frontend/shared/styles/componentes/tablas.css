@@ -1,0 +1,27 @@
+.tabla-scroll {
+  overflow-x: auto;
+}
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--tinta);
+  --bs-table-border-color: var(--borde);
+  width: 100%;
+  font-size: .91rem;
+  margin-bottom: 0;
+}
+.table > :not(caption) > * > * {
+  padding: .78rem .75rem;
+  vertical-align: middle;
+}
+.table thead th {
+  background: var(--fondo);
+  color: #435d60;
+  font-size: .79rem;
+}
+.table th {
+  font-weight: 600;
+}
+caption {
+  color: var(--suave);
+  font-size: .84rem;
+}

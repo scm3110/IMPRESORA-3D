@@ -1,0 +1,30 @@
+# Memoria del proyecto
+
+- Maqueta estática de gestión de impresión 3D del SENA, con 82 páginas HTML.
+- Arquitectura híbrida por funcionalidad aplicada en `Frontend/`.
+- Entrada: `Frontend/index.html`; panel: `Frontend/features/dashboard/pages/index.html`.
+- Las pantallas pertenecen a `Frontend/features/<modulo>/pages/`.
+- Módulos: acceso, dashboard, producción, inventario, equipos, costeo, estadísticas, reportes, usuarios, roles, laboratorios y parámetros.
+- Acceso agrupa también `styles/acceso.css` y `assets/engranaje-helicoidal.png`.
+- Estilos comunes en `Frontend/shared/styles/`, con componentes y layouts.
+- Marca, iconos y fuentes en `Frontend/shared/assets/`; Bootstrap en `Frontend/vendor/bootstrap/`.
+- Los menús y encabezados siguen escritos en cada HTML; no hay motor de plantillas.
+- El acceso se presenta tanto en la portada como en `features/acceso/pages/index.html`.
+- README.md explica arquitectura, nuevas pantallas y migración de rutas; AGENTS.md refleja la estructura actual.
+- `tools/verificar-rutas.ps1` comprueba enlaces, recursos y anclas, sin dependencias.
+- Última comprobación tras migrar: 82 páginas, 11 hojas CSS y 2748 referencias locales válidas.
+- La revisión visual previa quedó bloqueada al identificar la URL; revisión de esta mejora pendiente de comprobar en navegador.
+- No hay package.json, Eleventy ni carpeta src en esta copia; abre el HTML directamente.
+- Formularios, permisos y registros son ilustrativos; sin JavaScript de navegador ni backend.
+- Matriz y casos de uso definen requisitos; SQL orienta nombres y relaciones.
+- Consultar `documentos/Caso de uso - Impresion3d.eap` antes de implementar nuevos flujos.
+- Preguntar antes de agregar dependencias, JavaScript, backend/API o modificar la base de datos.
+- Se explicó la función de las carpetas y archivos actuales a petición del usuario.
+- Mejora autorizada e implementada: sangría de dos espacios y comentarios de bloques en las 82 páginas.
+- CSS de legend/label/ayudas agrupado en formularios.css; colores de progress centralizados sin cambiar sus valores.
+- `tools/verificar-bloques-compartidos.ps1` verifica 77 menús, dos accesos, módulo activo y estructura móvil sin modificar archivos.
+- El verificador pasó nueve casos temporales, incluidos errores deliberados y una ruta equivalente válida.
+- Comprobaciones actuales: 2748 referencias válidas, HTML anidado correctamente, sin IDs duplicados y controles etiquetados.
+- README documenta referencias de bloques, dependencias del menú móvil y escenarios ilustrativos relacionados.
+- Se conservan ambas entradas de acceso, URLs y alcance estático; no se añadieron dependencias ni JavaScript de navegador.
+- Git inicializado en la rama frontend/estructura-hibrida por solicitud del usuario; reemplazo del remoto scm3110/IMPRESORA-3D pendiente.

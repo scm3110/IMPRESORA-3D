@@ -1,0 +1,68 @@
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+legend {
+  font-size: 1.2rem;
+  font-weight: 650;
+  float: none;
+  margin-bottom: 1rem;
+}
+label {
+  color: #314c50;
+  font-size: .88rem;
+  font-weight: 650;
+}
+.ayuda, .filtros p {
+  color: var(--suave);
+  font-size: .84rem;
+}
+fieldset + fieldset {
+  border-top: 1px solid var(--borde);
+  padding-top: 1.4rem;
+  margin-top: 1.4rem;
+}
+.campos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(min(235px,100%),1fr));
+  gap: var(--espacio);
+}
+.campo label {
+  display: block;
+  margin-bottom: .35rem;
+}
+.form-control, .form-select {
+  min-height: 44px;
+  border-color: var(--borde-control);
+  color: var(--tinta);
+}
+input[readonly], input:disabled {
+  background-color: #f0f4f2;
+}
+.filtros summary, details summary {
+  color: var(--verde);
+  font-weight: 650;
+  cursor: pointer;
+}
+.filtros > p {
+  margin-block: .7rem;
+}
+.resultado {
+  display: none;
+}
+.resultado:target {
+  display: block;
+  background: #e3f4dc;
+  color: #214b30;
+  padding: var(--espacio);
+  border-radius: var(--radio);
+}
+.form-check-input {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.form-check-input:checked {
+  background-color: var(--verde);
+  border-color: var(--verde);
+}

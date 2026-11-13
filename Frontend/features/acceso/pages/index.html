@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar sesión | Laboratorio 3D SENA</title>
+    <link rel="stylesheet" href="../../../vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../shared/styles/base.css">
+    <link rel="stylesheet" href="../../../shared/styles/componentes.css">
+    <link rel="stylesheet" href="../styles/acceso.css">
+  </head>
+  <body class="acceso">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <aside class="identidad">
+      <a class="marca" href="../../../index.html" aria-label="Laboratorio 3D SENA, portada">
+        <img src="../../../shared/assets/img/sena.svg" alt="SENA" width="48" height="48">
+        <span>Laboratorio 3D<small>Medellín</small></span>
+      </a>
+
+      <div class="presentacion">
+        <p class="sobrelinea">Laboratorio de fabricación digital</p>
+        <h2>Sistema de Gestión de Impresión 3D</h2>
+        <img class="pieza" src="../assets/engranaje-helicoidal.png" width="530" height="420" alt="">
+        <p>Medellín, Colombia</p>
+      </div>
+    </aside>
+    <!-- Inicio del contenido de esta pantalla. -->
+    <main id="contenido" tabindex="-1">
+      <!-- Inicio del acceso compartido: revisar también la otra página de inicio de sesión. -->
+      <div class="contenido-formulario">
+        <h1>Iniciar sesión</h1>
+        <p>Ingrese con su correo institucional SENA.</p>
+        <form class="formulario" action="../../dashboard/pages/index.html" method="get" autocomplete="off">
+          <div class="campo">
+            <label for="correo">Correo institucional</label>
+            <input class="form-control" id="correo" type="email" required autocomplete="username" placeholder="usuario@sena.edu.co">
+          </div>
+          <div class="campo">
+            <label for="clave">Contraseña</label>
+            <input class="form-control" id="clave" type="password" required autocomplete="current-password" placeholder="Ingrese su contraseña">
+          </div>
+          <p class="ayuda">Maqueta estática. El acceso y la validación de credenciales son solo de muestra.</p>
+          <button type="submit" class="btn accion">Ingresar</button>
+        </form>
+        <a class="enlace-recuperacion" href="recuperar.html">¿Olvidó su contraseña?</a>
+      </div>
+      <!-- Fin del acceso compartido. -->
+
+
+    </main>
+    <!-- Fin del contenido de esta pantalla. -->
+
+  </body>
+</html>

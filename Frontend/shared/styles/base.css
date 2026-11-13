@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fuentes/work-sans.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --institucional: #39a900;
+  --verde: #24642a;
+  --verde-oscuro: #17491d;
+  --seleccion: #edf6e8;
+  --tinta: #202d28;
+  --suave: #53625b;
+  --fondo: #f6f8f6;
+  --superficie: #fff;
+  --borde: #d9e1da;
+  --borde-control: #7c8c81;
+  --foco: #155b83;
+  --color-pista-progreso: #eaf0ea;
+  --color-valor-progreso: #548647;
+  --radio: .75rem;
+  --espacio: 1rem;
+  --fuente: "Work Sans", Calibri, Arial, sans-serif;
+}
+body {
+  margin: 0;
+  font: 400 1rem/1.55 var(--fuente);
+  color: var(--tinta);
+  background: var(--fondo);
+}
+h1, h2, h3, p, figure, dl {
+  margin: 0;
+}
+h1, h2, h3 {
+  line-height: 1.16;
+  letter-spacing: -.035em;
+  font-weight: 650;
+}
+a {
+  color: var(--verde);
+  text-underline-offset: .2em;
+}
+a:hover {
+  color: var(--verde-oscuro);
+}
+:focus-visible, .btn:focus-visible, .form-control:focus-visible, .form-select:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--superficie);
+}
+.salto {
+  position: fixed;
+  top: -6rem;
+  left: 1rem;
+  z-index: 5;
+  background: var(--superficie);
+  padding: .5rem 1rem;
+}
+.salto:focus {
+  top: 1rem;
+}

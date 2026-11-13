@@ -1,0 +1,174 @@
+.marco {
+  display: grid;
+  grid-template-columns: 15.5rem minmax(0, 1fr);
+  min-height: 100vh;
+}
+.lateral {
+  background: var(--superficie);
+  padding: 1.5rem 1rem;
+  border-right: 1px solid var(--borde);
+}
+.lateral .marca {
+  margin: 0 .4rem 2rem;
+}
+.grupo {
+  margin-bottom: 1.3rem;
+}
+.grupo p {
+  margin: 0 .8rem .35rem;
+  color: var(--suave);
+  font-size: .78rem;
+  font-weight: 600;
+}
+.grupo a, .volver-portada {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  min-height: 2.65rem;
+  padding: .5rem .75rem;
+  border-radius: .4rem;
+  color: var(--tinta);
+  text-decoration: none;
+  font-size: .93rem;
+}
+.grupo a:hover, .volver-portada:hover {
+  background: var(--fondo);
+}
+.grupo .actual {
+  background: var(--seleccion);
+  box-shadow: inset 3px 0 var(--institucional);
+  color: var(--verde-oscuro);
+  font-weight: 650;
+}
+.volver-portada {
+  border-top: 1px solid var(--borde);
+  border-radius: 0;
+}
+.area {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.barra, .pie-interno {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .6rem;
+  padding: 1rem clamp(1rem, 3vw, 3rem);
+  color: var(--suave);
+  font-size: .86rem;
+}
+.barra {
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borde);
+}
+.area main {
+  flex: 1;
+  width: min(100%, 85rem);
+  margin-inline: auto;
+  padding: 1.5rem clamp(1rem, 3vw, 3rem) 3rem;
+}
+.area main > * + * {
+  margin-top: 1rem;
+}
+.migas {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+  font-size: .84rem;
+  color: var(--suave);
+}
+.titulo-vista {
+  margin-block: 1.4rem;
+}
+.titulo-vista h1 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+.titulo-vista p, .titulo-vista small {
+  display: block;
+  margin-top: .45rem;
+  color: var(--suave);
+}
+.pie-interno {
+  border-top: 1px solid var(--borde);
+}
+.control-menu, .etiqueta-menu {
+  display: none;
+}
+@media (max-width: 900px) {
+  .marco {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+  .lateral {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: .85rem 1rem;
+    border: 0;
+    border-bottom: 1px solid var(--borde);
+  }
+  .lateral .marca {
+    margin: 0;
+  }
+  .control-menu {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+  }
+  .etiqueta-menu {
+    display: block;
+    padding: .55rem;
+    border: 1px solid var(--borde-control);
+    border-radius: .4rem;
+    cursor: pointer;
+  }
+  /* El + exige que label esté inmediatamente después del input, como hermano. */
+  .control-menu:focus-visible + .etiqueta-menu {
+    outline: 3px solid var(--foco);
+  }
+  .navegacion, .volver-portada {
+    display: none;
+  }
+  /* El ~ exige que nav sea un hermano posterior del input, sin contenedores intermedios. */
+  .control-menu:checked ~ .navegacion {
+    display: block;
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  .lateral {
+    padding-inline: .6rem;
+  }
+  .lateral .marca, .etiqueta-menu {
+    font-size: .82rem;
+  }
+}
+@media print {
+  .marco, .area {
+    display: block;
+  }
+  .lateral, .barra, .migas, .acciones, .filtros, .salto, .formulario, .pie-interno, .resultado {
+    display: none;
+  }
+  body, .panel {
+    background: white;
+  }
+  .area main {
+    padding: 0;
+  }
+  .panel {
+    break-inside: avoid;
+  }
+  .tabla-scroll {
+    overflow: visible;
+  }
+  .table {
+    font-size: .74rem;
+  }
+}

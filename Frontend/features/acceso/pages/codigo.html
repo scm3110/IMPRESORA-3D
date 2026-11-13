@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Verificar código | Laboratorio 3D SENA</title>
+    <link rel="stylesheet" href="../../../vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../shared/styles/base.css">
+    <link rel="stylesheet" href="../../../shared/styles/componentes.css">
+    <link rel="stylesheet" href="../styles/acceso.css">
+  </head>
+  <body class="acceso">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <aside class="identidad">
+      <a class="marca" href="../../../index.html" aria-label="Laboratorio 3D SENA, portada">
+        <img src="../../../shared/assets/img/sena.svg" alt="SENA" width="48" height="48">
+        <span>Laboratorio 3D<small>Medellín</small></span>
+      </a>
+
+      <div class="presentacion">
+        <p class="sobrelinea">Fabricación digital</p>
+        <h2>Laboratorio de impresión 3D</h2>
+        <img class="pieza" src="../assets/engranaje-helicoidal.png" width="530" height="420" alt="">
+        <p>SENA · Medellín, Colombia</p>
+      </div>
+    </aside>
+    <!-- Inicio del contenido de esta pantalla. -->
+    <main id="contenido" tabindex="-1">
+      <span class="muestra">Maqueta estática</span>
+
+      <h1>Verificar código</h1>
+      <p>Usa seis dígitos ficticios. El código de recuperación es de un solo uso, vence en 30 minutos y queda bloqueado tras tres intentos fallidos consecutivos.</p>
+      <form class="panel formulario" action="#revision" method="get" autocomplete="off">
+        <fieldset>
+          <legend>Restablecimiento</legend>
+          <div class="campos">
+            <div class="campo">
+              <label for="codigo">Código de seis dígitos</label>
+              <input class="form-control" id="codigo" type="text" required inputmode="numeric" pattern="[0-9]{6}" maxlength="6">
+            </div>
+            <div class="campo">
+              <label for="nueva">Nueva contraseña</label>
+              <input class="form-control" id="nueva" type="password" required minlength="8" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}" autocomplete="new-password" title="Mínimo 8 caracteres con mayúscula, minúscula y número">
+            </div>
+            <div class="campo">
+              <label for="confirmar">Confirmar nueva contraseña</label>
+              <input class="form-control" id="confirmar" type="password" required minlength="8" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}" autocomplete="new-password" title="Mínimo 8 caracteres con mayúscula, minúscula y número">
+            </div>
+          </div>
+        </fieldset>
+        <p class="ayuda">Mínimo 8 caracteres con mayúscula, minúscula y número. La coincidencia entre claves se comprobaría en el sistema.</p>
+        <p class="ayuda">Usa datos ficticios. El navegador comprueba los campos y descarta los valores al continuar.</p>
+
+        <div class="acciones">
+          <button type="submit" class="btn accion">Validar formato</button>
+          <a href="recuperar.html" class="btn secundaria">Volver</a>
+        </div>
+      </form>
+      <p class="resultado" id="revision" tabindex="-1">Validación de ejemplo completada. Los registros de la maqueta siguen mostrando sus valores de muestra.</p>
+
+      <nav class="acciones" aria-label="Acciones de la pantalla">
+        <a href="recuperar.html">Solicitar otro código de ejemplo</a>
+      </nav>
+      <a href="../../../index.html">Volver a la portada</a>
+
+    </main>
+    <!-- Fin del contenido de esta pantalla. -->
+
+  </body>
+</html>

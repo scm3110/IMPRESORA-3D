@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recuperar contraseña | Laboratorio 3D SENA</title>
+    <link rel="stylesheet" href="../../../vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../shared/styles/base.css">
+    <link rel="stylesheet" href="../../../shared/styles/componentes.css">
+    <link rel="stylesheet" href="../styles/acceso.css">
+  </head>
+  <body class="acceso">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <aside class="identidad">
+      <a class="marca" href="../../../index.html" aria-label="Laboratorio 3D SENA, portada">
+        <img src="../../../shared/assets/img/sena.svg" alt="SENA" width="48" height="48">
+        <span>Laboratorio 3D<small>Medellín</small></span>
+      </a>
+
+      <div class="presentacion">
+        <p class="sobrelinea">Fabricación digital</p>
+        <h2>Laboratorio de impresión 3D</h2>
+        <img class="pieza" src="../assets/engranaje-helicoidal.png" width="530" height="420" alt="">
+        <p>SENA · Medellín, Colombia</p>
+      </div>
+    </aside>
+    <!-- Inicio del contenido de esta pantalla. -->
+    <main id="contenido" tabindex="-1">
+      <span class="muestra">Maqueta estática</span>
+
+      <h1>Recuperar contraseña</h1>
+      <p>Indica un correo de ejemplo. La maqueta no envía correos.</p>
+      <form class="panel formulario" action="codigo.html" method="get" autocomplete="off">
+        <fieldset>
+          <legend>Correo de recuperación</legend>
+          <div class="campos">
+            <div class="campo">
+              <label for="correo">Correo institucional</label>
+              <input class="form-control" id="correo" type="email" required>
+            </div>
+          </div>
+        </fieldset>
+        <p class="ayuda">Usa datos ficticios. El navegador comprueba los campos y descarta los valores al continuar.</p>
+
+        <div class="acciones">
+          <button type="submit" class="btn accion">Ver paso del código</button>
+          <a href="index.html" class="btn secundaria">Volver</a>
+        </div>
+      </form>
+      <a href="../../../index.html">Volver a la portada</a>
+
+    </main>
+    <!-- Fin del contenido de esta pantalla. -->
+
+  </body>
+</html>

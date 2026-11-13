@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Estadísticas de uso | Laboratorio 3D SENA</title>
+    <link rel="stylesheet" href="../../../vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../shared/styles/base.css">
+    <link rel="stylesheet" href="../../../shared/styles/componentes.css">
+    <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+  </head>
+  <body class="gestion">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <div class="marco">
+      <!-- Inicio del menú compartido. Mantener sus copias sincronizadas. -->
+      <aside class="lateral">
+        <a class="marca" href="../../../index.html" aria-label="Laboratorio 3D SENA, portada">
+          <img src="../../../shared/assets/img/sena.svg" alt="SENA" width="48" height="48">
+          <span>Laboratorio 3D<small>Medellín</small></span>
+        </a>
+
+        <!-- Menú móvil sin JavaScript: conservar input, label y nav como hermanos, en ese orden y con label inmediatamente después de input. -->
+        <input class="control-menu" type="checkbox" id="control-menu" aria-controls="navegacion">
+        <label class="etiqueta-menu" for="control-menu">Menú de módulos</label>
+        <nav class="navegacion" id="navegacion" aria-label="Módulos">
+
+          <div class="grupo">
+            <p>Operación</p>
+
+            <a href="../../dashboard/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/panel.svg" alt="">
+              Dashboard
+            </a>
+
+            <a href="../../produccion/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/capas.svg" alt="">
+              Producción
+            </a>
+
+            <a href="../../inventario/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/caja.svg" alt="">
+              Inventario
+            </a>
+
+            <a href="../../equipos/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/impresora.svg" alt="">
+              Equipos
+            </a>
+
+            <a href="../../costeo/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/calculo.svg" alt="">
+              Costeo
+            </a>
+
+          </div>
+
+          <div class="grupo">
+            <p>Análisis</p>
+
+            <a href="index.html" class="actual" aria-current="location">
+              <img class="icono" src="../../../shared/assets/img/barras.svg" alt="">
+              Estadísticas
+            </a>
+
+            <a href="../../reportes/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/informe.svg" alt="">
+              Reportes
+            </a>
+
+          </div>
+
+          <div class="grupo">
+            <p>Administración</p>
+
+            <a href="../../usuarios/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/usuarios.svg" alt="">
+              Usuarios
+            </a>
+
+            <a href="../../roles/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/escudo.svg" alt="">
+              Roles y permisos
+            </a>
+
+            <a href="../../laboratorios/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/edificio.svg" alt="">
+              Laboratorios
+            </a>
+
+            <a href="../../parametros/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/ajustes.svg" alt="">
+              Parámetros
+            </a>
+
+          </div>
+
+        </nav>
+
+        <a href="../../../index.html" class="volver-portada">
+          <img class="icono" src="../../../shared/assets/img/salir.svg" alt="">Volver a la portada
+        </a>
+      </aside>
+      <!-- Fin del menú compartido. -->
+      <div class="area">
+        <!-- Inicio del encabezado compartido. -->
+        <header class="barra">
+          <span>Laboratorio de fabricación digital</span>
+          <span class="muestra">Maqueta estática</span>
+
+        </header>
+        <!-- Fin del encabezado compartido. -->
+        <!-- Inicio del contenido de esta pantalla. -->
+        <main id="contenido" tabindex="-1">
+          <nav class="migas" aria-label="Ruta">
+            <a href="../../../index.html">Inicio</a>
+            <span aria-hidden="true">/</span>
+
+            <a href="index.html">Estadísticas</a>
+            <span aria-hidden="true">/</span>
+
+            <span aria-current="page">Estadísticas de uso</span>
+          </nav>
+          <header class="titulo-vista">
+            <h1>Estadísticas de uso</h1>
+            <p>Vista semanal · 2–8 nov 2026. Solo se incluyen trabajos finalizados.</p>
+            <small>Perfil de referencia · Administrador e instructor</small>
+          </header>
+
+          <nav class="acciones" aria-label="Acciones de la pantalla">
+            <a href="index.html" class="btn secundaria">Mensual</a>
+            <a href="semanal.html" class="btn accion">Semanal</a>
+            <a href="diario.html" class="btn secundaria">Diario</a>
+          </nav>
+          <div class="indicadores">
+            <div class="indicador">
+              <span>Piezas</span>
+              <strong>18</strong>
+              <small>Trabajos finalizados</small>
+            </div>
+            <div class="indicador">
+              <span>Horas activas</span>
+              <strong>36 h</strong>
+              <small>Tiempo de impresión</small>
+            </div>
+            <div class="indicador">
+              <span>Filamento</span>
+              <strong>900 g</strong>
+              <small>Consumo de material</small>
+            </div>
+            <div class="indicador">
+              <span>Energía</span>
+              <strong>9 kWh</strong>
+              <small>Consumo del período</small>
+            </div>
+          </div>
+          <section class="panel">
+            <h2>Producción por período</h2>
+            <div class="grafico">
+              <div>
+                <span>2–3 nov</span>
+                <progress max="10" value="4" aria-label="2–3 nov, 4 piezas">
+                </progress>
+                <strong>4 piezas</strong>
+              </div>
+              <div>
+                <span>4–6 nov</span>
+                <progress max="10" value="10" aria-label="4–6 nov, 10 piezas">
+                </progress>
+                <strong>10 piezas</strong>
+              </div>
+              <div>
+                <span>7–8 nov</span>
+                <progress max="10" value="4" aria-label="7–8 nov, 4 piezas">
+                </progress>
+                <strong>4 piezas</strong>
+              </div>
+            </div>
+          </section>
+          <section class="panel">
+            <h2>Consumo de material</h2>
+            <div class="grafico">
+              <div>
+                <span>2–3 nov</span>
+                <progress max="500" value="200" aria-label="2–3 nov, 200 g">
+                </progress>
+                <strong>200 g</strong>
+              </div>
+              <div>
+                <span>4–6 nov</span>
+                <progress max="500" value="500" aria-label="4–6 nov, 500 g">
+                </progress>
+                <strong>500 g</strong>
+              </div>
+              <div>
+                <span>7–8 nov</span>
+                <progress max="500" value="200" aria-label="7–8 nov, 200 g">
+                </progress>
+                <strong>200 g</strong>
+              </div>
+            </div>
+          </section>
+          <section class="panel">
+            <h2>Horas activas</h2>
+            <div class="grafico">
+              <div>
+                <span>2–3 nov</span>
+                <progress max="20" value="8" aria-label="2–3 nov, 8 h">
+                </progress>
+                <strong>8 h</strong>
+              </div>
+              <div>
+                <span>4–6 nov</span>
+                <progress max="20" value="20" aria-label="4–6 nov, 20 h">
+                </progress>
+                <strong>20 h</strong>
+              </div>
+              <div>
+                <span>7–8 nov</span>
+                <progress max="20" value="8" aria-label="7–8 nov, 8 h">
+                </progress>
+                <strong>8 h</strong>
+              </div>
+            </div>
+          </section>
+          <section class="panel">
+            <h2>Rendimiento por responsable</h2>
+            <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
+              <table class="table">
+                <caption>Registros de demostración</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Responsable</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Piezas</th>
+                    <th scope="col">Horas</th>
+                    <th scope="col">Material</th>
+                    <th scope="col">Energía</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Aprendiz de muestra</th>
+                    <td>Aprendiz</td>
+                    <td>11</td>
+                    <td>22 h</td>
+                    <td>550 g</td>
+                    <td>5.5 kWh</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Instructor de muestra</th>
+                    <td>Instructor</td>
+                    <td>7</td>
+                    <td>14 h</td>
+                    <td>350 g</td>
+                    <td>3.5 kWh</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <p class="ayuda">Para conservar esta vista, usa Imprimir en el navegador y selecciona Guardar como PDF.</p>
+
+        </main>
+        <!-- Fin del contenido de esta pantalla. -->
+        <footer class="pie-interno">Laboratorio 3D · SENA <span>Datos de demostración</span></footer>
+      </div>
+    </div>
+
+  </body>
+</html>

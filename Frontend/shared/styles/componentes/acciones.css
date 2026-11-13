@@ -1,0 +1,33 @@
+.btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem 1.1rem;
+  border-radius: .45rem;
+  font-weight: 600;
+  gap: .5rem;
+}
+.accion {
+  background: var(--verde);
+  color: white;
+}
+.accion:hover, .btn.accion:active {
+  background: var(--verde-oscuro);
+  color: white;
+}
+.secundaria {
+  background: var(--superficie);
+  border: 1px solid var(--borde-control);
+  color: var(--tinta);
+}
+.secundaria:hover {
+  background: var(--fondo);
+  border-color: var(--suave);
+}
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .65rem;
+  align-items: center;
+}

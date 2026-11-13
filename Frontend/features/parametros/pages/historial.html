@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Histórico de parámetros | Laboratorio 3D SENA</title>
+    <link rel="stylesheet" href="../../../vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../shared/styles/base.css">
+    <link rel="stylesheet" href="../../../shared/styles/componentes.css">
+    <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+  </head>
+  <body class="gestion">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <div class="marco">
+      <!-- Inicio del menú compartido. Mantener sus copias sincronizadas. -->
+      <aside class="lateral">
+        <a class="marca" href="../../../index.html" aria-label="Laboratorio 3D SENA, portada">
+          <img src="../../../shared/assets/img/sena.svg" alt="SENA" width="48" height="48">
+          <span>Laboratorio 3D<small>Medellín</small></span>
+        </a>
+
+        <!-- Menú móvil sin JavaScript: conservar input, label y nav como hermanos, en ese orden y con label inmediatamente después de input. -->
+        <input class="control-menu" type="checkbox" id="control-menu" aria-controls="navegacion">
+        <label class="etiqueta-menu" for="control-menu">Menú de módulos</label>
+        <nav class="navegacion" id="navegacion" aria-label="Módulos">
+
+          <div class="grupo">
+            <p>Operación</p>
+
+            <a href="../../dashboard/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/panel.svg" alt="">
+              Dashboard
+            </a>
+
+            <a href="../../produccion/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/capas.svg" alt="">
+              Producción
+            </a>
+
+            <a href="../../inventario/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/caja.svg" alt="">
+              Inventario
+            </a>
+
+            <a href="../../equipos/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/impresora.svg" alt="">
+              Equipos
+            </a>
+
+            <a href="../../costeo/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/calculo.svg" alt="">
+              Costeo
+            </a>
+
+          </div>
+
+          <div class="grupo">
+            <p>Análisis</p>
+
+            <a href="../../estadisticas/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/barras.svg" alt="">
+              Estadísticas
+            </a>
+
+            <a href="../../reportes/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/informe.svg" alt="">
+              Reportes
+            </a>
+
+          </div>
+
+          <div class="grupo">
+            <p>Administración</p>
+
+            <a href="../../usuarios/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/usuarios.svg" alt="">
+              Usuarios
+            </a>
+
+            <a href="../../roles/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/escudo.svg" alt="">
+              Roles y permisos
+            </a>
+
+            <a href="../../laboratorios/pages/index.html">
+              <img class="icono" src="../../../shared/assets/img/edificio.svg" alt="">
+              Laboratorios
+            </a>
+
+            <a href="index.html" class="actual" aria-current="location">
+              <img class="icono" src="../../../shared/assets/img/ajustes.svg" alt="">
+              Parámetros
+            </a>
+
+          </div>
+
+        </nav>
+
+        <a href="../../../index.html" class="volver-portada">
+          <img class="icono" src="../../../shared/assets/img/salir.svg" alt="">Volver a la portada
+        </a>
+      </aside>
+      <!-- Fin del menú compartido. -->
+      <div class="area">
+        <!-- Inicio del encabezado compartido. -->
+        <header class="barra">
+          <span>Laboratorio de fabricación digital</span>
+          <span class="muestra">Maqueta estática</span>
+
+        </header>
+        <!-- Fin del encabezado compartido. -->
+        <!-- Inicio del contenido de esta pantalla. -->
+        <main id="contenido" tabindex="-1">
+          <nav class="migas" aria-label="Ruta">
+            <a href="../../../index.html">Inicio</a>
+            <span aria-hidden="true">/</span>
+
+            <a href="index.html">Parámetros</a>
+            <span aria-hidden="true">/</span>
+
+            <span aria-current="page">Histórico de parámetros</span>
+          </nav>
+          <header class="titulo-vista">
+            <h1>Histórico de parámetros</h1>
+            <p>Registro de auditoría de solo lectura.</p>
+            <small>Perfil de referencia · Administrador</small>
+          </header>
+
+          <section class="panel">
+            <h2>Cambios registrados</h2>
+            <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
+              <table class="table">
+                <caption>Registros de demostración</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Parámetro</th>
+                    <th scope="col">Campo</th>
+                    <th scope="col">Anterior</th>
+                    <th scope="col">Nuevo</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Responsable</th>
+                    <th scope="col">Observación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">H-01</th>
+                    <td>PAR-01</td>
+                    <td>Precio por gramo</td>
+                    <td>75 COP</td>
+                    <td>80 COP</td>
+                    <td>01 nov 2026</td>
+                    <td>Administrador de muestra</td>
+                    <td>Tarifa de referencia</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+        </main>
+        <!-- Fin del contenido de esta pantalla. -->
+        <footer class="pie-interno">Laboratorio 3D · SENA <span>Datos de demostración</span></footer>
+      </div>
+    </div>
+
+  </body>
+</html>

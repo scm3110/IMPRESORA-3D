@@ -1,0 +1,50 @@
+.muestra {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--suave);
+  font-size: .8rem;
+}
+.muestra::before {
+  content: "";
+  width: .45rem;
+  height: .45rem;
+  border-radius: 50%;
+  background: var(--institucional);
+}
+.estado {
+  display: inline-block;
+  padding: .17rem .58rem;
+  border-radius: 2rem;
+  font-size: .76rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.verde {
+  background: #e0f2dc;
+  color: #27552b;
+}
+.ambar {
+  background: #fff0cb;
+  color: #714801;
+}
+.rojo {
+  background: #fce3df;
+  color: #8d332a;
+}
+.azul {
+  background: #deedf8;
+  color: #205873;
+}
+.gris {
+  background: #e8eeee;
+  color: #465659;
+}
+.aviso {
+  border: 1px solid #dfcd9d;
+  border-left: 4px solid #ad780c;
+  border-radius: .5rem;
+  background: #fff8e5;
+  color: #5f4918;
+  padding: .85rem 1rem;
+}

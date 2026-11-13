@@ -1,0 +1,94 @@
+.acceso {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: 100svh;
+  background: var(--superficie);
+}
+.identidad {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(2rem, 5vw, 5.5rem);
+  background: var(--fondo);
+  border-right: 1px solid var(--borde);
+}
+.presentacion {
+  width: 100%;
+  margin-block: auto;
+  padding-top: 3rem;
+}
+.sobrelinea {
+  font-size: .87rem;
+  font-weight: 600;
+  color: var(--verde);
+}
+.presentacion h2 {
+  max-width: 14ch;
+  margin-block: .65rem;
+  font-size: clamp(2rem, 3.6vw, 3.8rem);
+}
+.presentacion > p:last-child {
+  color: var(--suave);
+  font-size: .9rem;
+}
+.pieza {
+  display: block;
+  width: min(74%, 20rem);
+  height: auto;
+  margin: 1.75rem auto;
+  filter: saturate(.55);
+}
+.acceso main {
+  width: min(100%, 34rem);
+  align-self: center;
+  justify-self: center;
+  padding: 3rem clamp(1.25rem, 4vw, 3rem);
+  min-width: 0;
+}
+.acceso h1 {
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+  margin: .8rem 0 .5rem;
+}
+.acceso main p {
+  color: var(--suave);
+}
+.acceso .formulario {
+  display: grid;
+  gap: 1rem;
+  margin: 1.75rem 0 1rem;
+  padding: 0;
+  border: 0;
+}
+.acceso .campos {
+  grid-template-columns: 1fr;
+}
+.acceso .formulario > * {
+  margin: 0;
+}
+.acceso details, .acceso main nav {
+  margin-top: 1rem;
+}
+@media (max-width: 700px) {
+  .acceso {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+  }
+  .identidad {
+    padding: 1.25rem;
+    border: 0;
+    border-bottom: 1px solid var(--borde);
+  }
+  .presentacion {
+    padding-top: 1rem;
+  }
+  .presentacion h2 {
+    font-size: 1.35rem;
+    max-width: none;
+  }
+  .presentacion .pieza, .presentacion p {
+    display: none;
+  }
+  .acceso main {
+    padding-block: 1.75rem;
+  }
+}
