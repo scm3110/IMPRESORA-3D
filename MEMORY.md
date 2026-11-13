@@ -27,4 +27,6 @@
 - Comprobaciones actuales: 2748 referencias válidas, HTML anidado correctamente, sin IDs duplicados y controles etiquetados.
 - README documenta referencias de bloques, dependencias del menú móvil y escenarios ilustrativos relacionados.
 - Se conservan ambas entradas de acceso, URLs y alcance estático; no se añadieron dependencias ni JavaScript de navegador.
-- Git inicializado en la rama frontend/estructura-hibrida por solicitud del usuario; reemplazo del remoto scm3110/IMPRESORA-3D pendiente.
+- Repositorio scm3110/IMPRESORA-3D recreado por solicitud del usuario; origin apunta a https://github.com/scm3110/IMPRESORA-3D.git.
+- Rama frontend/estructura-hibrida conectada a origin; commit de implementación 1da5357 publicado.
+- Historial anterior de master conservado únicamente en la rama local respaldo/anterior-master.
