@@ -11,7 +11,9 @@ Maqueta estática del laboratorio SENA. Contiene 82 páginas HTML con formulario
 3. Abre una pull request con destino (`base`) `master` y origen (`compare`) la rama de trabajo.
 4. Revisa los archivos y commits de la solicitud; incorpora los cambios con `Merge pull request` cuando los aceptes.
 
-El cambio de rama principal no bloquea por sí solo los commits directos a `master`. El flujo acordado es enviar las modificaciones mediante pull requests y dejar su fusión al usuario.
+`master` tiene una regla de protección que exige pull requests, también para administradores. Los pushes directos, los pushes forzados y la eliminación de la rama están bloqueados. Trabaja y sube tus commits a `frontend/estructura-hibrida`; después revisa y fusiona la pull request hacia `master`.
+
+No se exige una aprobación de otra persona: GitHub no permite aprobar una pull request propia. Como propietario puedes revisar los cambios y aceptarlos con `Merge pull request`. La revisión y la fusión quedan a cargo del usuario.
 
 ## Arquitectura híbrida por funcionalidad
 
