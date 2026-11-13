@@ -32,4 +32,5 @@
 - Rama master creada desde 88a1c28; frontend/estructura-hibrida se mantiene como rama activa de trabajo.
 - master es la rama principal de GitHub; proponer cambios desde las ramas de trabajo mediante pull requests y dejar la fusión al usuario.
 - Protección de master activa: exige PR también a administradores; sin bypass, force push ni eliminación. No exige aprobación externa para permitir fusionar PR propias.
+- PR #1 revisada y autorizada por el usuario, fusionada en master mediante 5f77ed7; rama de trabajo sincronizada con la fusión.
 - Historial anterior de master conservado únicamente en la rama local respaldo/anterior-master.
