@@ -29,4 +29,7 @@
 - Se conservan ambas entradas de acceso, URLs y alcance estático; no se añadieron dependencias ni JavaScript de navegador.
 - Repositorio scm3110/IMPRESORA-3D recreado por solicitud del usuario; origin apunta a https://github.com/scm3110/IMPRESORA-3D.git.
 - Rama frontend/estructura-hibrida conectada a origin; commit de implementación 1da5357 publicado.
+- Rama master creada desde 88a1c28; frontend/estructura-hibrida se mantiene como rama activa de trabajo.
+- master es la rama principal de GitHub; proponer cambios desde las ramas de trabajo mediante pull requests y dejar la fusión al usuario.
+- Protección de master activa: exige PR también a administradores; sin bypass, force push ni eliminación. No exige aprobación externa para permitir fusionar PR propias.
 - Historial anterior de master conservado únicamente en la rama local respaldo/anterior-master.

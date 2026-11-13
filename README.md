@@ -2,6 +2,19 @@
 
 Maqueta estática del laboratorio SENA. Contiene 82 páginas HTML con formularios, estados y registros ilustrativos. No requiere instalación ni compilación; abre `Frontend/index.html` en el navegador. El panel se encuentra en `Frontend/features/dashboard/pages/index.html`.
 
+## Flujo de trabajo con Git
+
+`master` es la rama principal y contiene la versión aceptada. `frontend/estructura-hibrida` es la rama de trabajo actual. Las ramas de Git no forman carpetas ni subramas: sus cambios se incorporan a la principal mediante una pull request.
+
+1. Realiza los cambios en la rama de trabajo.
+2. Registra un commit y súbelo a esa misma rama.
+3. Abre una pull request con destino (`base`) `master` y origen (`compare`) la rama de trabajo.
+4. Revisa los archivos y commits de la solicitud; incorpora los cambios con `Merge pull request` cuando los aceptes.
+
+`master` tiene una regla de protección que exige pull requests, también para administradores. Los pushes directos, los pushes forzados y la eliminación de la rama están bloqueados. Trabaja y sube tus commits a `frontend/estructura-hibrida`; después revisa y fusiona la pull request hacia `master`.
+
+No se exige una aprobación de otra persona: GitHub no permite aprobar una pull request propia. Como propietario puedes revisar los cambios y aceptarlos con `Merge pull request`. La revisión y la fusión quedan a cargo del usuario.
+
 ## Arquitectura híbrida por funcionalidad
 
 La organización combina módulos del dominio con recursos transversales. Cada funcionalidad agrupa sus pantallas y, cuando los necesita, sus propios estilos y recursos.
