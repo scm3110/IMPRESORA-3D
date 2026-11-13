@@ -4,6 +4,19 @@ Maqueta estática del laboratorio SENA. Contiene 82 páginas HTML con formulario
 
 ## Arquitectura híbrida por funcionalidad
 
+## Flujo de trabajo con Git
+
+`master` es la rama principal y contiene la versión aceptada. `frontend/estructura-hibrida` es la rama de trabajo actual. Las ramas de Git no forman carpetas ni subramas: sus cambios se incorporan a la principal mediante una pull request.
+
+1. Realiza los cambios en la rama de trabajo.
+2. Registra un commit y súbelo a esa misma rama.
+3. Abre una pull request con destino (`base`) `master` y origen (`compare`) la rama de trabajo.
+4. Revisa los archivos y commits de la solicitud; incorpora los cambios con `Merge pull request` cuando los aceptes.
+
+El cambio de rama principal no bloquea por sí solo los commits directos a `master`. El flujo acordado es enviar las modificaciones mediante pull requests y dejar su fusión al usuario.
+
+## Organización del frontend
+
 La organización combina módulos del dominio con recursos transversales. Cada funcionalidad agrupa sus pantallas y, cuando los necesita, sus propios estilos y recursos.
 
 ```text
