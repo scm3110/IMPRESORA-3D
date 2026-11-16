@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../../shared/styles/base.css">
     <link rel="stylesheet" href="../../../shared/styles/componentes.css">
     <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+    <link rel="stylesheet" href="../../../shared/styles/reportes.css">
   </head>
   <body class="gestion">
     <a class="salto" href="#contenido">Saltar al contenido</a>
@@ -110,7 +111,7 @@
         </header>
         <!-- Fin del encabezado compartido. -->
         <!-- Inicio del contenido de esta pantalla. -->
-        <main id="contenido" tabindex="-1">
+        <main id="contenido" class="vista-reportes" tabindex="-1">
           <nav class="migas" aria-label="Ruta">
             <a href="../../../index.html">Inicio</a>
             <span aria-hidden="true">/</span>
@@ -123,45 +124,34 @@
             <small>Perfil de referencia · Administrador, coordinador e instructor</small>
           </header>
 
-          <section class="panel">
-            <h2>Informes disponibles</h2>
-            <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
-              <table class="table">
-                <caption>Registros de demostración</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Informe</th>
-                    <th scope="col">Datos incluidos</th>
-                    <th scope="col">Perfiles</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      <a href="gastos.html">Gastos consolidados</a>
-                    </th>
-                    <td>Material, energía y uso del equipo</td>
-                    <td>Administrador y coordinador</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <a href="produccion.html">Producción total</a>
-                    </th>
-                    <td>Piezas y horas por responsable</td>
-                    <td>Administrador, coordinador e instructor</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <a href="ganancia.html">Ganancia neta</a>
-                    </th>
-                    <td>Ingresos y costos del período</td>
-                    <td>Administrador y coordinador</td>
-                  </tr>
-                </tbody>
-              </table>
+          <section aria-labelledby="informes-disponibles">
+            <h2 id="informes-disponibles">Informes disponibles</h2>
+            <p class="ayuda">Configura el período y revisa una vista previa del documento. Todos los resultados son ilustrativos.</p>
+            <div class="catalogo-informes">
+              <article class="tarjeta-informe">
+                <span class="tipo-informe">INFORME FINANCIERO</span>
+                <h3>Gastos consolidados</h3>
+                <p>Material, energía y uso del equipo en un documento consolidado.</p>
+                <small>Administrador y coordinador</small>
+                <a href="gastos.html" class="btn secundaria">Preparar informe de gastos</a>
+              </article>
+              <article class="tarjeta-informe">
+                <span class="tipo-informe">INFORME OPERATIVO</span>
+                <h3>Producción total</h3>
+                <p>Piezas producidas y horas de impresión por responsable.</p>
+                <small>Administrador, coordinador e instructor</small>
+                <a href="produccion.html" class="btn secundaria">Preparar informe de producción</a>
+              </article>
+              <article class="tarjeta-informe">
+                <span class="tipo-informe">INFORME FINANCIERO</span>
+                <h3>Ganancia neta</h3>
+                <p>Ingresos y costos del período para revisar los resultados del laboratorio.</p>
+                <small>Administrador y coordinador</small>
+                <a href="ganancia.html" class="btn secundaria">Preparar informe de ganancia</a>
+              </article>
             </div>
           </section>
-          <p class="aviso">Los informes incluyen una vista imprimible. El navegador permite guardarla como PDF.</p>
+          <p class="aviso">Los botones de descarga son una propuesta visual. Puedes revisar los informes de muestra y su presentación para impresión.</p>
 
         </main>
         <!-- Fin del contenido de esta pantalla. -->

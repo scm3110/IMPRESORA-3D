@@ -133,58 +133,140 @@
           <section class="panel">
             <h2>Existencias del laboratorio</h2>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
-              <table class="table">
-                <caption>Registros de demostración</caption>
+              <table class="table tabla-gestion">
+                <caption>
+                  Registros de demostración
+                </caption>
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Material</th>
-                    <th scope="col">Presentación</th>
-                    <th scope="col">Actual</th>
-                    <th scope="col">Mínimo</th>
-                    <th scope="col">Máximo</th>
-                    <th scope="col">Disponibilidad</th>
-                    <th scope="col">Detalle</th>
+                    <th scope="col">
+                      ID
+                    </th>
+                    <th scope="col">
+                      Material
+                    </th>
+                    <th scope="col">
+                      Presentación
+                    </th>
+                    <th scope="col">
+                      Actual
+                    </th>
+                    <th scope="col">
+                      Mínimo
+                    </th>
+                    <th scope="col">
+                      Máximo
+                    </th>
+                    <th scope="col">
+                      Disponibilidad
+                    </th>
+                    <th scope="col">
+                      Observación
+                    </th>
+                    <th scope="col" class="columna-acciones">
+                      Acciones
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">MAT-01</th>
-                    <td>PLA · Lima</td>
-                    <td>1 kg</td>
-                    <td>940 g</td>
-                    <td>200 g</td>
-                    <td>2.000 g</td>
+                    <th scope="row">
+                      MAT-01
+                    </th>
                     <td>
-                      <span class="estado verde">Disponible</span>
+                      PLA · Lima
                     </td>
                     <td>
-                      <a href="editar.html">Editar material</a>
+                      1 kg
+                    </td>
+                    <td>
+                      940 g
+                    </td>
+                    <td>
+                      200 g
+                    </td>
+                    <td>
+                      2.000 g
+                    </td>
+                    <td>
+                      <span class="estado verde">
+                        Disponible
+                      </span>
+                    </td>
+                    <td>
+                      Existencias suficientes
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar.html" aria-label="Editar MAT-01 · PLA Lima" title="Editar MAT-01 · PLA Lima">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">MAT-02</th>
-                    <td>PETG · Natural</td>
-                    <td>1 kg</td>
-                    <td>150 g</td>
-                    <td>150 g</td>
-                    <td>1.000 g</td>
+                    <th scope="row">
+                      MAT-02
+                    </th>
                     <td>
-                      <span class="estado ambar">Alerta</span>
+                      PETG · Natural
                     </td>
-                    <td>En el mínimo</td>
+                    <td>
+                      1 kg
+                    </td>
+                    <td>
+                      150 g
+                    </td>
+                    <td>
+                      150 g
+                    </td>
+                    <td>
+                      1.000 g
+                    </td>
+                    <td>
+                      <span class="estado ambar">
+                        Alerta
+                      </span>
+                    </td>
+                    <td>
+                      En el mínimo
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar-petg.html" aria-label="Editar MAT-02 · PETG Natural" title="Editar MAT-02 · PETG Natural">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </td>
                   </tr>
                   <tr>
-                    <th scope="row">MAT-03</th>
-                    <td>ABS · Negro</td>
-                    <td>500 g</td>
-                    <td>0 g</td>
-                    <td>100 g</td>
-                    <td>1.000 g</td>
+                    <th scope="row">
+                      MAT-03
+                    </th>
                     <td>
-                      <span class="estado rojo">Crítico</span>
+                      ABS · Negro
                     </td>
-                    <td>Sin existencias</td>
+                    <td>
+                      500 g
+                    </td>
+                    <td>
+                      0 g
+                    </td>
+                    <td>
+                      100 g
+                    </td>
+                    <td>
+                      1.000 g
+                    </td>
+                    <td>
+                      <span class="estado rojo">
+                        Crítico
+                      </span>
+                    </td>
+                    <td>
+                      Sin existencias
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar-abs.html" aria-label="Editar MAT-03 · ABS Negro" title="Editar MAT-03 · ABS Negro">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </td>
                   </tr>
                 </tbody>
               </table>

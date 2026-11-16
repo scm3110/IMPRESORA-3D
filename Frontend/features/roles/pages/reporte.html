@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../../shared/styles/base.css">
     <link rel="stylesheet" href="../../../shared/styles/componentes.css">
     <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+    <link rel="stylesheet" href="../../../shared/styles/reportes.css">
   </head>
   <body class="gestion">
     <a class="salto" href="#contenido">Saltar al contenido</a>
@@ -110,7 +111,7 @@
         </header>
         <!-- Fin del encabezado compartido. -->
         <!-- Inicio del contenido de esta pantalla. -->
-        <main id="contenido" tabindex="-1">
+        <main id="contenido" class="vista-reportes" tabindex="-1">
           <nav class="migas" aria-label="Ruta">
             <a href="../../../index.html">Inicio</a>
             <span aria-hidden="true">/</span>
@@ -125,8 +126,18 @@
             <p>Roles, usuarios asignados y permisos del ejemplo.</p>
             <small>Perfil de referencia · Administrador</small>
           </header>
+          <section class="barra-informe" aria-label="Exportación del informe">
+            <div>
+              <strong>Vista previa del informe</strong>
+              <p id="ayuda-descarga" class="ayuda">Datos ilustrativos. La descarga se muestra como propuesta visual y aún no está disponible.</p>
+            </div>
+            <div class="acciones">
+              <button type="button" class="btn accion" disabled aria-describedby="ayuda-descarga">Descargar PDF</button>
+              <button type="button" class="btn secundaria" disabled aria-describedby="ayuda-descarga">Exportar CSV</button>
+            </div>
+          </section>
 
-          <section class="panel">
+          <section class="panel hoja-informe">
             <h2>Roles del laboratorio</h2>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
               <table class="table">
@@ -186,7 +197,7 @@
               </table>
             </div>
           </section>
-          <section class="panel">
+          <section class="panel hoja-informe">
             <h2>Administrador</h2>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Permisos de muestra · Administrador">
               <table class="table">
@@ -370,7 +381,7 @@
               </table>
             </div>
           </section>
-          <section class="panel">
+          <section class="panel hoja-informe">
             <h2>Instructor</h2>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Permisos de muestra · Instructor">
               <table class="table">
@@ -554,7 +565,7 @@
               </table>
             </div>
           </section>
-          <section class="panel">
+          <section class="panel hoja-informe">
             <h2>Aprendiz</h2>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Permisos de muestra · Aprendiz">
               <table class="table">
@@ -738,7 +749,7 @@
               </table>
             </div>
           </section>
-          <section class="panel">
+          <section class="panel hoja-informe">
             <h2>Coordinador</h2>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Permisos de muestra · Coordinador">
               <table class="table">

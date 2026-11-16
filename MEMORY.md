@@ -1,35 +1,37 @@
 # Memoria del proyecto
 
-- Maqueta estática de gestión de impresión 3D del SENA, con 82 páginas HTML.
-- Arquitectura híbrida por funcionalidad aplicada en `Frontend/`.
-- Entrada: `Frontend/index.html`; panel: `Frontend/features/dashboard/pages/index.html`.
-- Las pantallas pertenecen a `Frontend/features/<modulo>/pages/`.
-- Módulos: acceso, dashboard, producción, inventario, equipos, costeo, estadísticas, reportes, usuarios, roles, laboratorios y parámetros.
-- Acceso agrupa también `styles/acceso.css` y `assets/engranaje-helicoidal.png`.
-- Estilos comunes en `Frontend/shared/styles/`, con componentes y layouts.
-- Marca, iconos y fuentes en `Frontend/shared/assets/`; Bootstrap en `Frontend/vendor/bootstrap/`.
-- Los menús y encabezados siguen escritos en cada HTML; no hay motor de plantillas.
-- El acceso se presenta tanto en la portada como en `features/acceso/pages/index.html`.
-- README.md explica arquitectura, nuevas pantallas y migración de rutas; AGENTS.md refleja la estructura actual.
-- `tools/verificar-rutas.ps1` comprueba enlaces, recursos y anclas, sin dependencias.
-- Última comprobación tras migrar: 82 páginas, 11 hojas CSS y 2748 referencias locales válidas.
-- La revisión visual previa quedó bloqueada al identificar la URL; revisión de esta mejora pendiente de comprobar en navegador.
-- No hay package.json, Eleventy ni carpeta src en esta copia; abre el HTML directamente.
-- Formularios, permisos y registros son ilustrativos; sin JavaScript de navegador ni backend.
-- Matriz y casos de uso definen requisitos; SQL orienta nombres y relaciones.
-- Consultar `documentos/Caso de uso - Impresion3d.eap` antes de implementar nuevos flujos.
-- Preguntar antes de agregar dependencias, JavaScript, backend/API o modificar la base de datos.
-- Se explicó la función de las carpetas y archivos actuales a petición del usuario.
-- Mejora autorizada e implementada: sangría de dos espacios y comentarios de bloques en las 82 páginas.
-- CSS de legend/label/ayudas agrupado en formularios.css; colores de progress centralizados sin cambiar sus valores.
-- `tools/verificar-bloques-compartidos.ps1` verifica 77 menús, dos accesos, módulo activo y estructura móvil sin modificar archivos.
-- El verificador pasó nueve casos temporales, incluidos errores deliberados y una ruta equivalente válida.
-- Comprobaciones actuales: 2748 referencias válidas, HTML anidado correctamente, sin IDs duplicados y controles etiquetados.
-- README documenta referencias de bloques, dependencias del menú móvil y escenarios ilustrativos relacionados.
-- Se conservan ambas entradas de acceso, URLs y alcance estático; no se añadieron dependencias ni JavaScript de navegador.
-- Repositorio scm3110/IMPRESORA-3D recreado por solicitud del usuario; origin apunta a https://github.com/scm3110/IMPRESORA-3D.git.
-- Rama frontend/estructura-hibrida conectada a origin; commit de implementación 1da5357 publicado.
-- Rama master creada desde 88a1c28; frontend/estructura-hibrida se mantiene como rama activa de trabajo.
-- master es la rama principal de GitHub; proponer cambios desde las ramas de trabajo mediante pull requests y dejar la fusión al usuario.
-- Protección de master activa: exige PR también a administradores; sin bypass, force push ni eliminación. No exige aprobación externa para permitir fusionar PR propias.
-- Historial anterior de master conservado únicamente en la rama local respaldo/anterior-master.
+- Maqueta estática de gestión de impresión 3D SENA: 97 páginas HTML y 12 hojas CSS.
+- Entrada: Frontend/index.html; panel: Frontend/features/dashboard/pages/index.html.
+- Todos los módulos contienen únicamente pages; CSS e imágenes centralizados en shared por decisión del usuario.
+- Todo el CSS propio está en Frontend/shared/styles; recursos en Frontend/shared/assets; Bootstrap en vendor/bootstrap.
+- Sin JavaScript de navegador, backend ni dependencias de compilación; abrir HTML directamente.
+- Consultar matriz, casos de uso y SQL; revisar documentos/Caso de uso - Impresion3d.eap antes de nuevos flujos.
+- Preguntar antes de dependencias, JavaScript, backend/API o cambios de base de datos.
+- Menús y encabezados permanecen en cada HTML; conservar comentarios y orden input/label/nav móvil.
+- Lateral de acceso: fuente única shared/templates/acceso-lateral.html.tpl.
+- tools/actualizar-lateral-acceso.ps1 actualiza cinco pantallas, ajustando rutas; -Comprobar es de solo lectura.
+- El actualizador superó casos de divergencia, restauración sin afectar formularios, idempotencia y rechazo antes de escribir.
+- tools/verificar-rutas.ps1 y tools/verificar-bloques-compartidos.ps1 son verificadores de solo lectura.
+- README documenta bloques, nuevas pantallas y escenarios ilustrativos relacionados; mantener su coherencia.
+- Todos los registros, permisos, estados y cifras son ilustrativos; los cambios no persisten.
+- Repositorio scm3110/IMPRESORA-3D; origin https://github.com/scm3110/IMPRESORA-3D.git.
+- master principal protegida: exige PR, sin bypass, force push ni eliminación; fusión a cargo del usuario.
+- Carpeta principal: C:/Users/PC/Documents/PROYECTOS-SOFTWARE/IMPRESORA 3D, rama frontend/estructura-hibrida.
+- Worktree de revisión: C:/Users/PC/.codex/worktrees/c084/IMPRESORA 3D.
+- La centralización de recursos de acceso en shared ya fue transferida a la carpeta principal con autorización.
+- Mejoras revisadas y aprobadas por el usuario; transferidas de c084 a la carpeta principal el 16 de noviembre de 2026.
+- Usuarios y roles tienen edición por fila con sus datos y matrices; RF-2.2 visible para los cuatro roles.
+- Reportes con catálogo y presentación documental; PDF/CSV deshabilitados como propuesta visual.
+- Último plan implementado: controles compactos en usuarios, roles, catálogos, materiales, equipos y laboratorios.
+- Interruptores únicamente activo/inactivo, sin texto visible adicional; lápiz sin recuadro permanente y área de 44 × 44 px.
+- CSS limitado a tabla-gestion; icono único shared/assets/img/editar.svg; parámetros conserva edición conjunta con icono y texto.
+- Todas las filas editables tienen su muestra: añadidos Natural, Negro, ABS, PETG, materiales MAT-02/MAT-03 y equipos FDM-02/SLA-03.
+- Nuevas muestras de estado para FDM-02/SLA-03; disponibilidad, alertas de stock y estados operativos conservados.
+- Sin papelera; stock actual y códigos inmutables siguen de solo lectura.
+- Verificación actual: 3325 referencias válidas, 92 menús, dos accesos y cinco laterales coherentes; git diff --check sin errores.
+- Verificados valores y selecciones por registro, igual número de columnas, un lápiz por fila y referencias de etiquetas; sin IDs duplicados.
+- Revisión visual realizada y aprobada por el usuario; la herramienta automática de navegador no pudo revisar file://.
+- A petición explícita se lanzó Chrome desde terminal en una ventana nueva con usuarios, roles, catálogos y equipos para revisar los controles compactos.
+- El usuario autorizó registrar las mejoras aprobadas y publicarlas en origin/frontend/estructura-hibrida el 16 de noviembre de 2026; master se actualiza mediante PR.
+- PR #1 revisada y autorizada por el usuario, fusionada en master mediante 5f77ed7; rama de trabajo sincronizada con la fusión.
+- Carpeta del proyecto abierta en Visual Studio Code el 14 de noviembre de 2026; rama visible frontend/estructura-hibrida.

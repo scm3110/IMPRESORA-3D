@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../../shared/styles/base.css">
     <link rel="stylesheet" href="../../../shared/styles/componentes.css">
     <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+    <link rel="stylesheet" href="../../../shared/styles/reportes.css">
   </head>
   <body class="gestion">
     <a class="salto" href="#contenido">Saltar al contenido</a>
@@ -110,7 +111,7 @@
         </header>
         <!-- Fin del encabezado compartido. -->
         <!-- Inicio del contenido de esta pantalla. -->
-        <main id="contenido" tabindex="-1">
+        <main id="contenido" class="vista-reportes" tabindex="-1">
           <nav class="migas" aria-label="Ruta">
             <a href="../../../index.html">Inicio</a>
             <span aria-hidden="true">/</span>
@@ -126,6 +127,16 @@
             <p>Define un intervalo para ensayar el formulario o consulta la muestra consolidada.</p>
             <small>Perfil de referencia · Administrador, coordinador e instructor</small>
           </header>
+          <section class="barra-informe" aria-label="Exportación del informe">
+            <div>
+              <strong>Vista previa del informe</strong>
+              <p id="ayuda-descarga" class="ayuda">Datos ilustrativos. La descarga se muestra como propuesta visual y aún no está disponible.</p>
+            </div>
+            <div class="acciones">
+              <button type="button" class="btn accion" disabled aria-describedby="ayuda-descarga">Descargar PDF</button>
+              <button type="button" class="btn secundaria" disabled aria-describedby="ayuda-descarga">Exportar CSV</button>
+            </div>
+          </section>
 
           <form class="panel formulario" action="vista-produccion.html" method="get" autocomplete="off">
             <fieldset>
@@ -165,8 +176,8 @@
               <a href="index.html" class="btn secundaria">Volver</a>
             </div>
           </form>
-          <section class="panel">
-            <h2>Filtros del informe</h2>
+          <section class="panel hoja-informe">
+            <h2>Ficha del informe</h2>
             <dl class="ficha">
               <div>
                 <dt>Laboratorio</dt>
@@ -190,8 +201,8 @@
               </div>
             </dl>
           </section>
-          <section class="panel">
-            <h2>Resultado consolidado</h2>
+          <section class="panel hoja-informe">
+            <h2>Resumen de resultados</h2>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
               <table class="table">
                 <caption>Registros de demostración</caption>

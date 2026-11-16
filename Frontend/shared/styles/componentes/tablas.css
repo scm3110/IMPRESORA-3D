@@ -25,3 +25,122 @@ caption {
   color: var(--suave);
   font-size: .84rem;
 }
+/* Controles compactos exclusivos de las tablas de gestión. */
+.tabla-gestion {
+  --ancho-control: 44px;
+  --ancho-interruptor: 40px;
+  --alto-interruptor: 24px;
+  --tamano-circulo: 16px;
+  --separacion-circulo: 3px;
+}
+.tabla-gestion > :not(caption) > * > * {
+  padding-block: .55rem;
+}
+.tabla-gestion .columna-estado,
+.tabla-gestion .columna-acciones {
+  width: 1%;
+  text-align: center;
+  white-space: nowrap;
+}
+.tabla-gestion thead th {
+  white-space: nowrap;
+}
+.tabla-gestion tbody tr:hover {
+  background: var(--fondo);
+}
+.tabla-gestion .interruptor-estado {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ancho-control);
+  height: var(--ancho-control);
+  vertical-align: middle;
+  cursor: pointer;
+}
+.tabla-gestion .interruptor-estado input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.tabla-gestion .pista-estado {
+  display: block;
+  width: var(--ancho-interruptor);
+  height: var(--alto-interruptor);
+  border-radius: 2rem;
+  background: var(--suave);
+  border: 1px solid var(--suave);
+  position: relative;
+  pointer-events: none;
+}
+.tabla-gestion .pista-estado::after {
+  content: "";
+  position: absolute;
+  top: var(--separacion-circulo);
+  left: var(--separacion-circulo);
+  width: var(--tamano-circulo);
+  height: var(--tamano-circulo);
+  border-radius: 50%;
+  background: var(--superficie);
+}
+.tabla-gestion input:checked + .pista-estado {
+  background: var(--verde);
+  border-color: var(--verde);
+}
+.tabla-gestion input:checked + .pista-estado::after {
+  transform: translateX(16px);
+}
+.tabla-gestion input:focus-visible + .pista-estado {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+}
+.tabla-gestion .accion-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ancho-control);
+  height: var(--ancho-control);
+  vertical-align: middle;
+  border-radius: .5rem;
+  background: transparent;
+  color: var(--verde);
+}
+.tabla-gestion .accion-icono:hover,
+.tabla-gestion .accion-icono:focus-visible {
+  background: var(--seleccion);
+}
+.tabla-gestion .accion-icono img {
+  display: block;
+  flex-shrink: 0;
+}
+.tabla-gestion .acciones-fila {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+.tabla-gestion .accion-estado {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ancho-control);
+  padding-inline: .5rem;
+  font-size: .82rem;
+}
+@media print {
+  .tabla-gestion .columna-acciones {
+    display: none;
+  }
+  .tabla-gestion .interruptor-estado::after {
+    content: "Inactivo";
+  }
+  .tabla-gestion .interruptor-estado:has(input:checked)::after {
+    content: "Activo";
+  }
+  .tabla-gestion .pista-estado {
+    display: none;
+  }
+}

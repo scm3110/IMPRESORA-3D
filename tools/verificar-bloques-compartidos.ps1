@@ -120,3 +120,6 @@ if ($errores.Count) {
   throw "$($errores.Count) diferencias en bloques compartidos. No se modificó ningún archivo."
 }
 Write-Output "$menus menús y 2 accesos coherentes; estados activos y orden del menú móvil verificados. No se modificó ningún archivo."
+
+# El lateral de acceso debe coincidir con su fuente única.
+& (Join-Path $PSScriptRoot 'actualizar-lateral-acceso.ps1') -Comprobar
