@@ -130,50 +130,119 @@
           <section class="panel">
             <h2>Impresoras del laboratorio</h2>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
-              <table class="table">
-                <caption>Registros de demostración</caption>
+              <table class="table tabla-gestion">
+                <caption>
+                  Registros de demostración
+                </caption>
                 <thead>
                   <tr>
-                    <th scope="col">ID y modelo</th>
-                    <th scope="col">Tecnología</th>
-                    <th scope="col">Serie</th>
-                    <th scope="col">Potencia</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Acción</th>
+                    <th scope="col">
+                      ID y modelo
+                    </th>
+                    <th scope="col">
+                      Tecnología
+                    </th>
+                    <th scope="col">
+                      Serie
+                    </th>
+                    <th scope="col">
+                      Potencia
+                    </th>
+                    <th scope="col">
+                      Estado
+                    </th>
+                    <th scope="col" class="columna-acciones">
+                      Acciones
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">FDM-01 · Prusa MK4</th>
-                    <td>FDM</td>
-                    <td>DEMO-001</td>
-                    <td>0,25 kW</td>
+                    <th scope="row">
+                      FDM-01 · Prusa MK4
+                    </th>
                     <td>
-                      <span class="estado verde">Disponible</span>
+                      FDM
                     </td>
                     <td>
-                      <a href="editar.html">Editar</a> · <a href="estado.html">Cambiar estado</a>
+                      DEMO-001
+                    </td>
+                    <td>
+                      0,25 kW
+                    </td>
+                    <td>
+                      <span class="estado verde">
+                        Disponible
+                      </span>
+                    </td>
+                    <td class="columna-acciones">
+                      <div class="acciones-fila">
+                        <a class="accion-icono" href="editar.html" aria-label="Editar FDM-01 · MK4" title="Editar FDM-01 · MK4">
+                          <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                        </a>
+                        <a class="accion-estado" href="estado.html" aria-label="Cambiar estado de FDM-01">
+                          Cambiar estado
+                        </a>
+                      </div>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">FDM-02 · Ender 3</th>
-                    <td>FDM</td>
-                    <td>DEMO-002</td>
-                    <td>0,22 kW</td>
+                    <th scope="row">
+                      FDM-02 · Ender 3
+                    </th>
                     <td>
-                      <span class="estado azul">En impresión</span>
+                      FDM
                     </td>
-                    <td>Consulta</td>
+                    <td>
+                      DEMO-002
+                    </td>
+                    <td>
+                      0,22 kW
+                    </td>
+                    <td>
+                      <span class="estado azul">
+                        En impresión
+                      </span>
+                    </td>
+                    <td class="columna-acciones">
+                      <div class="acciones-fila">
+                        <a class="accion-icono" href="editar-ender.html" aria-label="Editar FDM-02 · Ender 3" title="Editar FDM-02 · Ender 3">
+                          <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                        </a>
+                        <a class="accion-estado" href="estado-ender.html" aria-label="Cambiar estado de FDM-02">
+                          Cambiar estado
+                        </a>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
-                    <th scope="row">SLA-03 · Form 3</th>
-                    <td>SLA</td>
-                    <td>DEMO-003</td>
-                    <td>0,18 kW</td>
+                    <th scope="row">
+                      SLA-03 · Form 3
+                    </th>
                     <td>
-                      <span class="estado ambar">Mantenimiento</span>
+                      SLA
                     </td>
-                    <td>Consulta</td>
+                    <td>
+                      DEMO-003
+                    </td>
+                    <td>
+                      0,18 kW
+                    </td>
+                    <td>
+                      <span class="estado ambar">
+                        Mantenimiento
+                      </span>
+                    </td>
+                    <td class="columna-acciones">
+                      <div class="acciones-fila">
+                        <a class="accion-icono" href="editar-form.html" aria-label="Editar SLA-03 · Form 3" title="Editar SLA-03 · Form 3">
+                          <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                        </a>
+                        <a class="accion-estado" href="estado-form.html" aria-label="Cambiar estado de SLA-03">
+                          Cambiar estado
+                        </a>
+                      </div>
+                    </td>
                   </tr>
                 </tbody>
               </table>

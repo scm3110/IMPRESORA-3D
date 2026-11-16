@@ -1,0 +1,71 @@
+.catalogo-informes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1.25rem;
+  margin-block: 1.25rem;
+}
+.tarjeta-informe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--borde);
+  border-top: 4px solid var(--verde);
+  border-radius: var(--radio);
+  background: var(--superficie);
+}
+.tipo-informe {
+  color: var(--verde);
+  font-size: .75rem;
+  font-weight: 650;
+  letter-spacing: .06em;
+}
+.tarjeta-informe h3 {
+  font-size: 1.4rem;
+}
+.tarjeta-informe p, .tarjeta-informe small {
+  color: var(--suave);
+}
+.tarjeta-informe .btn {
+  margin-top: auto;
+}
+.barra-informe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--seleccion);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+}
+.barra-informe > div:first-child {
+  flex: 1 1 260px;
+}
+.barra-informe .btn:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+.vista-reportes .hoja-informe {
+  border-radius: .25rem;
+  border-top: 3px solid var(--verde);
+  padding: clamp(1rem, 3vw, 2.25rem);
+  background: var(--superficie);
+}
+.hoja-informe h2 {
+  font-size: 1.25rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid var(--borde);
+}
+@media print {
+  .barra-informe {
+    display: none;
+  }
+  .vista-reportes .hoja-informe {
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}

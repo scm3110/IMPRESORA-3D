@@ -130,45 +130,90 @@
             <a href="nuevo-color.html" class="btn accion">Registrar color</a>
             <a href="nuevo-tipo.html" class="btn secundaria">Registrar tipo</a>
           </nav>
+          <p id="ayuda-estados" class="ayuda">Interruptores de muestra: activo o inactivo, sin guardar cambios.</p>
           <section class="panel">
             <h2>Colores</h2>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
-              <table class="table">
-                <caption>Registros de demostración</caption>
+              <table class="table tabla-gestion">
+                <caption>
+                  Registros de demostración
+                </caption>
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Color</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Acción</th>
+                    <th scope="col">
+                      ID
+                    </th>
+                    <th scope="col">
+                      Color
+                    </th>
+                    <th scope="col" class="columna-estado">
+                      Estado
+                    </th>
+                    <th scope="col" class="columna-acciones">
+                      Acciones
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">C-01</th>
-                    <td>Lima</td>
+                    <th scope="row">
+                      C-01
+                    </th>
                     <td>
-                      <span class="estado verde">Activo</span>
+                      Lima
                     </td>
-                    <td>
-                      <a href="editar-color.html">Editar lima</a>
+                    <td class="columna-estado">
+                      <label class="interruptor-estado" for="estado-C-01" title="Activar o desactivar Lima">
+                        <input id="estado-C-01" type="checkbox" role="switch" checked aria-label="Activo: Lima" aria-describedby="ayuda-estados">
+                        <span class="pista-estado" aria-hidden="true">
+                        </span>
+                      </label>
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar-color.html" aria-label="Editar Lima" title="Editar Lima">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">C-02</th>
-                    <td>Natural</td>
+                    <th scope="row">
+                      C-02
+                    </th>
                     <td>
-                      <span class="estado verde">Activo</span>
+                      Natural
                     </td>
-                    <td>Consulta</td>
+                    <td class="columna-estado">
+                      <label class="interruptor-estado" for="estado-C-02" title="Activar o desactivar Natural">
+                        <input id="estado-C-02" type="checkbox" role="switch" checked aria-label="Activo: Natural" aria-describedby="ayuda-estados">
+                        <span class="pista-estado" aria-hidden="true">
+                        </span>
+                      </label>
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar-color-natural.html" aria-label="Editar Natural" title="Editar Natural">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </td>
                   </tr>
                   <tr>
-                    <th scope="row">C-03</th>
-                    <td>Negro</td>
+                    <th scope="row">
+                      C-03
+                    </th>
                     <td>
-                      <span class="estado verde">Activo</span>
+                      Negro
                     </td>
-                    <td>Consulta</td>
+                    <td class="columna-estado">
+                      <label class="interruptor-estado" for="estado-C-03" title="Activar o desactivar Negro">
+                        <input id="estado-C-03" type="checkbox" role="switch" checked aria-label="Activo: Negro" aria-describedby="ayuda-estados">
+                        <span class="pista-estado" aria-hidden="true">
+                        </span>
+                      </label>
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar-color-negro.html" aria-label="Editar Negro" title="Editar Negro">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -177,50 +222,110 @@
           <section class="panel">
             <h2>Tipos de filamento</h2>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
-              <table class="table">
-                <caption>Registros de demostración</caption>
+              <table class="table tabla-gestion">
+                <caption>
+                  Registros de demostración
+                </caption>
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Código</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Acción</th>
+                    <th scope="col">
+                      ID
+                    </th>
+                    <th scope="col">
+                      Código
+                    </th>
+                    <th scope="col">
+                      Tipo
+                    </th>
+                    <th scope="col">
+                      Descripción
+                    </th>
+                    <th scope="col" class="columna-estado">
+                      Estado
+                    </th>
+                    <th scope="col" class="columna-acciones">
+                      Acciones
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">TF-01</th>
-                    <td>PLA</td>
-                    <td>PLA</td>
-                    <td>Ácido poliláctico</td>
+                    <th scope="row">
+                      TF-01
+                    </th>
                     <td>
-                      <span class="estado verde">Activo</span>
+                      PLA
                     </td>
                     <td>
-                      <a href="editar-tipo.html">Editar PLA</a>
+                      PLA
+                    </td>
+                    <td>
+                      Ácido poliláctico
+                    </td>
+                    <td class="columna-estado">
+                      <label class="interruptor-estado" for="estado-TF-01" title="Activar o desactivar PLA">
+                        <input id="estado-TF-01" type="checkbox" role="switch" checked aria-label="Activo: PLA" aria-describedby="ayuda-estados">
+                        <span class="pista-estado" aria-hidden="true">
+                        </span>
+                      </label>
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar-tipo.html" aria-label="Editar PLA" title="Editar PLA">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">TF-02</th>
-                    <td>ABS</td>
-                    <td>ABS</td>
-                    <td>Termoplástico ABS</td>
+                    <th scope="row">
+                      TF-02
+                    </th>
                     <td>
-                      <span class="estado verde">Activo</span>
+                      ABS
                     </td>
-                    <td>Consulta</td>
+                    <td>
+                      ABS
+                    </td>
+                    <td>
+                      Termoplástico ABS
+                    </td>
+                    <td class="columna-estado">
+                      <label class="interruptor-estado" for="estado-TF-02" title="Activar o desactivar ABS">
+                        <input id="estado-TF-02" type="checkbox" role="switch" checked aria-label="Activo: ABS" aria-describedby="ayuda-estados">
+                        <span class="pista-estado" aria-hidden="true">
+                        </span>
+                      </label>
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar-tipo-abs.html" aria-label="Editar ABS" title="Editar ABS">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </td>
                   </tr>
                   <tr>
-                    <th scope="row">TF-03</th>
-                    <td>PETG</td>
-                    <td>PETG</td>
-                    <td>Copoliéster PETG</td>
+                    <th scope="row">
+                      TF-03
+                    </th>
                     <td>
-                      <span class="estado verde">Activo</span>
+                      PETG
                     </td>
-                    <td>Consulta</td>
+                    <td>
+                      PETG
+                    </td>
+                    <td>
+                      Copoliéster PETG
+                    </td>
+                    <td class="columna-estado">
+                      <label class="interruptor-estado" for="estado-TF-03" title="Activar o desactivar PETG">
+                        <input id="estado-TF-03" type="checkbox" role="switch" checked aria-label="Activo: PETG" aria-describedby="ayuda-estados">
+                        <span class="pista-estado" aria-hidden="true">
+                        </span>
+                      </label>
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar-tipo-petg.html" aria-label="Editar PETG" title="Editar PETG">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </td>
                   </tr>
                 </tbody>
               </table>

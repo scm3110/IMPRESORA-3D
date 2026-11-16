@@ -2,7 +2,7 @@
 
 ## Estructura del proyecto y organización de módulos
 
-Usa la arquitectura híbrida por funcionalidad de `Frontend/`. Edita las vistas en `Frontend/features/<modulo>/pages/` y los estilos y recursos exclusivos en las carpetas `styles/` y `assets/` de ese módulo. Los estilos comunes están en `Frontend/shared/styles/`, los recursos comunes en `Frontend/shared/assets/` y Bootstrap en `Frontend/vendor/bootstrap/`. La navegación y los layouts están escritos en cada HTML; mantén consistentes los cambios comunes. Consulta el README para crear una pantalla. Los requisitos y prototipos están en `documentos/` y los modelos en `Base de datos/`.
+Usa la arquitectura híbrida por funcionalidad de `Frontend/`. Todos los módulos contienen únicamente `pages/`: edita sus vistas en `Frontend/features/<modulo>/pages/`. Centraliza todo el CSS propio en `Frontend/shared/styles/` y las imágenes y fuentes en `Frontend/shared/assets/`, incluidos los recursos exclusivos de un módulo. Bootstrap está en `Frontend/vendor/bootstrap/`. El lateral de acceso se genera desde `Frontend/shared/templates/acceso-lateral.html.tpl` con `tools/actualizar-lateral-acceso.ps1`. La navegación y los demás layouts están escritos en cada HTML; mantén consistentes los cambios comunes. Consulta el README para crear una pantalla. Los requisitos y prototipos están en `documentos/` y los modelos en `Base de datos/`.
 
 ## Comandos de desarrollo y compilación
 

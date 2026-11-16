@@ -1,0 +1,13 @@
+    <aside class="identidad">
+      <a class="marca" href="{{raiz}}index.html" aria-label="Laboratorio 3D SENA, portada">
+        <img src="{{raiz}}shared/assets/img/sena.svg" alt="SENA" width="48" height="48">
+        <span>Laboratorio 3D<small>Medellín</small></span>
+      </a>
+
+      <div class="presentacion">
+        <p class="sobrelinea">Laboratorio de fabricación digital</p>
+        <h2>Sistema de Gestión de Impresión 3D</h2>
+        <img class="pieza" src="{{raiz}}shared/assets/img/engranaje-helicoidal.png" width="530" height="420" alt="">
+        <p>Medellín, Colombia</p>
+      </div>
+    </aside>

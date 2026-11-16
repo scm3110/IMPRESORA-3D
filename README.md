@@ -1,6 +1,6 @@
 # Gestión de impresión 3D
 
-Maqueta estática del laboratorio SENA. Contiene 82 páginas HTML con formularios, estados y registros ilustrativos. No requiere instalación ni compilación; abre `Frontend/index.html` en el navegador. El panel se encuentra en `Frontend/features/dashboard/pages/index.html`.
+Maqueta estática del laboratorio SENA. Contiene 97 páginas HTML con formularios, estados y registros ilustrativos. No requiere instalación ni compilación; abre `Frontend/index.html` en el navegador. El panel se encuentra en `Frontend/features/dashboard/pages/index.html`.
 
 ## Flujo de trabajo con Git
 
@@ -17,16 +17,13 @@ No se exige una aprobación de otra persona: GitHub no permite aprobar una pull 
 
 ## Arquitectura híbrida por funcionalidad
 
-La organización combina módulos del dominio con recursos transversales. Cada funcionalidad agrupa sus pantallas y, cuando los necesita, sus propios estilos y recursos.
+La organización combina pantallas agrupadas por módulo con estilos y recursos centralizados. Todos los módulos de `features/` contienen únicamente `pages/`; el CSS propio del proyecto se guarda en `shared/styles/` y las imágenes y fuentes en `shared/assets/`, aunque solo los utilice un módulo.
 
 ```text
 Frontend/
   index.html                 # Entrada al prototipo
   features/
-    acceso/
-      pages/                 # Inicio y recuperación de acceso
-      styles/acceso.css
-      assets/                # Ilustración del acceso
+    acceso/pages/            # Inicio y recuperación de acceso
     dashboard/pages/
     produccion/pages/
     inventario/pages/
@@ -41,8 +38,9 @@ Frontend/
   shared/
     assets/
       fuentes/               # Fuente local y licencia
-      img/                   # Marca e iconos compartidos
+      img/                   # Marca, iconos e ilustración del acceso
     styles/
+      acceso.css             # Diseño de las pantallas de acceso
       base.css               # Variables, tipografía y estilos globales
       componentes.css        # Importaciones de componentes comunes
       componentes/           # Formularios, tablas, estados y otros
@@ -58,8 +56,8 @@ tools/
 ## Reglas de ubicación y dependencia
 
 - Una página pertenece a `features/<modulo>/pages/`. Los enlaces entre módulos apuntan a esas páginas.
-- Los estilos o imágenes exclusivos de un módulo pertenecen a sus carpetas `styles/` o `assets/`. Crea estas carpetas cuando haya archivos que guardar.
-- Un recurso utilizado por varios módulos pertenece a `shared/`. Los estilos compartidos no importan estilos de `features/`.
+- Todos los módulos mantienen la misma estructura: `features/<modulo>/pages/`, sin carpetas `styles/` ni `assets/` dentro del módulo.
+- Guarda todo el CSS propio en `shared/styles/` y las imágenes y fuentes en `shared/assets/`. Los estilos particulares pueden conservar el nombre del módulo, como `acceso.css`, y se enlazan solo desde las páginas que los necesitan.
 - Bootstrap se conserva en `vendor/`; los ajustes propios se escriben en CSS del proyecto.
 - `index.html` conserva el acceso directo de la portada. Al modificar ese formulario, revisa también `features/acceso/pages/index.html`.
 
@@ -89,6 +87,7 @@ El selector CSS `+` relaciona el input con la etiqueta inmediatamente siguiente 
 
 ### Dónde cambiar los estilos
 
+- `shared/styles/acceso.css`: diseño de las pantallas de acceso, incluida la portada.
 - `shared/styles/base.css`: variables de color y estilos generales. Las barras usan `--color-pista-progreso` y `--color-valor-progreso`.
 - `shared/styles/componentes/formularios.css`: campos, etiquetas, títulos de grupos y textos de ayuda.
 - `shared/styles/componentes/tablas.css`: tablas y sus títulos (`caption`).
@@ -135,3 +134,23 @@ Usa HTML semántico, indentación de dos espacios, texto en español y clases CS
 ## Migración de rutas
 
 Las páginas antes situadas en `Frontend/pages/<modulo>/` están ahora en `Frontend/features/<modulo>/pages/`. Los enlaces internos ya usan la nueva ubicación; los marcadores externos a las rutas anteriores deben actualizarse. La entrada `Frontend/index.html` mantiene su ubicación.
+
+Los recursos de acceso se centralizaron en `Frontend/shared/styles/acceso.css` y `Frontend/shared/assets/img/engranaje-helicoidal.png`. La portada y las cuatro pantallas de acceso usan estas ubicaciones.
+
+## Bloques reutilizables y mejoras visuales
+
+El lateral de acceso tiene una única fuente en `Frontend/shared/templates/acceso-lateral.html.tpl`. Conserva los textos de la portada en las cinco pantallas de acceso. Edita esa plantilla y ejecuta `pwsh -File tools/actualizar-lateral-acceso.ps1`; el marcador `{{raiz}}` ajusta las rutas de cada página. El comando comprueba todos los delimitadores antes de escribir. Su opción `-Comprobar` valida sin modificar archivos y forma parte del verificador de bloques compartidos.
+
+Usuarios y roles muestran interruptores accesibles de activo/inactivo y un lápiz para editar cada registro de ejemplo. Los cambios de estado son visuales y no se guardan. Cada lápiz abre una muestra con los datos correspondientes a su fila. Los formularios de roles permiten actualizar nombre, descripción y permisos por módulo, reflejando RF-2.2; también se accede a ellos desde cada matriz de permisos. No se incluye eliminación.
+
+Los reportes presentan un catálogo de informes, ficha y resultados con apariencia de documento. Las páginas de reportes de usuarios y roles siguen la misma presentación. Los botones Descargar PDF y Exportar CSV están deshabilitados: son una propuesta visual, sin generación de archivos. Los datos y períodos siguen siendo ilustrativos; los filtros no modifican los resultados. La impresión del navegador sigue disponible.
+
+Para revisar: alterna un interruptor con clic y con la barra espaciadora; abre cada lápiz y comprueba que nombre y permisos corresponden a su fila; revisa acceso y recuperación con la misma ventana; comprueba el catálogo de reportes y las vistas previas en escritorio y móvil.
+
+### Controles compactos de gestión
+
+Las tablas de usuarios, roles, catálogos, materiales, equipos y laboratorios usan `tabla-gestion`. Las columnas `columna-estado` y `columna-acciones` centran sus controles y reservan solo el ancho necesario. Los interruptores de activo/inactivo no muestran texto adicional; su nombre y estado se anuncian mediante controles nativos accesibles. El lápiz usa el recurso compartido `shared/assets/img/editar.svg`, sin recuadro permanente, con fondo al pasar el cursor y foco visible. Ambos conservan un área pulsable de 44 × 44 px.
+
+Todas las filas de esos listados disponen de su muestra de edición. Los materiales PETG y ABS conservan sus saldos, límites y avisos de existencias. Los colores Natural y Negro, los tipos ABS y PETG y las impresoras Ender 3 y Form 3 tienen formularios propios. Las impresoras tienen además una acción separada para su estado operativo, sin convertirlo en un interruptor. Parámetros conserva su edición conjunta con lápiz y texto. Los informes mantienen sus etiquetas informativas.
+
+Los botones de edición de cada registro deben apuntar a su muestra correspondiente. El stock actual, los códigos inmutables y el estado operativo mostrado en edición conservan sus restricciones. Los interruptores solo representan cambios locales de la maqueta; no guardan ni modifican los formularios o reportes.

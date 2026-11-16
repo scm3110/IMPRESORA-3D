@@ -140,63 +140,148 @@
           </details>
           <section class="panel">
             <h2>Usuarios registrados</h2>
+            <p id="ayuda-estados" class="ayuda">Usa el lápiz para editar cada usuario. Los interruptores son de muestra y no guardan cambios.</p>
             <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
-              <table class="table">
-                <caption>Registros de demostración</caption>
+              <table class="table tabla-gestion">
+                <caption>
+                  Registros de demostración
+                </caption>
                 <thead>
                   <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nombres</th>
-                    <th scope="col">Apellidos</th>
-                    <th scope="col">Documento</th>
-                    <th scope="col">Correo</th>
-                    <th scope="col">Teléfono</th>
-                    <th scope="col">Rol</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Acción</th>
+                    <th scope="col">
+                      ID
+                    </th>
+                    <th scope="col">
+                      Nombres
+                    </th>
+                    <th scope="col">
+                      Apellidos
+                    </th>
+                    <th scope="col">
+                      Documento
+                    </th>
+                    <th scope="col">
+                      Correo
+                    </th>
+                    <th scope="col">
+                      Teléfono
+                    </th>
+                    <th scope="col">
+                      Rol
+                    </th>
+                    <th scope="col" class="columna-estado">
+                      Estado
+                    </th>
+                    <th scope="col" class="columna-acciones">
+                      Acciones
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">U-01</th>
-                    <td>Aprendiz</td>
-                    <td>de muestra</td>
-                    <td>100001</td>
-                    <td>aprendiz@example.invalid</td>
-                    <td>3000000001</td>
-                    <td>Aprendiz</td>
+                    <th scope="row">
+                      U-01
+                    </th>
                     <td>
-                      <span class="estado verde">Activo</span>
+                      Aprendiz
                     </td>
                     <td>
-                      <a href="editar.html">Editar aprendiz</a>
+                      de muestra
+                    </td>
+                    <td>
+                      100001
+                    </td>
+                    <td>
+                      aprendiz@example.invalid
+                    </td>
+                    <td>
+                      3000000001
+                    </td>
+                    <td>
+                      Aprendiz
+                    </td>
+                    <td class="columna-estado">
+                      <label class="interruptor-estado" for="estado-usuario-aprendiz">
+                        <input id="estado-usuario-aprendiz" type="checkbox" role="switch" checked aria-label="Activo: Aprendiz" aria-describedby="ayuda-estados">
+                        <span class="pista-estado" aria-hidden="true">
+                        </span>
+                      </label>
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar.html" aria-label="Editar Aprendiz" title="Editar Aprendiz">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">U-02</th>
-                    <td>Instructor</td>
-                    <td>de muestra</td>
-                    <td>100002</td>
-                    <td>instructor@example.invalid</td>
-                    <td>3000000002</td>
-                    <td>Instructor</td>
+                    <th scope="row">
+                      U-02
+                    </th>
                     <td>
-                      <span class="estado verde">Activo</span>
+                      Instructor
                     </td>
-                    <td>Consulta</td>
+                    <td>
+                      de muestra
+                    </td>
+                    <td>
+                      100002
+                    </td>
+                    <td>
+                      instructor@example.invalid
+                    </td>
+                    <td>
+                      3000000002
+                    </td>
+                    <td>
+                      Instructor
+                    </td>
+                    <td class="columna-estado">
+                      <label class="interruptor-estado" for="estado-usuario-instructor">
+                        <input id="estado-usuario-instructor" type="checkbox" role="switch" checked aria-label="Activo: Instructor" aria-describedby="ayuda-estados">
+                        <span class="pista-estado" aria-hidden="true">
+                        </span>
+                      </label>
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar-instructor.html" aria-label="Editar Instructor" title="Editar Instructor">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </td>
                   </tr>
                   <tr>
-                    <th scope="row">U-03</th>
-                    <td>Administrador</td>
-                    <td>de muestra</td>
-                    <td>100003</td>
-                    <td>admin@example.invalid</td>
-                    <td>3000000003</td>
-                    <td>Administrador</td>
+                    <th scope="row">
+                      U-03
+                    </th>
                     <td>
-                      <span class="estado verde">Activo</span>
+                      Administrador
                     </td>
-                    <td>Consulta</td>
+                    <td>
+                      de muestra
+                    </td>
+                    <td>
+                      100003
+                    </td>
+                    <td>
+                      admin@example.invalid
+                    </td>
+                    <td>
+                      3000000003
+                    </td>
+                    <td>
+                      Administrador
+                    </td>
+                    <td class="columna-estado">
+                      <label class="interruptor-estado" for="estado-usuario-administrador">
+                        <input id="estado-usuario-administrador" type="checkbox" role="switch" checked aria-label="Activo: Administrador" aria-describedby="ayuda-estados">
+                        <span class="pista-estado" aria-hidden="true">
+                        </span>
+                      </label>
+                    </td>
+                    <td class="columna-acciones">
+                      <a class="accion-icono" href="editar-administrador.html" aria-label="Editar Administrador" title="Editar Administrador">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </td>
                   </tr>
                 </tbody>
               </table>
