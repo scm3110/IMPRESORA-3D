@@ -1,15 +1,25 @@
+param([string]$FrontendPath = (Join-Path $PSScriptRoot '../Frontend'))
+
 $ErrorActionPreference = 'Stop'
-$frontend = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../Frontend'))
+$frontend = [IO.Path]::GetFullPath($FrontendPath)
 $errores = [Collections.Generic.List[string]]::new()
 $referencias = 0
-# Las plantillas son fragmentos con marcadores; se comprueban sus páginas generadas.
+# Comprobar pantallas, estilos y las rutas de los bloques compartidos.
 $paginas = @(Get-ChildItem -LiteralPath $frontend -Recurse -Filter '*.html' -File | Where-Object {
   [IO.Path]::GetRelativePath($frontend, $_.FullName).Replace('\', '/') -notlike 'shared/templates/*'
 })
 $estilos = @(Get-ChildItem -LiteralPath $frontend -Recurse -Filter '*.css' -File)
 
-foreach ($archivo in @($paginas) + @($estilos)) {
+$carpetaPlantillas = Join-Path $frontend 'shared/templates'
+$plantillas = @(Get-ChildItem -LiteralPath $carpetaPlantillas -Filter '*.html' -File)
+foreach ($archivo in @($paginas) + @($estilos) + @($plantillas)) {
   $contenido = [IO.File]::ReadAllText($archivo.FullName)
+  if ($archivo.DirectoryName -eq $carpetaPlantillas) {
+    $prefijo = [IO.Path]::GetRelativePath($archivo.DirectoryName, $frontend).Replace('\', '/') + '/'
+    $contenido = $contenido.Replace('{{raiz}}', $prefijo)
+    $contenido = [regex]::Replace($contenido, '\{\{activo:[a-z0-9-]+\}\}', '')
+    if ($contenido -match '\{\{') { throw "Marcador desconocido en $($archivo.FullName)" }
+  }
   $patron = if ($archivo.Extension -eq '.html') {
     '\b(?:href|src|action)\s*=\s*["''](?<ruta>[^"'']+)["'']'
   } else {
@@ -40,4 +50,4 @@ if ($errores.Count) {
   $errores | ForEach-Object { Write-Output $_ }
   throw "$($errores.Count) referencias inválidas."
 }
-Write-Output "$($paginas.Count) páginas y $($estilos.Count) hojas CSS verificadas; $referencias referencias locales válidas."
+Write-Output "$($paginas.Count) páginas, $($plantillas.Count) plantillas y $($estilos.Count) hojas CSS verificadas; $referencias referencias locales válidas."

@@ -8,397 +8,294 @@
     <link rel="stylesheet" href="../../../shared/styles/base.css">
     <link rel="stylesheet" href="../../../shared/styles/componentes.css">
     <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+    <script src="../../../shared/scripts/layout.js" defer></script>
   </head>
-  <body class="gestion">
+  <body class="gestion" data-layout="gestion" data-modulo="roles">
     <a class="salto" href="#contenido">Saltar al contenido</a>
-    <div class="marco">
-      <!-- Inicio del menú compartido. Mantener sus copias sincronizadas. -->
-      <aside class="lateral">
-        <a class="marca" href="../../../features/acceso/pages/index.html" aria-label="Laboratorio 3D SENA, inicio de sesión">
-          <img src="../../../shared/assets/img/sena.svg" alt="SENA" width="48" height="48">
-          <span>Laboratorio 3D<small>Medellín</small></span>
-        </a>
-
-        <!-- Menú móvil sin JavaScript: conservar input, label y nav como hermanos, en ese orden y con label inmediatamente después de input. -->
-        <input class="control-menu" type="checkbox" id="control-menu" aria-controls="navegacion">
-        <label class="etiqueta-menu" for="control-menu">Menú de módulos</label>
-        <nav class="navegacion" id="navegacion" aria-label="Módulos">
-
-          <div class="grupo">
-            <p>Operación</p>
-
-            <a href="../../../features/dashboard/pages/index.html">
-              <img class="icono" src="../../../shared/assets/img/panel.svg" alt="">
-              Dashboard
-            </a>
-
-            <a href="../../../features/produccion/pages/index.html">
-              <img class="icono" src="../../../shared/assets/img/capas.svg" alt="">
-              Producción
-            </a>
-
-            <a href="../../../features/inventario/pages/index.html">
-              <img class="icono" src="../../../shared/assets/img/caja.svg" alt="">
-              Inventario
-            </a>
-
-            <a href="../../../features/equipos/pages/index.html">
-              <img class="icono" src="../../../shared/assets/img/impresora.svg" alt="">
-              Equipos
-            </a>
-
-            <a href="../../../features/costeo/pages/index.html">
-              <img class="icono" src="../../../shared/assets/img/calculo.svg" alt="">
-              Costeo
-            </a>
-
-          </div>
-
-          <div class="grupo">
-            <p>Análisis</p>
-
-            <a href="../../../features/estadisticas/pages/index.html">
-              <img class="icono" src="../../../shared/assets/img/barras.svg" alt="">
-              Estadísticas
-            </a>
-
-            <a href="../../../features/reportes/pages/index.html">
-              <img class="icono" src="../../../shared/assets/img/informe.svg" alt="">
-              Reportes
-            </a>
-
-          </div>
-
-          <div class="grupo">
-            <p>Administración</p>
-
-            <a href="../../../features/usuarios/pages/index.html">
-              <img class="icono" src="../../../shared/assets/img/usuarios.svg" alt="">
-              Usuarios
-            </a>
-
-            <a href="../../../features/roles/pages/index.html" class="actual" aria-current="location">
-              <img class="icono" src="../../../shared/assets/img/escudo.svg" alt="">
-              Roles y permisos
-            </a>
-
-            <a href="../../../features/laboratorios/pages/index.html">
-              <img class="icono" src="../../../shared/assets/img/edificio.svg" alt="">
-              Laboratorios
-            </a>
-
-            <a href="../../../features/parametros/pages/index.html">
-              <img class="icono" src="../../../shared/assets/img/ajustes.svg" alt="">
-              Parámetros
-            </a>
-
-          </div>
-
-        </nav>
-
-        <a href="../../../features/acceso/pages/index.html" class="cerrar-sesion">
-          <img class="icono" src="../../../shared/assets/img/salir.svg" alt="">Cerrar sesión
-        </a>
-      </aside>
-      <!-- Fin del menú compartido. -->
-      <div class="area">
-        <!-- Inicio del encabezado compartido. -->
-        <header class="barra">
-          <span>Laboratorio de fabricación digital</span>
-          <span class="muestra">Maqueta estática</span>
-
-        </header>
-        <!-- Fin del encabezado compartido. -->
-        <!-- Inicio del contenido de esta pantalla. -->
-        <main id="contenido" tabindex="-1">
-          <nav class="migas" aria-label="Ruta">
-            <a href="../../acceso/pages/index.html">Inicio</a>
-            <span aria-hidden="true">/</span>
+    <noscript><p class="error-layout">Activa JavaScript para mostrar el menú y los bloques compartidos.</p></noscript>
+    <main id="contenido" tabindex="-1">
+      <nav class="migas" aria-label="Ruta">
+        <a href="../../acceso/pages/index.html">Inicio</a>
+        <span aria-hidden="true">/</span>
 
-            <a href="index.html">Roles y permisos</a>
-            <span aria-hidden="true">/</span>
+        <a href="index.html">Roles y permisos</a>
+        <span aria-hidden="true">/</span>
 
-            <span aria-current="page">Permisos de aprendiz</span>
-          </nav>
-          <header class="titulo-vista">
-            <h1>Permisos de aprendiz</h1>
-            <p>Matriz de módulos y acciones del rol de ejemplo.</p>
-            <small>Perfil de referencia · Administrador</small>
-          </header>
-          <nav class="acciones" aria-label="Acciones de la pantalla"><a href="editar-aprendiz.html" class="btn accion">Editar datos y permisos</a><a href="index.html" class="btn secundaria">Volver a roles</a></nav>
+        <span aria-current="page">Permisos de aprendiz</span>
+      </nav>
+      <header class="titulo-vista">
+        <h1>Permisos de aprendiz</h1>
+        <p>Matriz de módulos y acciones del rol de ejemplo.</p>
+        <small>Perfil de referencia · Administrador</small>
+      </header>
+      <p class="ayuda">Esta matriz conserva los permisos del rol indicado. El enlace de edición abre un formulario común con datos fijos de Instructor.</p>
+      <nav class="acciones" aria-label="Acciones de la pantalla"><a href="editar.html" class="btn accion">Ver formulario de edición de ejemplo</a><a href="index.html" class="btn secundaria">Volver a roles</a></nav>
 
 
-          <section class="panel">
-            <h2>Matriz de acceso</h2>
-            <div class="tabla-scroll" tabindex="0" role="region" aria-label="Permisos de muestra · Aprendiz">
-              <table class="table">
-                <caption>Permisos de muestra · Aprendiz</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Módulo</th>
+      <section class="panel">
+        <h2>Matriz de acceso</h2>
+        <div class="tabla-scroll" tabindex="0" role="region" aria-label="Permisos de muestra · Aprendiz">
+          <table class="table">
+            <caption>Permisos de muestra · Aprendiz</caption>
+            <thead>
+              <tr>
+                <th scope="col">Módulo</th>
 
-                    <th scope="col">Ver</th>
+                <th scope="col">Ver</th>
 
-                    <th scope="col">Crear</th>
+                <th scope="col">Crear</th>
 
-                    <th scope="col">Editar</th>
+                <th scope="col">Editar</th>
 
-                    <th scope="col">Cambiar estado</th>
+                <th scope="col">Cambiar estado</th>
 
-                  </tr>
-                </thead>
-                <tbody>
+              </tr>
+            </thead>
+            <tbody>
 
 
-                  <tr>
-                    <th scope="row">Dashboard</th>
+              <tr>
+                <th scope="row">Dashboard</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Dashboard" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Dashboard" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Dashboard" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Dashboard" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Dashboard" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Dashboard" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Dashboard" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Dashboard" disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
-                  <tr>
-                    <th scope="row">Producción</th>
+              <tr>
+                <th scope="row">Producción</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Producción" checked disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Producción" checked disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Producción" checked disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Producción" checked disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Producción" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Producción" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Producción" checked disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Producción" checked disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
-                  <tr>
-                    <th scope="row">Inventario</th>
+              <tr>
+                <th scope="row">Inventario</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Inventario" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Inventario" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Inventario" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Inventario" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Inventario" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Inventario" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Inventario" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Inventario" disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
-                  <tr>
-                    <th scope="row">Equipos</th>
+              <tr>
+                <th scope="row">Equipos</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Equipos" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Equipos" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Equipos" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Equipos" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Equipos" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Equipos" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Equipos" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Equipos" disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
-                  <tr>
-                    <th scope="row">Costeo</th>
+              <tr>
+                <th scope="row">Costeo</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Costeo" checked disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Costeo" checked disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Costeo" checked disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Costeo" checked disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Costeo" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Costeo" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Costeo" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Costeo" disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
 
 
-                  <tr>
-                    <th scope="row">Estadísticas</th>
+              <tr>
+                <th scope="row">Estadísticas</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Estadísticas" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Estadísticas" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Estadísticas" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Estadísticas" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Estadísticas" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Estadísticas" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Estadísticas" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Estadísticas" disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
-                  <tr>
-                    <th scope="row">Reportes</th>
+              <tr>
+                <th scope="row">Reportes</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Reportes" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Reportes" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Reportes" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Reportes" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Reportes" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Reportes" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Reportes" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Reportes" disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
 
 
-                  <tr>
-                    <th scope="row">Usuarios</th>
+              <tr>
+                <th scope="row">Usuarios</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Usuarios" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Usuarios" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Usuarios" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Usuarios" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Usuarios" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Usuarios" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Usuarios" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Usuarios" disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
-                  <tr>
-                    <th scope="row">Roles y permisos</th>
+              <tr>
+                <th scope="row">Roles y permisos</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Roles y permisos" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Roles y permisos" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Roles y permisos" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Roles y permisos" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Roles y permisos" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Roles y permisos" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Roles y permisos" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Roles y permisos" disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
-                  <tr>
-                    <th scope="row">Laboratorios</th>
+              <tr>
+                <th scope="row">Laboratorios</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Laboratorios" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Laboratorios" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Laboratorios" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Laboratorios" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Laboratorios" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Laboratorios" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Laboratorios" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Laboratorios" disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
-                  <tr>
-                    <th scope="row">Parámetros</th>
+              <tr>
+                <th scope="row">Parámetros</th>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Ver · Parámetros" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Parámetros" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Crear · Parámetros" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Parámetros" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Editar · Parámetros" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Parámetros" disabled>
+                </td>
 
-                    <td>
-                      <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Parámetros" disabled>
-                    </td>
+                <td>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Parámetros" disabled>
+                </td>
 
-                  </tr>
+              </tr>
 
 
-                </tbody>
-              </table>
-            </div>
-          </section>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
 
-        </main>
-        <!-- Fin del contenido de esta pantalla. -->
-        <!-- Inicio del pie compartido. -->
-        <footer class="pie-interno">Laboratorio 3D · SENA <span>Datos de demostración</span></footer>
-        <!-- Fin del pie compartido. -->
-      </div>
-    </div>
-
+    </main>
   </body>
 </html>

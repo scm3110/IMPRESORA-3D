@@ -5,7 +5,8 @@
       "name": "Abrir inicio de sesión",
       "type": "chrome",
       "request": "launch",
-      "file": "${workspaceFolder}/Frontend/features/acceso/pages/index.html"
+      "url": "http://127.0.0.1:5500/features/acceso/pages/index.html",
+      "webRoot": "${workspaceFolder}/Frontend"
     }
   ]
 }

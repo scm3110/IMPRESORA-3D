@@ -1,14 +1,13 @@
 # Memoria del proyecto
-- Maqueta estática de gestión de impresión 3D SENA: 94 páginas HTML y 12 hojas CSS.
+- Maqueta estática de gestión de impresión 3D SENA: 81 páginas HTML y 12 hojas CSS.
 - Entrada única: Frontend/features/acceso/pages/index.html; panel: Frontend/features/dashboard/pages/index.html.
 - Todos los módulos contienen únicamente pages; CSS e imágenes centralizados en shared por decisión del usuario.
 - Todo el CSS propio está en Frontend/shared/styles; recursos en Frontend/shared/assets; Bootstrap en vendor/bootstrap.
-- Sin JavaScript de navegador, backend ni dependencias de compilación; abrir HTML directamente.
+- JavaScript autorizado solo para cargar cuatro bloques compartidos con fetch; sin backend ni compilación. Usar Go Live; no abrir por file://.
 - Consultar matriz, casos de uso y SQL; revisar documentos/Caso de uso - Impresion3d.eap antes de nuevos flujos.
 - Preguntar antes de dependencias, JavaScript, backend/API o cambios de base de datos.
-- Sidebar: fuente shared/templates/sidebar.html; actualizar con tools/actualizar-sidebar.ps1. Encabezado y pie desde sus plantillas con tools/actualizar-encabezado-pie.ps1; conservar comentarios y orden input/label/nav móvil.
+- Cuatro bloques en shared/templates/; shared/scripts/layout.js los carga en navegador. Body indica data-layout y data-modulo; conservar orden input/label/nav móvil.
 - Lateral de acceso: fuente única shared/templates/acceso-lateral.html.
-- tools/actualizar-lateral-acceso.ps1 actualiza cuatro pantallas, ajustando rutas; -Comprobar es de solo lectura.
 - El actualizador superó casos de divergencia, restauración sin afectar formularios, idempotencia y rechazo antes de escribir.
 - tools/verificar-rutas.ps1 y tools/verificar-bloques-compartidos.ps1 son verificadores de solo lectura.
 - README documenta bloques, nuevas pantallas y escenarios ilustrativos relacionados; mantener su coherencia.
@@ -27,7 +26,7 @@
 - Salvo usuarios, que comparte un formulario, las filas editables tienen su muestra: añadidos Natural, Negro, ABS, PETG, materiales MAT-02/MAT-03 y equipos FDM-02/SLA-03.
 - Nuevas muestras de estado para FDM-02/SLA-03; disponibilidad, alertas de stock y estados operativos conservados.
 - Sin papelera; stock actual y códigos inmutables siguen de solo lectura.
-- Verificación actual: 3245 referencias válidas, 90 menús, un inicio de sesión y cuatro laterales coherentes; git diff --check correcto.
+- Verificación actual: 81 pantallas, cuatro plantillas, 12 CSS y 886 referencias locales válidas; carga dinámica y módulos coherentes.
 - Verificados valores y selecciones por registro, igual número de columnas, un lápiz por fila y referencias de etiquetas; sin IDs duplicados.
 - Revisión visual realizada y aprobada por el usuario; la herramienta automática de navegador no pudo revisar file://.
 - A petición explícita se lanzó Chrome desde terminal en una ventana nueva con usuarios, roles, catálogos y equipos para revisar los controles compactos.
@@ -39,8 +38,10 @@
 - Inicio único en acceso; eliminada Frontend/index.html y ajustados enlaces, plantilla, herramientas y README. F5 abre el acceso en Chrome con .vscode/launch.json; cambios existentes conservados.
 - Sidebar compartido aplicado también en la carpeta principal: 90 páginas, Cerrar sesión, activo automático y salida móvil. Verificadores e idempotencia correctos; contenido externo al sidebar conservado. Sin sesiones reales ni JavaScript.
 - Encabezado y pie convertidos en plantillas de gestión en carpeta principal: 90 páginas, apariencia y contenido conservados (HTML normalizado idéntico). Actualizador con -Comprobar integrado en verificador; sin CSS, JavaScript ni dependencias nuevas.
-
 - Encabezado y pie reutilizables implementados en carpeta principal: encabezado-gestion.html y pie-gestion.html; actualizar-encabezado-pie.ps1 con -Comprobar. 90 páginas con HTML normalizado idéntico; verificadores, idempotencia, propagación y rechazo previo a escritura probados. Revisión visual automática bloqueada por ventana minimizada.
-
 - Las cuatro plantillas de carpeta principal ahora terminan en .html; scripts y documentación actualizados. Verificar-rutas excluye shared/templates (fragmentos con marcadores). Hashes de plantillas, páginas y CSS conservados; tres actualizadores y ambos verificadores correctos.
 - A petición del usuario se guarda el estado actual como punto de control antes de corregir problemas pendientes; incluye sus ajustes y la reutilización de bloques. Verificadores correctos; commit local en frontend/estructura-hibrida, sin push.
+- Propuesta JavaScript trasladada por autorización explícita: 81 pantallas, 13 copias retiradas, cuatro plantillas y layout.js, sin dist ni generador. Retirados tres actualizadores; quedan dos verificadores. Documentos, SQL, modelos, imágenes, fuentes y Bootstrap conservados por hash. Go Live raíz /Frontend:5500; F5 usa HTTP y requiere Live Server iniciado. Sin nuevo commit ni push; checkpoint 1349ae9.
+
+- Verificación tras traslado: las 81 pantallas cargaron correctamente en navegador y sin errores JavaScript. Probados acceso de muestra, menú móvil, Cerrar sesión y recuperación. Servidor temporal de prueba retirado. Para trabajar: reiniciar Go Live con raíz /Frontend y puerto 5500; F5 requiere ese servidor iniciado. Sin commit ni push.
+- El usuario autorizó crear el segundo commit y subir ambos a la rama de trabajo para revisar desde el SENA, sin fusionar master. Comprobaciones correctas. Push pendiente: auto-review exigió acreditar autorización del destino origin (github.com/scm3110/IMPRESORA-3D). Primer commit 1349ae9.
