@@ -1,15 +1,14 @@
 # Memoria del proyecto
-
-- Maqueta estática de gestión de impresión 3D SENA: 97 páginas HTML y 12 hojas CSS.
-- Entrada: Frontend/index.html; panel: Frontend/features/dashboard/pages/index.html.
+- Maqueta estática de gestión de impresión 3D SENA: 94 páginas HTML y 12 hojas CSS.
+- Entrada única: Frontend/features/acceso/pages/index.html; panel: Frontend/features/dashboard/pages/index.html.
 - Todos los módulos contienen únicamente pages; CSS e imágenes centralizados en shared por decisión del usuario.
 - Todo el CSS propio está en Frontend/shared/styles; recursos en Frontend/shared/assets; Bootstrap en vendor/bootstrap.
 - Sin JavaScript de navegador, backend ni dependencias de compilación; abrir HTML directamente.
 - Consultar matriz, casos de uso y SQL; revisar documentos/Caso de uso - Impresion3d.eap antes de nuevos flujos.
 - Preguntar antes de dependencias, JavaScript, backend/API o cambios de base de datos.
-- Menús y encabezados permanecen en cada HTML; conservar comentarios y orden input/label/nav móvil.
-- Lateral de acceso: fuente única shared/templates/acceso-lateral.html.tpl.
-- tools/actualizar-lateral-acceso.ps1 actualiza cinco pantallas, ajustando rutas; -Comprobar es de solo lectura.
+- Sidebar: fuente shared/templates/sidebar.html; actualizar con tools/actualizar-sidebar.ps1. Encabezado y pie desde sus plantillas con tools/actualizar-encabezado-pie.ps1; conservar comentarios y orden input/label/nav móvil.
+- Lateral de acceso: fuente única shared/templates/acceso-lateral.html.
+- tools/actualizar-lateral-acceso.ps1 actualiza cuatro pantallas, ajustando rutas; -Comprobar es de solo lectura.
 - El actualizador superó casos de divergencia, restauración sin afectar formularios, idempotencia y rechazo antes de escribir.
 - tools/verificar-rutas.ps1 y tools/verificar-bloques-compartidos.ps1 son verificadores de solo lectura.
 - README documenta bloques, nuevas pantallas y escenarios ilustrativos relacionados; mantener su coherencia.
@@ -20,18 +19,28 @@
 - Worktree de revisión: C:/Users/PC/.codex/worktrees/c084/IMPRESORA 3D.
 - La centralización de recursos de acceso en shared ya fue transferida a la carpeta principal con autorización.
 - Mejoras revisadas y aprobadas por el usuario; transferidas de c084 a la carpeta principal el 16 de noviembre de 2026.
-- Usuarios y roles tienen edición por fila con sus datos y matrices; RF-2.2 visible para los cuatro roles.
+- Usuarios comparte editar.html con datos fijos; roles conserva edición por fila y matrices; RF-2.2 visible para los cuatro roles.
 - Reportes con catálogo y presentación documental; PDF/CSV deshabilitados como propuesta visual.
 - Último plan implementado: controles compactos en usuarios, roles, catálogos, materiales, equipos y laboratorios.
 - Interruptores únicamente activo/inactivo, sin texto visible adicional; lápiz sin recuadro permanente y área de 44 × 44 px.
 - CSS limitado a tabla-gestion; icono único shared/assets/img/editar.svg; parámetros conserva edición conjunta con icono y texto.
-- Todas las filas editables tienen su muestra: añadidos Natural, Negro, ABS, PETG, materiales MAT-02/MAT-03 y equipos FDM-02/SLA-03.
+- Salvo usuarios, que comparte un formulario, las filas editables tienen su muestra: añadidos Natural, Negro, ABS, PETG, materiales MAT-02/MAT-03 y equipos FDM-02/SLA-03.
 - Nuevas muestras de estado para FDM-02/SLA-03; disponibilidad, alertas de stock y estados operativos conservados.
 - Sin papelera; stock actual y códigos inmutables siguen de solo lectura.
-- Verificación actual: 3325 referencias válidas, 92 menús, dos accesos y cinco laterales coherentes; git diff --check sin errores.
+- Verificación actual: 3245 referencias válidas, 90 menús, un inicio de sesión y cuatro laterales coherentes; git diff --check correcto.
 - Verificados valores y selecciones por registro, igual número de columnas, un lápiz por fila y referencias de etiquetas; sin IDs duplicados.
 - Revisión visual realizada y aprobada por el usuario; la herramienta automática de navegador no pudo revisar file://.
 - A petición explícita se lanzó Chrome desde terminal en una ventana nueva con usuarios, roles, catálogos y equipos para revisar los controles compactos.
 - El usuario autorizó registrar las mejoras aprobadas y publicarlas en origin/frontend/estructura-hibrida el 16 de noviembre de 2026; master se actualiza mediante PR.
 - PR #1 revisada y autorizada por el usuario, fusionada en master mediante 5f77ed7; rama de trabajo sincronizada con la fusión.
 - Carpeta del proyecto abierta en Visual Studio Code el 14 de noviembre de 2026; rama visible frontend/estructura-hibrida.
+- El 18 de noviembre de 2026 se aplicó en la carpeta principal el formulario único de usuarios: tres lápices a editar.html; eliminadas las otras dos muestras de usuarios y actualizado README. Conservados cambios previos de textos en editar.html y nuevo.html. Sin JavaScript.
+- Portada aprobada y trasladada desde 2f8b a la carpeta principal el 18 de noviembre de 2026: bienvenida y botón al único login del módulo acceso; README y verificador adaptados. Conservado el texto Correo y los cambios de usuarios. Sin commit ni push.
+- Inicio único en acceso; eliminada Frontend/index.html y ajustados enlaces, plantilla, herramientas y README. F5 abre el acceso en Chrome con .vscode/launch.json; cambios existentes conservados.
+- Sidebar compartido aplicado también en la carpeta principal: 90 páginas, Cerrar sesión, activo automático y salida móvil. Verificadores e idempotencia correctos; contenido externo al sidebar conservado. Sin sesiones reales ni JavaScript.
+- Encabezado y pie convertidos en plantillas de gestión en carpeta principal: 90 páginas, apariencia y contenido conservados (HTML normalizado idéntico). Actualizador con -Comprobar integrado en verificador; sin CSS, JavaScript ni dependencias nuevas.
+
+- Encabezado y pie reutilizables implementados en carpeta principal: encabezado-gestion.html y pie-gestion.html; actualizar-encabezado-pie.ps1 con -Comprobar. 90 páginas con HTML normalizado idéntico; verificadores, idempotencia, propagación y rechazo previo a escritura probados. Revisión visual automática bloqueada por ventana minimizada.
+
+- Las cuatro plantillas de carpeta principal ahora terminan en .html; scripts y documentación actualizados. Verificar-rutas excluye shared/templates (fragmentos con marcadores). Hashes de plantillas, páginas y CSS conservados; tres actualizadores y ambos verificadores correctos.
+- A petición del usuario se guarda el estado actual como punto de control antes de corregir problemas pendientes; incluye sus ajustes y la reutilización de bloques. Verificadores correctos; commit local en frontend/estructura-hibrida, sin push.

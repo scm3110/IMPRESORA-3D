@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Abrir inicio de sesión",
+      "type": "chrome",
+      "request": "launch",
+      "file": "${workspaceFolder}/Frontend/features/acceso/pages/index.html"
+    }
+  ]
+}

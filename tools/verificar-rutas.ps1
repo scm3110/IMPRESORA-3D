@@ -2,7 +2,10 @@ $ErrorActionPreference = 'Stop'
 $frontend = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../Frontend'))
 $errores = [Collections.Generic.List[string]]::new()
 $referencias = 0
-$paginas = @(Get-ChildItem -LiteralPath $frontend -Recurse -Filter '*.html' -File)
+# Las plantillas son fragmentos con marcadores; se comprueban sus páginas generadas.
+$paginas = @(Get-ChildItem -LiteralPath $frontend -Recurse -Filter '*.html' -File | Where-Object {
+  [IO.Path]::GetRelativePath($frontend, $_.FullName).Replace('\', '/') -notlike 'shared/templates/*'
+})
 $estilos = @(Get-ChildItem -LiteralPath $frontend -Recurse -Filter '*.css' -File)
 
 foreach ($archivo in @($paginas) + @($estilos)) {

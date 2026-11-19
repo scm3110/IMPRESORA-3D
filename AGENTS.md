@@ -2,17 +2,17 @@
 
 ## Estructura del proyecto y organización de módulos
 
-Usa la arquitectura híbrida por funcionalidad de `Frontend/`. Todos los módulos contienen únicamente `pages/`: edita sus vistas en `Frontend/features/<modulo>/pages/`. Centraliza todo el CSS propio en `Frontend/shared/styles/` y las imágenes y fuentes en `Frontend/shared/assets/`, incluidos los recursos exclusivos de un módulo. Bootstrap está en `Frontend/vendor/bootstrap/`. El lateral de acceso se genera desde `Frontend/shared/templates/acceso-lateral.html.tpl` con `tools/actualizar-lateral-acceso.ps1`. La navegación y los demás layouts están escritos en cada HTML; mantén consistentes los cambios comunes. Consulta el README para crear una pantalla. Los requisitos y prototipos están en `documentos/` y los modelos en `Base de datos/`.
+Usa la arquitectura híbrida por funcionalidad de `Frontend/`. Todos los módulos contienen únicamente `pages/`: edita sus vistas en `Frontend/features/<modulo>/pages/`. Centraliza todo el CSS propio en `Frontend/shared/styles/` y las imágenes y fuentes en `Frontend/shared/assets/`, incluidos los recursos exclusivos de un módulo. Bootstrap está en `Frontend/vendor/bootstrap/`. El lateral de acceso se genera desde `Frontend/shared/templates/acceso-lateral.html` con `tools/actualizar-lateral-acceso.ps1`. El sidebar se genera desde Frontend/shared/templates/sidebar.html con tools/actualizar-sidebar.ps1; edita esa plantilla en lugar de sus copias. El encabezado y el pie se generan desde shared/templates/encabezado-gestion.html y pie-gestion.html con tools/actualizar-encabezado-pie.ps1; edita las plantillas y conserva los delimitadores. El contenido particular permanece en cada HTML. Consulta el README para crear una pantalla. Los requisitos y prototipos están en `documentos/` y los modelos en `Base de datos/`.
 
 ## Comandos de desarrollo y compilación
 
-Abre `Frontend/index.html` en el navegador; esta copia contiene HTML y CSS estáticos, sin instalación ni compilación. Ejecuta `pwsh -File tools/verificar-rutas.ps1` y `pwsh -File tools/verificar-bloques-compartidos.ps1` desde la raíz para comprobar rutas y consistencia de menús y accesos. Ambas herramientas son de solo lectura.
+Abre `Frontend/features/acceso/pages/index.html` en el navegador; esta copia contiene HTML y CSS estáticos, sin instalación ni compilación. Ejecuta `pwsh -File tools/verificar-rutas.ps1` y `pwsh -File tools/verificar-bloques-compartidos.ps1` desde la raíz para comprobar rutas y consistencia de menús y accesos. Ambas herramientas son de solo lectura.
 
 ## Estilo de código y convenciones de nombres
 
 Usa HTML semántico e indentación de dos espacios. Escribe en español los textos y comentarios. Nombra las clases CSS en kebab-case, define valores visuales compartidos con variables CSS y guarda los estilos en archivos CSS, no inline. Usa Bootstrap para la cuadrícula y componentes. El alcance es una maqueta estática, sin JavaScript en el navegador ni backend.
 
-Conserva los comentarios que delimitan bloques compartidos y el orden input/label/nav del menú móvil. Usa el menú del dashboard y el acceso del módulo como referencias; consulta el README antes de modificar sus copias o datos ilustrativos relacionados.
+Conserva los comentarios que delimitan bloques compartidos y el orden input/label/nav del menú móvil. Usa la plantilla del sidebar y el acceso del módulo como referencias; consulta el README antes de modificar sus copias o datos ilustrativos relacionados.
 
 ## Requisitos y reglas del dominio
 

@@ -2,15 +2,15 @@ param([switch]$Comprobar)
 
 $ErrorActionPreference = 'Stop'
 $raiz = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../Frontend'))
-$plantilla = [IO.File]::ReadAllText((Join-Path $raiz 'shared/templates/acceso-lateral.html.tpl')).TrimEnd()
-$paginas = @((Join-Path $raiz 'index.html')) + @(Get-ChildItem -LiteralPath (Join-Path $raiz 'features/acceso/pages') -Filter '*.html' -File | ForEach-Object FullName)
+$plantilla = [IO.File]::ReadAllText((Join-Path $raiz 'shared/templates/acceso-lateral.html')).TrimEnd()
+$paginas = @(Get-ChildItem -LiteralPath (Join-Path $raiz 'features/acceso/pages') -Filter '*.html' -File | ForEach-Object FullName)
 $patron = '(?s)    <!-- Inicio del lateral de acceso compartido\. -->.*?    <!-- Fin del lateral de acceso compartido\. -->'
 $cambios = @()
 # Validar todos los destinos antes de escribir cualquiera.
 foreach ($pagina in $paginas) {
   $html = [IO.File]::ReadAllText($pagina)
   if ([regex]::Matches($html, $patron).Count -ne 1) { throw "Delimitadores del lateral ausentes o duplicados: $pagina" }
-  $prefijo = if ($pagina -eq (Join-Path $raiz 'index.html')) { '' } else { '../../../' }
+  $prefijo = '../../../'
   $bloque = "    <!-- Inicio del lateral de acceso compartido. -->`r`n" + $plantilla.Replace('{{raiz}}', $prefijo) + "`r`n    <!-- Fin del lateral de acceso compartido. -->"
   $actual = [regex]::Match($html, $patron).Value
   if ($actual.Replace("`r`n", "`n") -cne $bloque.Replace("`r`n", "`n")) {

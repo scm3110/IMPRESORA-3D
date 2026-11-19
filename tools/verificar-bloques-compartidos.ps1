@@ -102,24 +102,23 @@ foreach ($pagina in $paginas) {
   $menus++
 }
 
-# Se compara todo el contenido de acceso: título, formulario y enlace de recuperación.
-$accesos = @((Join-Path $raiz 'features/acceso/pages/index.html'), (Join-Path $raiz 'index.html'))
-$accesoEsperado = $null
-foreach ($archivo in $accesos) {
-  $html = [IO.File]::ReadAllText($archivo)
-  $contenido = Obtener-Bloque $html '<main\b[^>]*>.*?</main>' $archivo
-  if ([regex]::Matches($contenido, '<form\b').Count -ne 1) { $errores.Add("Debe existir un único formulario de acceso: $archivo") }
-  $acceso = Normalizar-Bloque $contenido $archivo
-  if ($null -eq $accesoEsperado) { $accesoEsperado = $acceso } elseif ($acceso -cne $accesoEsperado) {
-    $errores.Add("Acceso distinto de la referencia del módulo: $archivo")
-  }
+# El único inicio de sesión vive en el módulo de acceso.
+$archivoAcceso = Join-Path $raiz 'features/acceso/pages/index.html'
+$contenidoAcceso = Obtener-Bloque ([IO.File]::ReadAllText($archivoAcceso)) '<main\b[^>]*>.*?</main>' $archivoAcceso
+if ([regex]::Matches($contenidoAcceso, '<form\b').Count -ne 1) {
+  $errores.Add("Debe existir un único formulario de acceso: $archivoAcceso")
 }
-
 if ($errores.Count) {
   $errores | ForEach-Object { Write-Output $_ }
   throw "$($errores.Count) diferencias en bloques compartidos. No se modificó ningún archivo."
 }
-Write-Output "$menus menús y 2 accesos coherentes; estados activos y orden del menú móvil verificados. No se modificó ningún archivo."
+Write-Output "$menus menús, un inicio de sesión único coherentes; estados activos y orden del menú móvil verificados. No se modificó ningún archivo."
 
 # El lateral de acceso debe coincidir con su fuente única.
 & (Join-Path $PSScriptRoot 'actualizar-lateral-acceso.ps1') -Comprobar
+
+# Validar también contra la fuente única del sidebar.
+& (Join-Path $PSScriptRoot 'actualizar-sidebar.ps1') -Comprobar -FrontendPath $raiz
+
+# Comprobar encabezados y pies contra sus fuentes únicas.
+& (Join-Path $PSScriptRoot 'actualizar-encabezado-pie.ps1') -Comprobar -FrontendPath $raiz
