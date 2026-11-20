@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Abrir inicio de sesión",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://127.0.0.1:5500/features/acceso/pages/index.html",
+      "webRoot": "${workspaceFolder}/Frontend"
+    }
+  ]
+}

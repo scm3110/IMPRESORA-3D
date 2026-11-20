@@ -20,7 +20,7 @@
   font-size: .78rem;
   font-weight: 600;
 }
-.grupo a, .volver-portada {
+.grupo a, .cerrar-sesion {
   display: flex;
   gap: .75rem;
   align-items: center;
@@ -31,7 +31,7 @@
   text-decoration: none;
   font-size: .93rem;
 }
-.grupo a:hover, .volver-portada:hover {
+.grupo a:hover, .cerrar-sesion:hover {
   background: var(--fondo);
 }
 .grupo .actual {
@@ -40,7 +40,7 @@
   color: var(--verde-oscuro);
   font-weight: 650;
 }
-.volver-portada {
+.cerrar-sesion {
   border-top: 1px solid var(--borde);
   border-radius: 0;
 }
@@ -131,10 +131,14 @@
   .control-menu:focus-visible + .etiqueta-menu {
     outline: 3px solid var(--foco);
   }
-  .navegacion, .volver-portada {
+  .navegacion, .cerrar-sesion {
     display: none;
   }
   /* El ~ exige que nav sea un hermano posterior del input, sin contenedores intermedios. */
+  .control-menu:checked ~ .cerrar-sesion {
+    display: flex;
+    grid-column: 1 / -1;
+  }
   .control-menu:checked ~ .navegacion {
     display: block;
     grid-column: 1 / -1;

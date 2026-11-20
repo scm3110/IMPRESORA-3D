@@ -60,3 +60,14 @@ a:hover {
 .salto:focus {
   top: 1rem;
 }
+
+/* Avisos de carga: el contenido de la pantalla sigue disponible si falta un bloque. */
+body.layout-error {
+  display: block;
+}
+.error-layout {
+  padding: 1rem;
+  border: 1px solid var(--borde-control);
+  background: var(--superficie);
+  color: var(--tinta);
+}
