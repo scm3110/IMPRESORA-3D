@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="../../../shared/styles/base.css">
     <link rel="stylesheet" href="../../../shared/styles/componentes.css">
     <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+    <link rel="stylesheet" href="../../../shared/styles/reportes.css">
     <script src="../../../shared/scripts/layout.js" defer></script>
   </head>
   <body class="gestion" data-layout="gestion" data-modulo="costeo">
     <a class="salto" href="#contenido">Saltar al contenido</a>
     <noscript><p class="error-layout">Activa JavaScript para mostrar el menú y los bloques compartidos.</p></noscript>
-    <main id="contenido" tabindex="-1">
+    <main class="vista-reportes vista-costeo" id="contenido" tabindex="-1">
       <nav class="migas" aria-label="Ruta">
         <a href="../../acceso/pages/index.html">Inicio</a>
         <span aria-hidden="true">/</span>
@@ -30,7 +31,7 @@
         <small>Perfil de referencia · Administrador, instructor y aprendiz</small>
       </header>
 
-      <div class="indicadores">
+      <div class="indicadores resumen-costeo">
         <div class="indicador">
           <span>Costo real</span>
           <strong>9.200</strong>
@@ -47,7 +48,44 @@
           <small>COP</small>
         </div>
       </div>
-      <section class="panel">
+      <section class="barra-informe" aria-label="Exportación del comprobante">
+        <div>
+          <strong>Vista previa del comprobante</strong>
+          <p id="ayuda-descarga" class="ayuda">Datos ilustrativos. La descarga se muestra como propuesta visual y aún no está disponible.</p>
+        </div>
+        <div class="acciones">
+          <button type="button" class="btn accion" disabled aria-describedby="ayuda-descarga">Descargar PDF</button>
+          <button type="button" class="btn secundaria" disabled aria-describedby="ayuda-descarga">Exportar CSV</button>
+        </div>
+      </section>
+      <article id="comprobante" class="comprobante-integrado" aria-labelledby="titulo-comprobante" tabindex="-1">
+        <header class="cabecera-comprobante">
+          <h2 id="titulo-comprobante">Comprobante de costeo</h2>
+          <p>Fabricación Digital · Medellín · TR-024 · 09 nov 2026.</p>
+          <small>Datos ilustrativos · Documento de ejemplo sin persistencia.</small>
+        </header>
+      <section class="panel hoja-informe">
+        <h2>Engranaje helicoidal</h2>
+        <dl class="ficha">
+          <div>
+            <dt>Responsable</dt>
+            <dd>Aprendiz de muestra</dd>
+          </div>
+          <div>
+            <dt>Material</dt>
+            <dd>PLA · Lima · 60 g</dd>
+          </div>
+          <div>
+            <dt>Equipo</dt>
+            <dd>FDM-01 · 2 h</dd>
+          </div>
+          <div>
+            <dt>Tipo</dt>
+            <dd>Costeo real</dd>
+          </div>
+        </dl>
+      </section>
+      <section class="panel hoja-informe">
         <h2>Desglose por componente</h2>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Desglose de demostración en pesos colombianos">
           <table class="table">
@@ -94,7 +132,7 @@
           </table>
         </div>
       </section>
-      <section class="panel">
+      <section class="panel hoja-informe">
         <h2>Parámetros utilizados</h2>
         <dl class="ficha">
           <div>
@@ -120,8 +158,10 @@
         </dl>
       </section>
       <p class="aviso">El costeo vigente es el más reciente por fecha de cálculo. Cada cálculo conserva los parámetros utilizados.</p>
+      </article>
+      <p class="ayuda ayuda-impresion">Para imprimir o guardar como PDF usa Imprimir en el navegador (Ctrl+P).</p>
       <nav class="acciones" aria-label="Acciones de la pantalla">
-        <a href="comprobante-real.html" class="btn accion">Ver comprobante</a>
+        <a href="#comprobante" class="btn accion">Ver comprobante</a>
         <a href="precision.html" class="btn secundaria">Estimado frente a real</a>
         <a href="../../produccion/pages/finalizado.html" class="btn secundaria">Ver trabajo</a>
       </nav>

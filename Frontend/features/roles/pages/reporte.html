@@ -14,7 +14,7 @@
   <body class="gestion" data-layout="gestion" data-modulo="roles">
     <a class="salto" href="#contenido">Saltar al contenido</a>
     <noscript><p class="error-layout">Activa JavaScript para mostrar el menú y los bloques compartidos.</p></noscript>
-    <main id="contenido" class="vista-reportes" tabindex="-1">
+    <main id="contenido" class="vista-reportes consulta-roles" tabindex="-1">
       <nav class="migas" aria-label="Ruta">
         <a href="../../acceso/pages/index.html">Inicio</a>
         <span aria-hidden="true">/</span>
@@ -100,8 +100,9 @@
           </table>
         </div>
       </section>
-      <section class="panel hoja-informe">
+      <section id="administrador" class="panel hoja-informe matriz-rol" tabindex="-1">
         <h2>Administrador</h2>
+        <p class="aviso">El rol Administrador tiene todos los permisos y está protegido contra cambios.</p>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Permisos de muestra · Administrador">
           <table class="table">
             <caption>Permisos de muestra · Administrador</caption>
@@ -118,174 +119,175 @@
               <tr>
                 <th scope="row">Dashboard</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Dashboard" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Dashboard" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Dashboard" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Dashboard" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Dashboard" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Dashboard" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Dashboard" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Dashboard" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Producción</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Producción" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Producción" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Producción" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Producción" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Producción" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Producción" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Producción" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Producción" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Inventario</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Inventario" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Inventario" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Inventario" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Inventario" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Inventario" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Inventario" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Inventario" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Inventario" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Equipos</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Equipos" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Equipos" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Equipos" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Equipos" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Equipos" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Equipos" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Equipos" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Equipos" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Costeo</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Costeo" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Costeo" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Costeo" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Costeo" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Costeo" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Costeo" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Costeo" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Costeo" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Estadísticas</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Estadísticas" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Estadísticas" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Estadísticas" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Estadísticas" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Estadísticas" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Estadísticas" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Estadísticas" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Estadísticas" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Reportes</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Reportes" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Reportes" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Reportes" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Reportes" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Reportes" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Reportes" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Reportes" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Reportes" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Usuarios</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Usuarios" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Usuarios" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Usuarios" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Usuarios" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Usuarios" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Usuarios" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Usuarios" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Usuarios" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Roles y permisos</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Roles y permisos" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Roles y permisos" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Roles y permisos" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Roles y permisos" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Roles y permisos" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Roles y permisos" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Roles y permisos" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Roles y permisos" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Laboratorios</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Laboratorios" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Laboratorios" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Laboratorios" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Laboratorios" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Laboratorios" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Laboratorios" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Laboratorios" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Laboratorios" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Parámetros</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Parámetros" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Parámetros" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Parámetros" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Parámetros" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Parámetros" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Parámetros" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Parámetros" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Parámetros" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <section class="panel hoja-informe">
+      <section id="instructor" class="panel hoja-informe matriz-rol" tabindex="-1">
         <h2>Instructor</h2>
+        <nav class="acciones" aria-label="Acciones de Instructor"><a href="editar.html" class="btn secundaria">Ver edición de ejemplo de Instructor</a></nav>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Permisos de muestra · Instructor">
           <table class="table">
             <caption>Permisos de muestra · Instructor</caption>
@@ -302,174 +304,175 @@
               <tr>
                 <th scope="row">Dashboard</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Dashboard" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Dashboard" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Producción</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Producción" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Producción" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Producción" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Producción" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Producción" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Producción" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Producción" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Producción" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Inventario</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Inventario" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Inventario" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Inventario" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Inventario" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Inventario" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Inventario" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Inventario" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Inventario" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Equipos</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Equipos" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Equipos" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Equipos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Equipos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Equipos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Equipos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Equipos" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Equipos" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Costeo</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Costeo" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Costeo" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Costeo" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Costeo" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Costeo" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Costeo" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Costeo" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Costeo" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Estadísticas</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Estadísticas" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Estadísticas" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Reportes</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Reportes" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Reportes" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Reportes" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Reportes" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Reportes" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Reportes" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Reportes" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Reportes" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Usuarios</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Roles y permisos</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Laboratorios</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Parámetros</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Parámetros" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Parámetros" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <section class="panel hoja-informe">
+      <section id="aprendiz" class="panel hoja-informe matriz-rol" tabindex="-1">
         <h2>Aprendiz</h2>
+        <nav class="acciones" aria-label="Acciones de Aprendiz"><a href="editar.html" class="btn secundaria">Ver edición de ejemplo de Instructor</a></nav>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Permisos de muestra · Aprendiz">
           <table class="table">
             <caption>Permisos de muestra · Aprendiz</caption>
@@ -486,174 +489,175 @@
               <tr>
                 <th scope="row">Dashboard</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Producción</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Producción" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Producción" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Producción" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Producción" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Producción" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Producción" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Producción" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Producción" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Inventario</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Inventario" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Inventario" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Inventario" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Inventario" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Inventario" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Inventario" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Inventario" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Inventario" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Equipos</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Equipos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Equipos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Equipos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Equipos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Equipos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Equipos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Equipos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Equipos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Costeo</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Costeo" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Costeo" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Costeo" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Costeo" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Costeo" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Costeo" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Costeo" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Costeo" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Estadísticas</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Reportes</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Reportes" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Reportes" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Reportes" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Reportes" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Reportes" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Reportes" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Reportes" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Reportes" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Usuarios</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Roles y permisos</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Laboratorios</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Parámetros</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <section class="panel hoja-informe">
+      <section id="coordinador" class="panel hoja-informe matriz-rol" tabindex="-1">
         <h2>Coordinador</h2>
+        <nav class="acciones" aria-label="Acciones de Coordinador"><a href="editar.html" class="btn secundaria">Ver edición de ejemplo de Instructor</a></nav>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Permisos de muestra · Coordinador">
           <table class="table">
             <caption>Permisos de muestra · Coordinador</caption>
@@ -670,166 +674,166 @@
               <tr>
                 <th scope="row">Dashboard</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Dashboard" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Dashboard" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Producción</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Producción" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Producción" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Producción" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Producción" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Producción" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Producción" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Producción" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Producción" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Inventario</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Inventario" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Inventario" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Inventario" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Inventario" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Inventario" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Inventario" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Inventario" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Inventario" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Equipos</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Equipos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Equipos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Equipos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Equipos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Equipos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Equipos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Equipos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Equipos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Costeo</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Costeo" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Costeo" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Costeo" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Costeo" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Costeo" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Costeo" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Costeo" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Costeo" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Estadísticas</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Estadísticas" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Estadísticas" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Reportes</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Reportes" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Reportes" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Reportes" checked disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Reportes" checked disabled><span class="permiso-impreso" aria-hidden="true">Sí</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Reportes" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Reportes" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Reportes" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Reportes" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Usuarios</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Usuarios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Usuarios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Roles y permisos</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Roles y permisos" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Roles y permisos" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Laboratorios</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Laboratorios" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Laboratorios" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">Parámetros</th>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Ver · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Ver · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Crear · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Crear · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Editar · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Editar · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
                 <td>
-                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Parámetros" disabled>
+                  <input class="form-check-input" type="checkbox" aria-label="Cambiar estado · Parámetros" disabled><span class="permiso-impreso" aria-hidden="true">No</span>
                 </td>
               </tr>
             </tbody>
@@ -837,6 +841,7 @@
         </div>
       </section>
 
+      <nav class="acciones" aria-label="Volver al módulo"><a href="index.html" class="btn secundaria">Volver a roles</a></nav>
     </main>
   </body>
 </html>

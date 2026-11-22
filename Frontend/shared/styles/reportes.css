@@ -69,3 +69,82 @@
     box-shadow: none;
   }
 }
+
+/* Ficha y comprobante de Costeo comparten datos y una impresión documental. */
+.cabecera-comprobante {
+  padding-block: 1.25rem;
+  border-bottom: 2px solid var(--verde);
+  margin-bottom: 1rem;
+}
+@page comprobante-costeo {
+  size: A4;
+  margin: 15mm;
+}
+@media print {
+  .vista-costeo > .aviso-ficha,
+  .vista-costeo > .titulo-vista,
+  .vista-costeo > .resumen-costeo,
+  .vista-costeo > .ayuda-impresion {
+    display: none;
+  }
+  body:has(.vista-costeo) {
+    page: comprobante-costeo;
+  }
+  body:has(.vista-costeo) .marco {
+    min-height: 0;
+  }
+  .vista-costeo .comprobante-integrado {
+    font-size: 10pt;
+  }
+  .vista-costeo .cabecera-comprobante {
+    padding-block: 0 3mm;
+    margin-bottom: 3mm;
+    break-after: avoid;
+  }
+  .vista-costeo .comprobante-integrado h2 {
+    font-size: 13pt;
+    margin-bottom: 2mm;
+    padding-bottom: 2mm;
+  }
+  .vista-costeo .hoja-informe {
+    margin-block: 3mm;
+  }
+  .vista-costeo .table thead {
+    display: table-header-group;
+  }
+  .vista-costeo .table tr {
+    break-inside: avoid;
+  }
+}
+.permiso-impreso {
+  display: none;
+}
+@page consulta-documental {
+  size: A4;
+  margin: 15mm;
+}
+@media print {
+  body:has(.informe-integrado, .consulta-roles) {
+    page: consulta-documental;
+  }
+  body:has(.informe-integrado, .consulta-roles) .marco {
+    min-height: 0;
+  }
+  .consulta-roles .matriz-rol {
+    break-before: page;
+  }
+  .consulta-roles .form-check-input {
+    display: none;
+  }
+  .consulta-roles .permiso-impreso {
+    display: inline;
+  }
+  .informe-integrado .table thead,
+  .consulta-roles .table thead {
+    display: table-header-group;
+  }
+  .informe-integrado .table tr,
+  .consulta-roles .table tr {
+    break-inside: avoid;
+  }
+}

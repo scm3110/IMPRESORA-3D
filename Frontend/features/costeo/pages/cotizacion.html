@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Comprobante de cotizaci&#243;n | Laboratorio 3D SENA</title>
+    <title>Ficha de cotización | Laboratorio 3D SENA</title>
     <link rel="stylesheet" href="../../../vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../../shared/styles/base.css">
     <link rel="stylesheet" href="../../../shared/styles/componentes.css">
@@ -14,7 +14,7 @@
   <body class="gestion" data-layout="gestion" data-modulo="costeo">
     <a class="salto" href="#contenido">Saltar al contenido</a>
     <noscript><p class="error-layout">Activa JavaScript para mostrar el menú y los bloques compartidos.</p></noscript>
-    <main id="contenido" class="vista-reportes" tabindex="-1">
+    <main data-cotizacion="COT-017" class="vista-reportes vista-costeo" id="contenido" tabindex="-1">
       <nav class="migas" aria-label="Ruta">
         <a href="../../acceso/pages/index.html">Inicio</a>
         <span aria-hidden="true">/</span>
@@ -22,13 +22,16 @@
         <a href="index.html">Costeo</a>
         <span aria-hidden="true">/</span>
 
-        <span aria-current="page">Comprobante de cotización</span>
+        <span aria-current="page">Cotización COT-017</span>
       </nav>
+      <!-- Muestra COT-017 convertida en TR-024: consultar las páginas relacionadas en el README. -->
       <header class="titulo-vista">
-        <h1>Comprobante de cotización</h1>
-        <p>Fabricación Digital · Medellín · COT-018 · Ejemplo para impresión.</p>
+        <h1>Ficha de cotización</h1>
+        <p>COT-017 · Engranaje helicoidal · Costeo estimado del laboratorio.</p>
         <small>Perfil de referencia · Administrador, instructor y aprendiz</small>
       </header>
+
+      <p class="ayuda aviso-ficha">Ficha común con datos fijos de COT-017. Todavía no carga la cotización seleccionada ni cambia sus acciones según el estado.</p>
       <section class="barra-informe" aria-label="Exportación del comprobante">
         <div>
           <strong>Vista previa del comprobante</strong>
@@ -39,40 +42,45 @@
           <button type="button" class="btn secundaria" disabled aria-describedby="ayuda-descarga">Exportar CSV</button>
         </div>
       </section>
-
+      <article id="comprobante" class="comprobante-integrado" aria-labelledby="titulo-comprobante" tabindex="-1">
+        <header class="cabecera-comprobante">
+          <h2 id="titulo-comprobante">Comprobante de cotización</h2>
+          <p>Fabricación Digital · Medellín · COT-017 · Ejemplo para impresión.</p>
+          <small>Datos ilustrativos · Documento de ejemplo sin persistencia.</small>
+        </header>
       <section class="panel hoja-informe">
-        <h2>Datos de la cotización</h2>
+        <h2>Ficha de cotización</h2>
         <dl class="ficha">
           <div>
             <dt>Pieza</dt>
-            <dd>Guía de ensamble</dd>
+            <dd data-campo="pieza">Engranaje helicoidal</dd>
           </div>
           <div>
             <dt>Estado</dt>
-            <dd>
-              <span class="estado verde">Aprobada</span>
+            <dd data-campo="estado">
+              <span class="estado azul">Convertida</span>
             </dd>
           </div>
           <div>
             <dt>Responsable</dt>
-            <dd>Aprendiz de muestra</dd>
+            <dd data-campo="responsable">Aprendiz de muestra</dd>
           </div>
           <div>
             <dt>Equipo</dt>
-            <dd>FDM-01 · Prusa MK4</dd>
+            <dd data-campo="equipo">FDM-01 · Prusa MK4</dd>
           </div>
           <div>
             <dt>Material</dt>
-            <dd>PLA · Lima</dd>
+            <dd data-campo="material">PLA · Lima</dd>
           </div>
           <div>
             <dt>Estimación</dt>
-            <dd>50 g · 2 h</dd>
+            <dd data-campo="estimacion">50 g · 1,6 h</dd>
           </div>
         </dl>
       </section>
       <section class="panel hoja-informe">
-        <h2>Importes estimados</h2>
+        <h2>Desglose estimado</h2>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Desglose de demostración en pesos colombianos">
           <table class="table">
             <caption>Desglose de demostración en pesos colombianos</caption>
@@ -91,34 +99,73 @@
               </tr>
               <tr>
                 <th scope="row">Energía</th>
-                <td>2 h × 0,25 kW × 800 COP/kWh</td>
-                <td>400</td>
+                <td>1,6 h × 0,25 kW × 800 COP/kWh</td>
+                <td>320</td>
               </tr>
               <tr>
                 <th scope="row">Tiempo</th>
-                <td>2 h × 2.000 COP/h</td>
-                <td>4.000</td>
+                <td>1,6 h × 2.000 COP/h</td>
+                <td>3.200</td>
               </tr>
               <tr>
                 <th scope="row">Costo total</th>
                 <td>Material + energía + tiempo</td>
-                <td>8.400</td>
+                <td>7.520</td>
               </tr>
               <tr>
                 <th scope="row">Margen</th>
                 <td>20 % del costo total</td>
-                <td>1.680</td>
+                <td>1.504</td>
               </tr>
               <tr>
                 <th scope="row">Precio final</th>
                 <td>Costo total × 1,20</td>
-                <td>10.080</td>
+                <td>9.024</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <p class="ayuda">Puedes usar Imprimir en el navegador y seleccionar Guardar como PDF.</p>
+      <section class="panel hoja-informe">
+        <h2>Parámetros utilizados</h2>
+        <dl class="ficha">
+          <div>
+            <dt>Filamento</dt>
+            <dd>80 COP/g</dd>
+          </div>
+          <div>
+            <dt>Consumo de FDM-01</dt>
+            <dd>0,25 kW</dd>
+          </div>
+          <div>
+            <dt>Energía</dt>
+            <dd>800 COP/kWh</dd>
+          </div>
+          <div>
+            <dt>Impresión</dt>
+            <dd>2.000 COP/h</dd>
+          </div>
+          <div>
+            <dt>Margen</dt>
+            <dd>20 %</dd>
+          </div>
+        </dl>
+      </section>
+      </article>
+      <p class="ayuda ayuda-impresion">Para imprimir o guardar como PDF usa Imprimir en el navegador (Ctrl+P).</p>
+      <details class="filtros">
+        <summary>Otros escenarios de ejemplo</summary>
+        <p>La revisión corresponde al administrador o instructor sobre una cotización en Borrador. La conversión requiere una cotización Aprobada y asigna automáticamente el estado Convertida.</p>
+        <nav class="acciones" aria-label="Escenarios ilustrativos de cotizaciones">
+          <a href="revisar.html" class="btn secundaria">Revisar COT-019 · Borrador</a>
+          <a href="../../produccion/pages/desde-cotizacion.html" class="btn secundaria">Convertir COT-018 · Aprobada</a>
+        </nav>
+      </details>
+      <nav class="acciones" aria-label="Acciones de la pantalla">
+        <a href="../../produccion/pages/finalizado.html" class="btn accion">Ver trabajo TR-024</a>
+        <a href="#comprobante" class="btn secundaria">Ver comprobante</a>
+        <a href="cotizaciones.html" class="btn secundaria">Volver a cotizaciones</a>
+      </nav>
 
     </main>
   </body>

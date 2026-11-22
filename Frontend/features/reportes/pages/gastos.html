@@ -14,7 +14,7 @@
   <body class="gestion" data-layout="gestion" data-modulo="reportes">
     <a class="salto" href="#contenido">Saltar al contenido</a>
     <noscript><p class="error-layout">Activa JavaScript para mostrar el menú y los bloques compartidos.</p></noscript>
-    <main id="contenido" class="vista-reportes" tabindex="-1">
+    <main id="contenido" class="vista-reportes informe-integrado" tabindex="-1">
       <nav class="migas" aria-label="Ruta">
         <a href="../../acceso/pages/index.html">Inicio</a>
         <span aria-hidden="true">/</span>
@@ -40,7 +40,7 @@
         </div>
       </section>
 
-      <form class="panel formulario" action="vista-gastos.html" method="get" autocomplete="off">
+      <form class="panel formulario" action="#resultado" method="get" autocomplete="off">
         <fieldset>
           <legend>Período de consulta</legend>
           <div class="campos">
@@ -54,14 +54,14 @@
             </div>
           </div>
         </fieldset>
-        <p class="ayuda">Usa datos ficticios. El navegador comprueba los campos y descarta los valores al continuar.</p>
+        <p class="ayuda">El navegador valida los campos y muestra el resultado fijo de ejemplo. Los filtros ingresados no cambian sus cifras ni se guardan.</p>
 
         <div class="acciones">
           <button type="submit" class="btn accion">Ver informe de muestra</button>
           <a href="index.html" class="btn secundaria">Volver</a>
         </div>
       </form>
-      <section class="panel hoja-informe">
+      <section id="resultado" class="panel hoja-informe" tabindex="-1">
         <h2>Ficha del informe</h2>
         <dl class="ficha">
           <div>

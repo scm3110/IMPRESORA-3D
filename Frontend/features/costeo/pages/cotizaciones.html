@@ -68,8 +68,8 @@
       <section class="panel">
         <h2>Cotizaciones del laboratorio</h2>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
-          <table class="table">
-            <caption>Registros de demostración</caption>
+          <table class="table tabla-gestion tabla-cotizaciones">
+            <caption>Registros de demostración · Ficha y cambio de estado usan ejemplos fijos; aún no cargan los datos de cada fila.</caption>
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -77,7 +77,7 @@
                 <th scope="col">Fecha</th>
                 <th scope="col">Responsable</th>
                 <th scope="col">Estado</th>
-                <th scope="col">Detalle</th>
+                <th scope="col" class="columna-acciones">Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -89,8 +89,15 @@
                 <td>
                   <span class="estado ambar">Borrador</span>
                 </td>
-                <td>
-                  <a href="borrador.html">Revisar</a>
+                <td class="columna-acciones">
+                  <div class="acciones-fila">
+                    <a href="cotizacion.html">Ver ficha de ejemplo</a>
+                    <span class="espacio-estado">
+                      <a class="accion-icono" href="revisar.html" aria-label="Cambiar estado de COT-019" title="Cambiar estado de COT-019">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </span>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -101,8 +108,15 @@
                 <td>
                   <span class="estado verde">Aprobada</span>
                 </td>
-                <td>
-                  <a href="aprobada.html">Ver cotización</a>
+                <td class="columna-acciones">
+                  <div class="acciones-fila">
+                    <a href="cotizacion.html">Ver ficha de ejemplo</a>
+                    <span class="espacio-estado">
+                      <a class="accion-icono" href="revisar.html" aria-label="Cambiar estado de COT-018 · formulario de ejemplo" title="Cambiar estado de COT-018 · formulario de ejemplo">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </span>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -113,8 +127,11 @@
                 <td>
                   <span class="estado azul">Convertida</span>
                 </td>
-                <td>
-                  <a href="convertida.html">Ver origen</a>
+                <td class="columna-acciones">
+                  <div class="acciones-fila">
+                    <a href="cotizacion.html">Ver ficha de ejemplo</a>
+                    <span class="espacio-estado" aria-hidden="true"></span>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -125,8 +142,15 @@
                 <td>
                   <span class="estado rojo">Rechazada</span>
                 </td>
-                <td>
-                  <a href="rechazada.html">Ver detalle</a>
+                <td class="columna-acciones">
+                  <div class="acciones-fila">
+                    <a href="cotizacion.html">Ver ficha de ejemplo</a>
+                    <span class="espacio-estado">
+                      <a class="accion-icono" href="revisar.html" aria-label="Cambiar estado de COT-016 · formulario de ejemplo" title="Cambiar estado de COT-016 · formulario de ejemplo">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </span>
+                  </div>
                 </td>
               </tr>
             </tbody>

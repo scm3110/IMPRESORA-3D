@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cierre del trabajo · Ejemplo | Laboratorio 3D SENA</title>
+    <link rel="stylesheet" href="../../../vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../shared/styles/base.css">
+    <link rel="stylesheet" href="../../../shared/styles/componentes.css">
+    <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+    <script src="../../../shared/scripts/layout.js" defer></script>
+  </head>
+  <body class="gestion" data-layout="gestion" data-modulo="produccion">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <noscript><p class="error-layout">Activa JavaScript para mostrar el menú y los bloques compartidos.</p></noscript>
+    <main id="contenido" tabindex="-1">
+      <nav class="migas" aria-label="Ruta">
+        <a href="index.html">Producción</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Cierre de ejemplo</span>
+      </nav>
+      <header class="titulo-vista">
+        <h1>Cierre del trabajo</h1>
+        <p>TR-025 · Soporte de sensor</p>
+      </header>
+      <p class="ayuda">Ejemplo fijo de un cierre válido. No reproduce los valores ingresados ni guarda cambios.</p>
+      <section class="panel" aria-labelledby="datos-cierre">
+        <h2 id="datos-cierre">Datos del cierre</h2>
+        <dl class="ficha">
+          <div><dt>Trabajo</dt><dd>TR-025</dd></div>
+          <div><dt>Tiempo real</dt><dd>2 h</dd></div>
+          <div><dt>Material consumido</dt><dd>40 g</dd></div>
+          <div><dt>Fecha de fin</dt><dd><time datetime="2026-11-09T16:30:00">9 nov 2026, 16:30</time> · asignada automáticamente en el ejemplo</dd></div>
+          <div><dt>Estado final</dt><dd><span class="estado verde">Finalizado</span></dd></div>
+        </dl>
+      </section>
+      <section class="panel" aria-labelledby="costeos-trabajo">
+        <h2 id="costeos-trabajo">Costeos del trabajo</h2>
+        <p>El cierre añade un nuevo costeo real y conserva los registros anteriores.</p>
+        <div class="tabla-scroll" tabindex="0" role="region" aria-label="Historial ilustrativo de costeos de TR-025">
+          <table class="table">
+            <caption>Datos ilustrativos · Un trabajo puede tener varios registros de costeo (1:N).</caption>
+            <thead>
+              <tr><th scope="col">Costeo</th><th scope="col">Trabajo</th><th scope="col">Tipo</th><th scope="col">Fecha de cálculo</th><th scope="col">Tiempo base</th><th scope="col">Material base</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">CE-025-01</th><td>TR-025</td><td>Estimado</td><td>9 nov 2026, 09:00</td><td>1,5 h</td><td>40 g</td></tr>
+              <tr><th scope="row">CE-025-02</th><td>TR-025</td><td>Real · nuevo al cerrar · vigente</td><td>9 nov 2026, 16:30</td><td>2 h</td><td>40 g</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <nav class="acciones" aria-label="Acciones de la pantalla">
+        <a href="en-proceso.html" class="btn secundaria">Volver a la ficha del trabajo</a>
+        <a href="estado.html" class="btn secundaria">Volver al formulario</a>
+        <a href="index.html" class="btn secundaria">Volver a Producción</a>
+      </nav>
+    </main>
+  </body>
+</html>

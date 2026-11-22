@@ -32,10 +32,13 @@
       <form class="panel formulario" action="#revision" method="get" autocomplete="off">
         <fieldset>
           <legend>Decisión sobre la cotización</legend>
+          <p class="ayuda">Formulario común con datos fijos de COT-019. Los accesos desde otras cotizaciones todavía no cargan su identificación ni su estado. Los cambios no se guardan.</p>
           <div class="campos">
             <div class="campo">
               <label for="estado">Nuevo estado</label>
               <select class="form-select" id="estado" required>
+                <option value="" selected disabled>Selecciona un estado</option>
+                <option>Borrador</option>
                 <option>Aprobada</option>
                 <option>Rechazada</option>
               </select>
@@ -46,8 +49,9 @@
         <p class="ayuda">Usa datos ficticios. El navegador comprueba los campos y descarta los valores al continuar.</p>
 
         <div class="acciones">
-          <button type="submit" class="btn accion">Validar ejemplo</button>
-          <a href="borrador.html" class="btn secundaria">Volver</a>
+          <button type="submit" class="btn accion">Guardar cambios
+          </button>
+          <a href="cotizaciones.html" class="btn secundaria">Volver a cotizaciones</a>
         </div>
       </form>
       <p class="resultado" id="revision" tabindex="-1">Validación de ejemplo completada. Los registros de la maqueta siguen mostrando sus valores de muestra.</p>
