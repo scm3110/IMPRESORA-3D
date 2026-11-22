@@ -152,3 +152,17 @@ Cerrar sesión vuelve al acceso como navegación de muestra; no existe una sesi�
 Se retiraron 13 copias que solo cambiaban datos de muestra. Roles conserva editar.html; equipos conserva editar.html y estado.html; inventario conserva editar.html, editar-color.html y editar-tipo.html. Los avisos explican que siempre se muestran los mismos datos. Los campos inmutables y restricciones se conservan.
 
 Se mantienen separados registro y edición, acceso y recuperación, permisos de consulta por rol, estados y cancelaciones de producción, informes por finalidad y períodos de estadísticas: representan operaciones o escenarios distintos. No se han cambiado sus reglas para reducir archivos.
+
+### Registro de movimientos
+
+En Movimientos, selecciona Tipo (Entrada, Merma o Ajuste) y pulsa Registrar. Sin selección, Registrar está deshabilitado. CSS muestra únicamente el enlace al formulario correspondiente; el selector es independiente del filtro Tipo del historial. Consultar salidas se presenta como botón secundario: las salidas se originan al finalizar un trabajo. Los formularios y sus validaciones permanecen sin cambios. Sin JavaScript adicional ni persistencia.
+
+En Catálogos de material, Tipo permite elegir Color o Tipo de filamento. Un solo Registrar visible abre el formulario correspondiente; sin selección está deshabilitado. La selección usa CSS, sin JavaScript adicional. Las tablas y los formularios conservan sus datos y validaciones.
+
+### Presentación documental de informes y comprobantes
+
+El reporte de consumo de Inventario y los cinco comprobantes de Costeo (real, borrador, aprobada, convertida y rechazada) reutilizan reportes.css: barra de exportación, ficha y resultados con apariencia de documento. Descargar PDF y Exportar CSV permanecen deshabilitados. La impresión del navegador sigue disponible y oculta la barra de exportación. El catálogo de Reportes incluye el consumo de materiales; los comprobantes conservan sus accesos desde Costeo y Cotizaciones. No se alteraron importes, estados, períodos, registros, fórmulas ilustrativas ni filtros; no hay nuevas dependencias, JavaScript ni generación de archivos.
+
+### Actualizar estado de producción
+
+Producción sigue el patrón de Equipos: acción compacta en tabla-gestion que abre directamente un formulario con Estado actual de solo lectura y Nuevo estado. Los trabajos pendientes abren estado-pendiente.html (En proceso o Cancelado); los trabajos en proceso abren estado.html (Finalizado o Cancelado). Son dos escenarios con datos fijos de TR-026 y TR-025 y requisitos diferentes, no una carga dinámica del registro. Finalizados y cancelados mantienen solo consulta. El selector muestra mediante CSS el formulario correspondiente: cierre con tiempo y gramos reales obligatorios (máximo ilustrativo 150 g), cancelación con motivo obligatorio y aviso de rol Administrador/Instructor, inicio con comprobación ilustrativa de recursos. Solo se valida el formulario visible; no se añadió JavaScript, backend, persistencia ni comprobación real de permisos. Los formularios anteriores de inicio, cierre y cancelación se conservan.
