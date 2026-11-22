@@ -1,0 +1,109 @@
+/* Presentación exclusiva de las tres vistas de Estadísticas. */
+.vista-estadisticas {
+  --barra-estadistica: var(--verde);
+  --pista-estadistica: var(--seleccion);
+}
+.periodo-estadisticas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.4rem;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--superficie);
+}
+.etiqueta-estadistica {
+  display: block;
+  font-size: .72rem;
+  font-weight: 650;
+  letter-spacing: .08em;
+  color: var(--suave);
+}
+.periodo-estadisticas p { font-weight: 600; }
+.selector-periodo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  padding: .25rem;
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: .65rem;
+}
+.selector-periodo a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .45rem 1rem;
+  border-radius: .4rem;
+  text-decoration: none;
+  color: var(--suave);
+  font-weight: 600;
+  font-size: .88rem;
+}
+.selector-periodo a:hover { background: var(--seleccion); color: var(--verde-oscuro); }
+.selector-periodo a[aria-current="page"] { background: var(--verde); color: var(--superficie); }
+.vista-estadisticas .indicadores { gap: 1rem; }
+.vista-estadisticas .indicador { border-top: 3px solid var(--verde); padding: 1.2rem; }
+.vista-estadisticas .indicador strong { margin-block: .35rem; font-variant-numeric: tabular-nums; }
+.graficas-estadisticas { display: grid; gap: 1rem; }
+.estadistica-grafica { min-width: 0; }
+.barras-estadisticas { display: grid; gap: 1.1rem; }
+.dato-barra { display: flex; justify-content: space-between; gap: .75rem; font-size: .88rem; }
+.dato-barra span { color: var(--suave); }
+.dato-barra strong { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.barra-estadistica svg { display: block; width: 100%; height: 24px; }
+.pista-barra { fill: var(--pista-estadistica); }
+.valor-barra { fill: var(--barra-estadistica); }
+.vista-estadisticas .nota-estadisticas,
+.vista-estadisticas .nota-agrupacion { font-size: .82rem; color: var(--suave); }
+.rendimiento-estadisticas .table { min-width: 620px; }
+.rendimiento-estadisticas td:nth-child(n+3),
+.rendimiento-estadisticas th:nth-child(n+3) { text-align: right; font-variant-numeric: tabular-nums; }
+@media (min-width: 1200px) {
+  .graficas-estadisticas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .vista-estadisticas .indicadores { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+  .vista-estadisticas .indicador { padding: .85rem; }
+  .periodo-estadisticas { padding: 1rem; }
+  .selector-periodo { width: 100%; }
+  .selector-periodo a { flex: 1; padding-inline: .5rem; }
+}
+@page estadisticas {
+  size: A4;
+  margin: 15mm;
+}
+@media print {
+  body:has(.vista-estadisticas) { page: estadisticas; }
+  body:has(.vista-estadisticas) .marco { min-height: 0; }
+  .vista-estadisticas { font-size: 9pt; }
+  .vista-estadisticas .titulo-vista h1 { font-size: 20pt; }
+  .vista-estadisticas .titulo-vista { margin-block: 0 3mm; }
+  .vista-estadisticas .selector-periodo,
+  .vista-estadisticas .impresion-estadisticas { display: none; }
+  .vista-estadisticas .indicadores { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2mm; }
+  .vista-estadisticas .indicador { padding: 2mm; }
+  .vista-estadisticas .indicador strong { font-size: 16pt; }
+  .vista-estadisticas .indicador span,
+  .vista-estadisticas .indicador small { font-size: 8pt; }
+  .vista-estadisticas .panel { padding: 3mm; box-shadow: none; }
+  .vista-estadisticas .panel h2 { font-size: 11pt; }
+  .vista-estadisticas > * + * { margin-top: 3mm; }
+  .periodo-estadisticas { padding: 2mm; }
+  .graficas-estadisticas { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2mm; }
+  .barras-estadisticas { gap: 2mm; }
+  .dato-barra { font-size: 8pt; }
+  .vista-estadisticas .panel > * + * { margin-top: 3mm; }
+  .barra-estadistica svg { height: 16px; }
+  .valor-barra { fill: #24642a; }
+  .pista-barra { fill: #edf6e8; }
+  .rendimiento-estadisticas .table { min-width: 0; font-size: 8pt; }
+  .rendimiento-estadisticas .table > :not(caption) > * > * { padding: 2mm; }
+  .rendimiento-estadisticas thead { display: table-header-group; }
+  .rendimiento-estadisticas tr,
+  .graficas-estadisticas,
+  .vista-estadisticas .indicadores { break-inside: avoid; }
+}
