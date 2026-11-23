@@ -35,3 +35,45 @@
 .accion .icono-editar-boton {
   filter: brightness(0) invert(1);
 }
+
+/* Inventario: solo se muestra el acceso del tipo seleccionado, sin JavaScript. */
+.registro-movimiento, .registro-catalogo {
+  align-items: flex-end;
+}
+.registro-movimiento > .campo, .registro-catalogo > .campo {
+  flex: 0 1 18rem;
+  min-width: 0;
+}
+.registro-movimiento > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.registro-movimiento .registro-destino, .registro-catalogo .registro-destino {
+  display: none;
+}
+.registro-movimiento:has(#tipo-registro option[value="ENT"]:checked) .registro-inactivo,
+.registro-movimiento:has(#tipo-registro option[value="MER"]:checked) .registro-inactivo,
+.registro-movimiento:has(#tipo-registro option[value="AJU"]:checked) .registro-inactivo {
+  display: none;
+}
+.registro-movimiento:has(#tipo-registro option[value="ENT"]:checked) .registro-entrada,
+.registro-movimiento:has(#tipo-registro option[value="MER"]:checked) .registro-merma,
+.registro-movimiento:has(#tipo-registro option[value="AJU"]:checked) .registro-ajuste {
+  display: inline-flex;
+}
+@media (max-width: 575px) {
+  .registro-movimiento > .campo, .registro-catalogo > .campo {
+    flex-basis: 100%;
+  }
+}
+
+/* Catálogos: el tipo elegido abre su formulario existente. */
+.registro-catalogo:has(#tipo-catalogo option[value="color"]:checked) .registro-inactivo,
+.registro-catalogo:has(#tipo-catalogo option[value="filamento"]:checked) .registro-inactivo {
+  display: none;
+}
+.registro-catalogo:has(#tipo-catalogo option[value="color"]:checked) .registro-color,
+.registro-catalogo:has(#tipo-catalogo option[value="filamento"]:checked) .registro-filamento {
+  display: inline-flex;
+}

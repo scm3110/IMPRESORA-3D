@@ -66,3 +66,17 @@ input[readonly], input:disabled {
   background-color: var(--verde);
   border-color: var(--verde);
 }
+
+/* Producción: cada estado valida únicamente su formulario visible. */
+.cambio-estado-trabajo .estado-avance,
+.cambio-estado-trabajo .estado-cancelacion {
+  display: none;
+}
+.cambio-estado-trabajo:has(#nuevo option[value="en_proceso"]:checked) .estado-avance,
+.cambio-estado-trabajo:has(#nuevo option[value="finalizado"]:checked) .estado-avance,
+.cambio-estado-trabajo:has(#nuevo option[value="cancelado"]:checked) .estado-cancelacion {
+  display: block;
+}
+.cambio-estado-trabajo form > * + * {
+  margin-top: var(--espacio);
+}

@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="../../../shared/styles/base.css">
     <link rel="stylesheet" href="../../../shared/styles/componentes.css">
     <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+    <link rel="stylesheet" href="../../../shared/styles/estadisticas.css">
     <script src="../../../shared/scripts/layout.js" defer></script>
   </head>
   <body class="gestion" data-layout="gestion" data-modulo="estadisticas">
     <a class="salto" href="#contenido">Saltar al contenido</a>
     <noscript><p class="error-layout">Activa JavaScript para mostrar el menú y los bloques compartidos.</p></noscript>
-    <main id="contenido" tabindex="-1">
+    <main class="vista-estadisticas" id="contenido" tabindex="-1">
       <nav class="migas" aria-label="Ruta">
         <a href="../../acceso/pages/index.html">Inicio</a>
         <span aria-hidden="true">/</span>
@@ -25,15 +26,19 @@
       </nav>
       <header class="titulo-vista">
         <h1>Estadísticas de uso</h1>
-        <p>Vista semanal · 2–8 nov 2026. Solo se incluyen trabajos finalizados.</p>
+        <p>2–8 nov 2026. Solo trabajos finalizados; se excluyen cancelados.</p>
         <small>Perfil de referencia · Administrador e instructor</small>
       </header>
 
-      <nav class="acciones" aria-label="Acciones de la pantalla">
-        <a href="index.html" class="btn secundaria">Mensual</a>
-        <a href="semanal.html" class="btn accion">Semanal</a>
-        <a href="diario.html" class="btn secundaria">Diario</a>
-      </nav>
+      <section class="periodo-estadisticas" aria-label="Período de consulta">
+        <div><span class="etiqueta-estadistica">PERÍODO</span><p>2–8 nov 2026</p></div>
+        <nav class="selector-periodo" aria-label="Período de estadísticas">
+          <a href="diario.html">Diario</a>
+          <a href="semanal.html" aria-current="page">Semanal</a>
+          <a href="index.html">Mensual</a>
+        </nav>
+      </section>
+      <p class="ayuda nota-estadisticas">Datos ilustrativos. Cada período abre una muestra fija; no se actualiza desde Producción.</p>
       <div class="indicadores">
         <div class="indicador">
           <span>Piezas</span>
@@ -56,76 +61,61 @@
           <small>Consumo del período</small>
         </div>
       </div>
-      <section class="panel">
-        <h2>Producción por período</h2>
-        <div class="grafico">
-          <div>
-            <span>2–3 nov</span>
-            <progress max="10" value="4" aria-label="2–3 nov, 4 piezas">
-            </progress>
-            <strong>4 piezas</strong>
+      <p class="ayuda nota-agrupacion">Cada barra muestra el total de su intervalo; los intervalos pueden tener distinta duración. No representan tasas comparables.</p>
+      <div class="graficas-estadisticas">
+      <section class="panel estadistica-grafica" aria-labelledby="grafica-1">
+        <h2 id="grafica-1">Producción por período</h2>
+        <figure class="barras-estadisticas" aria-labelledby="grafica-1">
+          <div class="barra-estadistica">
+            <div class="dato-barra"><span>2–3 nov</span><strong>4 piezas</strong></div>
+            <svg viewBox="0 0 300 24" aria-hidden="true" focusable="false"><rect class="pista-barra" x="0" y="7" width="300" height="10" rx="5"/><rect class="valor-barra" x="0" y="7" width="120" height="10" rx="5"/></svg>
           </div>
-          <div>
-            <span>4–6 nov</span>
-            <progress max="10" value="10" aria-label="4–6 nov, 10 piezas">
-            </progress>
-            <strong>10 piezas</strong>
+          <div class="barra-estadistica">
+            <div class="dato-barra"><span>4–6 nov</span><strong>10 piezas</strong></div>
+            <svg viewBox="0 0 300 24" aria-hidden="true" focusable="false"><rect class="pista-barra" x="0" y="7" width="300" height="10" rx="5"/><rect class="valor-barra" x="0" y="7" width="300" height="10" rx="5"/></svg>
           </div>
-          <div>
-            <span>7–8 nov</span>
-            <progress max="10" value="4" aria-label="7–8 nov, 4 piezas">
-            </progress>
-            <strong>4 piezas</strong>
+          <div class="barra-estadistica">
+            <div class="dato-barra"><span>7–8 nov</span><strong>4 piezas</strong></div>
+            <svg viewBox="0 0 300 24" aria-hidden="true" focusable="false"><rect class="pista-barra" x="0" y="7" width="300" height="10" rx="5"/><rect class="valor-barra" x="0" y="7" width="120" height="10" rx="5"/></svg>
           </div>
-        </div>
+        </figure>
       </section>
-      <section class="panel">
-        <h2>Consumo de material</h2>
-        <div class="grafico">
-          <div>
-            <span>2–3 nov</span>
-            <progress max="500" value="200" aria-label="2–3 nov, 200 g">
-            </progress>
-            <strong>200 g</strong>
+      <section class="panel estadistica-grafica" aria-labelledby="grafica-2">
+        <h2 id="grafica-2">Consumo de material</h2>
+        <figure class="barras-estadisticas" aria-labelledby="grafica-2">
+          <div class="barra-estadistica">
+            <div class="dato-barra"><span>2–3 nov</span><strong>200 g</strong></div>
+            <svg viewBox="0 0 300 24" aria-hidden="true" focusable="false"><rect class="pista-barra" x="0" y="7" width="300" height="10" rx="5"/><rect class="valor-barra" x="0" y="7" width="120" height="10" rx="5"/></svg>
           </div>
-          <div>
-            <span>4–6 nov</span>
-            <progress max="500" value="500" aria-label="4–6 nov, 500 g">
-            </progress>
-            <strong>500 g</strong>
+          <div class="barra-estadistica">
+            <div class="dato-barra"><span>4–6 nov</span><strong>500 g</strong></div>
+            <svg viewBox="0 0 300 24" aria-hidden="true" focusable="false"><rect class="pista-barra" x="0" y="7" width="300" height="10" rx="5"/><rect class="valor-barra" x="0" y="7" width="300" height="10" rx="5"/></svg>
           </div>
-          <div>
-            <span>7–8 nov</span>
-            <progress max="500" value="200" aria-label="7–8 nov, 200 g">
-            </progress>
-            <strong>200 g</strong>
+          <div class="barra-estadistica">
+            <div class="dato-barra"><span>7–8 nov</span><strong>200 g</strong></div>
+            <svg viewBox="0 0 300 24" aria-hidden="true" focusable="false"><rect class="pista-barra" x="0" y="7" width="300" height="10" rx="5"/><rect class="valor-barra" x="0" y="7" width="120" height="10" rx="5"/></svg>
           </div>
-        </div>
+        </figure>
       </section>
-      <section class="panel">
-        <h2>Horas activas</h2>
-        <div class="grafico">
-          <div>
-            <span>2–3 nov</span>
-            <progress max="20" value="8" aria-label="2–3 nov, 8 h">
-            </progress>
-            <strong>8 h</strong>
+      <section class="panel estadistica-grafica" aria-labelledby="grafica-3">
+        <h2 id="grafica-3">Horas activas</h2>
+        <figure class="barras-estadisticas" aria-labelledby="grafica-3">
+          <div class="barra-estadistica">
+            <div class="dato-barra"><span>2–3 nov</span><strong>8 h</strong></div>
+            <svg viewBox="0 0 300 24" aria-hidden="true" focusable="false"><rect class="pista-barra" x="0" y="7" width="300" height="10" rx="5"/><rect class="valor-barra" x="0" y="7" width="120" height="10" rx="5"/></svg>
           </div>
-          <div>
-            <span>4–6 nov</span>
-            <progress max="20" value="20" aria-label="4–6 nov, 20 h">
-            </progress>
-            <strong>20 h</strong>
+          <div class="barra-estadistica">
+            <div class="dato-barra"><span>4–6 nov</span><strong>20 h</strong></div>
+            <svg viewBox="0 0 300 24" aria-hidden="true" focusable="false"><rect class="pista-barra" x="0" y="7" width="300" height="10" rx="5"/><rect class="valor-barra" x="0" y="7" width="300" height="10" rx="5"/></svg>
           </div>
-          <div>
-            <span>7–8 nov</span>
-            <progress max="20" value="8" aria-label="7–8 nov, 8 h">
-            </progress>
-            <strong>8 h</strong>
+          <div class="barra-estadistica">
+            <div class="dato-barra"><span>7–8 nov</span><strong>8 h</strong></div>
+            <svg viewBox="0 0 300 24" aria-hidden="true" focusable="false"><rect class="pista-barra" x="0" y="7" width="300" height="10" rx="5"/><rect class="valor-barra" x="0" y="7" width="120" height="10" rx="5"/></svg>
           </div>
-        </div>
+        </figure>
       </section>
-      <section class="panel">
+      </div>
+      <section class="panel rendimiento-estadisticas">
         <h2>Rendimiento por responsable</h2>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
           <table class="table">
@@ -147,7 +137,7 @@
                 <td>11</td>
                 <td>22 h</td>
                 <td>550 g</td>
-                <td>5.5 kWh</td>
+                <td>5,5 kWh</td>
               </tr>
               <tr>
                 <th scope="row">Instructor de muestra</th>
@@ -155,13 +145,13 @@
                 <td>7</td>
                 <td>14 h</td>
                 <td>350 g</td>
-                <td>3.5 kWh</td>
+                <td>3,5 kWh</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
-      <p class="ayuda">Para conservar esta vista, usa Imprimir en el navegador y selecciona Guardar como PDF.</p>
+      <p class="ayuda impresion-estadisticas">Imprimir o guardar como PDF: usa Ctrl+P y selecciona Guardar como PDF. La exportación automática está pendiente.</p>
 
     </main>
   </body>

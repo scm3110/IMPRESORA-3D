@@ -130,6 +130,22 @@ caption {
   padding-inline: .5rem;
   font-size: .82rem;
 }
+/* Producción y cotizaciones: consulta y actualización conservan su espacio. */
+:is(.tabla-produccion, .tabla-cotizaciones) .acciones-fila {
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) calc(var(--ancho-control) + .5rem);
+  gap: .75rem;
+  min-height: var(--ancho-control);
+  text-align: left;
+}
+:is(.tabla-produccion, .tabla-cotizaciones) .espacio-estado {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: var(--ancho-control);
+  padding-inline-start: .5rem;
+  border-inline-start: 1px solid var(--borde);
+}
 @media print {
   .tabla-gestion .columna-acciones {
     display: none;

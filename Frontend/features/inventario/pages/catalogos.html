@@ -30,10 +30,21 @@
       </header>
       <p class="ayuda">Los lápices comparten un formulario de ejemplo para colores y otro para tipos de filamento. Muestran siempre Lima y PLA, respectivamente, sin cargar el registro seleccionado.</p>
 
-      <nav class="acciones" aria-label="Acciones de la pantalla">
-        <a href="nuevo-color.html" class="btn accion">Registrar color</a>
-        <a href="nuevo-tipo.html" class="btn secundaria">Registrar tipo</a>
-      </nav>
+      <div class="acciones registro-catalogo" role="group" aria-label="Registrar en catálogo">
+        <div class="campo">
+          <label for="tipo-catalogo">Tipo</label>
+          <select class="form-select" id="tipo-catalogo">
+            <option value="" selected disabled>Selecciona un tipo</option>
+            <option value="color">Color</option>
+            <option value="filamento">Tipo de filamento</option>
+          </select>
+        </div>
+        <div class="acciones">
+          <button type="button" class="btn accion registro-inactivo" disabled>Registrar</button>
+          <a href="nuevo-color.html" class="btn accion registro-destino registro-color">Registrar</a>
+          <a href="nuevo-tipo.html" class="btn accion registro-destino registro-filamento">Registrar</a>
+        </div>
+      </div>
       <p id="ayuda-estados" class="ayuda">Interruptores de muestra: activo o inactivo, sin guardar cambios.</p>
       <section class="panel">
         <h2>Colores</h2>

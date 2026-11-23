@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Actualizar estado del trabajo · Ejemplo | Laboratorio 3D SENA</title>
+    <link rel="stylesheet" href="../../../vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../shared/styles/base.css">
+    <link rel="stylesheet" href="../../../shared/styles/componentes.css">
+    <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+    <script src="../../../shared/scripts/layout.js" defer></script>
+  </head>
+  <body class="gestion" data-layout="gestion" data-modulo="produccion">
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <noscript><p class="error-layout">Activa JavaScript para mostrar el menú y los bloques compartidos.</p></noscript>
+    <main id="contenido" tabindex="-1">
+      <nav class="migas" aria-label="Ruta">
+        <a href="../../acceso/pages/index.html">Inicio</a>
+        <span aria-hidden="true">/</span>
+
+        <a href="index.html">Producción</a>
+        <span aria-hidden="true">/</span>
+
+        <span aria-current="page">Actualizar estado del trabajo</span>
+      </nav>
+      <header class="titulo-vista">
+        <h1>Actualizar estado</h1>
+        <p>TR-026 · Guía de ensamble</p>
+        <small>Perfil de referencia · Administrador, instructor y aprendiz</small>
+      </header>
+      <p class="ayuda">Maqueta con datos fijos. Los cambios no se guardan.</p>
+      <section class="panel cambio-estado-trabajo" aria-label="Formulario de actualización del estado">
+        <fieldset>
+          <legend>Estado del trabajo</legend>
+          <div class="campos">
+            <div class="campo">
+              <label for="actual">Estado actual</label>
+              <input class="form-control" id="actual" type="text" value="Pendiente" readonly>
+            </div>
+            <div class="campo">
+              <label for="nuevo">Nuevo estado</label>
+              <select class="form-select" id="nuevo" aria-controls="formulario-avance formulario-cancelacion">
+                <option value="en_proceso" selected>En proceso</option>
+                <option value="cancelado">Cancelado</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+        <form class="formulario estado-avance" id="formulario-avance" action="#revision" method="get" autocomplete="off" aria-label="Iniciar trabajo">
+          <fieldset>
+            <legend>Comprobación de inicio</legend>
+            <dl class="ficha">
+              <div><dt>Material previsto</dt><dd>50 g de PLA Lima</dd></div>
+              <div><dt>Stock disponible</dt><dd>940 g</dd></div>
+              <div><dt>Equipo</dt><dd>FDM-01 · Disponible</dd></div>
+            </dl>
+          </fieldset>
+          <p class="aviso">Solo se inicia con material suficiente y equipo disponible. El equipo pasa a En impresión; el inventario se descuenta al finalizar. Comprobación ilustrativa.</p>
+          <div class="acciones">
+            <button type="submit" class="btn accion">Actualizar estado</button>
+            <a href="pendiente.html" class="btn secundaria">Volver</a>
+          </div>
+        </form>
+        <form class="formulario estado-cancelacion" id="formulario-cancelacion" action="#revision" method="get" autocomplete="off" aria-label="Cancelar trabajo">
+          <fieldset>
+            <legend>Motivo de cancelación</legend>
+            <div class="campo">
+              <label for="motivo">Motivo obligatorio</label>
+              <input class="form-control" id="motivo" type="text" required>
+            </div>
+          </fieldset>
+          <p class="aviso">La cancelación corresponde al administrador o instructor, conserva el motivo y no genera una salida automática de inventario.</p>
+          <div class="acciones">
+            <button type="submit" class="btn accion">Actualizar estado</button>
+            <a href="pendiente.html" class="btn secundaria">Volver</a>
+          </div>
+        </form>
+      </section>
+      <p class="resultado" id="revision" tabindex="-1">Campos de ejemplo validados. El estado, el inventario y los costes no se modificaron.</p>
+
+    </main>
+  </body>
+</html>

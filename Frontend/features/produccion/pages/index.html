@@ -59,7 +59,7 @@
       <section class="panel">
         <h2>Trabajos recientes</h2>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
-          <table class="table">
+          <table class="table tabla-gestion tabla-produccion">
             <caption>Registros de demostración</caption>
             <thead>
               <tr>
@@ -69,7 +69,7 @@
                 <th scope="col">Responsable</th>
                 <th scope="col">Equipo</th>
                 <th scope="col">Estado</th>
-                <th scope="col">Detalle</th>
+                <th scope="col" class="columna-acciones">Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -82,8 +82,15 @@
                 <td>
                   <span class="estado ambar">Pendiente</span>
                 </td>
-                <td>
-                  <a href="pendiente.html">Ver trabajo</a>
+                <td class="columna-acciones">
+                  <div class="acciones-fila">
+                    <a href="pendiente.html">Ver trabajo</a>
+                    <span class="espacio-estado">
+                      <a class="accion-icono" href="estado-pendiente.html" aria-label="Actualizar estado de TR-026" title="Actualizar estado de TR-026">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </span>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -95,8 +102,15 @@
                 <td>
                   <span class="estado azul">En proceso</span>
                 </td>
-                <td>
-                  <a href="en-proceso.html">Ver trabajo</a>
+                <td class="columna-acciones">
+                  <div class="acciones-fila">
+                    <a href="en-proceso.html">Ver trabajo</a>
+                    <span class="espacio-estado">
+                      <a class="accion-icono" href="estado.html" aria-label="Actualizar estado de TR-025" title="Actualizar estado de TR-025">
+                        <img src="../../../shared/assets/img/editar.svg" width="20" height="20" alt="">
+                      </a>
+                    </span>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -108,8 +122,11 @@
                 <td>
                   <span class="estado verde">Finalizado</span>
                 </td>
-                <td>
-                  <a href="finalizado.html">Ver trabajo</a>
+                <td class="columna-acciones">
+                  <div class="acciones-fila">
+                    <a href="finalizado.html">Ver trabajo</a>
+                    <span class="espacio-estado" aria-hidden="true"></span>
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -121,8 +138,11 @@
                 <td>
                   <span class="estado rojo">Cancelado</span>
                 </td>
-                <td>
-                  <a href="cancelado.html">Ver motivo</a>
+                <td class="columna-acciones">
+                  <div class="acciones-fila">
+                    <a href="cancelado.html">Ver motivo</a>
+                    <span class="espacio-estado" aria-hidden="true"></span>
+                  </div>
                 </td>
               </tr>
             </tbody>

@@ -29,12 +29,24 @@
         <small>Perfil de referencia · Administrador e instructor</small>
       </header>
 
-      <nav class="acciones" aria-label="Acciones de la pantalla">
-        <a href="entrada.html" class="btn accion">Registrar entrada</a>
-        <a href="merma.html" class="btn secundaria">Registrar merma</a>
-        <a href="ajuste.html" class="btn secundaria">Registrar ajuste</a>
+      <div class="acciones registro-movimiento" role="group" aria-label="Registrar movimiento">
+        <div class="campo">
+          <label for="tipo-registro">Tipo</label>
+          <select class="form-select" id="tipo-registro">
+            <option value="" selected disabled>Selecciona un tipo</option>
+            <option value="ENT">Entrada</option>
+            <option value="MER">Merma</option>
+            <option value="AJU">Ajuste</option>
+          </select>
+        </div>
+        <div class="acciones">
+          <button type="button" class="btn accion registro-inactivo" disabled>Registrar</button>
+          <a href="entrada.html" class="btn accion registro-destino registro-entrada">Registrar</a>
+          <a href="merma.html" class="btn accion registro-destino registro-merma">Registrar</a>
+          <a href="ajuste.html" class="btn accion registro-destino registro-ajuste">Registrar</a>
+        </div>
         <a href="salidas.html" class="btn secundaria">Consultar salidas</a>
-      </nav>
+      </div>
       <details class="filtros">
         <summary>Filtros de consulta</summary>
         <p class="ayuda">Controles de muestra. La tabla presenta un resultado fijo.</p>

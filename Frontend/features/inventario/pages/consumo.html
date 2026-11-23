@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="../../../shared/styles/base.css">
     <link rel="stylesheet" href="../../../shared/styles/componentes.css">
     <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
+    <link rel="stylesheet" href="../../../shared/styles/reportes.css">
     <script src="../../../shared/scripts/layout.js" defer></script>
   </head>
   <body class="gestion" data-layout="gestion" data-modulo="inventario">
     <a class="salto" href="#contenido">Saltar al contenido</a>
     <noscript><p class="error-layout">Activa JavaScript para mostrar el menú y los bloques compartidos.</p></noscript>
-    <main id="contenido" tabindex="-1">
+    <main id="contenido" class="vista-reportes" tabindex="-1">
       <nav class="migas" aria-label="Ruta">
         <a href="../../acceso/pages/index.html">Inicio</a>
         <span aria-hidden="true">/</span>
@@ -28,6 +29,16 @@
         <p>Consumo de ejemplo en trabajos finalizados del 1 al 9 de noviembre de 2026.</p>
         <small>Perfil de referencia · Administrador e instructor</small>
       </header>
+      <section class="barra-informe" aria-label="Exportación del informe">
+        <div>
+          <strong>Vista previa del informe</strong>
+          <p id="ayuda-descarga" class="ayuda">Datos ilustrativos. La descarga se muestra como propuesta visual y aún no está disponible.</p>
+        </div>
+        <div class="acciones">
+          <button type="button" class="btn accion" disabled aria-describedby="ayuda-descarga">Descargar PDF</button>
+          <button type="button" class="btn secundaria" disabled aria-describedby="ayuda-descarga">Exportar CSV</button>
+        </div>
+      </section>
 
       <details class="filtros">
         <summary>Filtros de consulta</summary>
@@ -51,7 +62,15 @@
           </div>
         </div>
       </details>
-      <section class="panel">
+      <section class="panel hoja-informe">
+        <h2>Ficha del informe</h2>
+        <dl class="ficha">
+          <div><dt>Laboratorio</dt><dd>Fabricación Digital · Medellín</dd></div>
+          <div><dt>Período de ejemplo</dt><dd>01–09 nov 2026</dd></div>
+          <div><dt>Origen</dt><dd>Trabajos finalizados</dd></div>
+        </dl>
+      </section>
+      <section class="panel hoja-informe">
         <h2>Consumo por material</h2>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
           <table class="table">
@@ -83,7 +102,7 @@
           </table>
         </div>
       </section>
-      <section class="panel">
+      <section class="panel hoja-informe">
         <h2>Detalle de un trabajo</h2>
         <div class="tabla-scroll" tabindex="0" role="region" aria-label="Registros de demostración">
           <table class="table">
@@ -110,6 +129,7 @@
         </div>
       </section>
 
+      <p class="ayuda">Puedes usar Imprimir en el navegador y seleccionar Guardar como PDF.</p>
     </main>
   </body>
 </html>
