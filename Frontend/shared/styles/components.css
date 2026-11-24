@@ -1,3 +1,4 @@
+/* Conserva el orden de estas importaciones para mantener la cascada de estilos. */
 @import url("components/marca.css");
 @import url("components/acciones.css");
 @import url("components/estados.css");

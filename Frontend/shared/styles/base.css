@@ -5,6 +5,7 @@
   font-weight: 100 900;
   font-display: swap;
 }
+/* Los valores visuales compartidos viven aquí. Deja las excepciones en su hoja de vista. */
 :root {
   --institucional: #39a900;
   --verde: #24642a;

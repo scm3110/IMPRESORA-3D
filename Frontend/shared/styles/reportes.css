@@ -90,6 +90,7 @@
   body:has(.vista-costeo) {
     page: comprobante-costeo;
   }
+  /* Quitar la altura mínima del marco en A4 evita una hoja adicional. */
   body:has(.vista-costeo) .marco {
     min-height: 0;
   }
@@ -116,6 +117,7 @@
     break-inside: avoid;
   }
 }
+/* La versión impresa muestra el texto Sí/No que acompaña a cada casilla de Roles. */
 .permiso-impreso {
   display: none;
 }

@@ -59,6 +59,7 @@
 .valor-barra { fill: var(--barra-estadistica); }
 .vista-estadisticas .nota-estadisticas,
 .vista-estadisticas .nota-agrupacion { font-size: .82rem; color: var(--suave); }
+/* La tabla se desplaza en pantallas estrechas. En impresión se elimina el ancho mínimo. */
 .rendimiento-estadisticas .table { min-width: 620px; }
 .rendimiento-estadisticas td:nth-child(n+3),
 .rendimiento-estadisticas th:nth-child(n+3) { text-align: right; font-variant-numeric: tabular-nums; }
