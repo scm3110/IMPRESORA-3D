@@ -107,12 +107,12 @@ El selector CSS `+` relaciona el input con la etiqueta inmediatamente siguiente 
 
 - `shared/styles/acceso.css`: diseño de las pantallas de acceso, que constituyen la entrada al sistema.
 - `shared/styles/base.css`: variables de color y estilos generales. Las barras usan `--color-pista-progreso` y `--color-valor-progreso`.
-- `shared/styles/componentes/formularios.css`: campos, etiquetas, títulos de grupos y textos de ayuda.
-- `shared/styles/componentes/tablas.css`: tablas y sus títulos (`caption`).
-- `shared/styles/componentes/paneles.css`: paneles, indicadores, fichas y gráficos.
+- `shared/styles/components/formularios.css`: campos, etiquetas, títulos de grupos y textos de ayuda.
+- `shared/styles/components/tablas.css`: tablas y sus títulos (`caption`).
+- `shared/styles/components/paneles.css`: paneles, indicadores, fichas y gráficos.
 - `shared/styles/layouts/gestion.css`: menú y distribución general, incluida la presentación móvil y de impresión.
 
-Mantén el orden de las importaciones en `componentes.css` y de las hojas CSS en el HTML: puede afectar qué regla se aplica. Los cambios de responsabilidad ya realizados conservan los valores y selectores existentes.
+Mantén el orden de las importaciones en `components.css` y de las hojas CSS en el HTML: puede afectar qué regla se aplica. Los cambios de responsabilidad ya realizados conservan los valores y selectores existentes.
 
 
 ### Datos ilustrativos relacionados
