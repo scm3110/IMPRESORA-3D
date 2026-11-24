@@ -6,6 +6,7 @@
   const cuerpo = document.body;
   const contenido = document.querySelector("main#contenido");
 
+  // Cada plantilla aporta una sola raíz. El selector esperado forma parte del contrato con shared/templates.
   async function cargarBloque(nombre, selector) {
     const respuesta = await fetch(new URL(`shared/templates/${nombre}.html`, raiz), {
       cache: "no-cache",
@@ -14,6 +15,7 @@
       throw new Error(`No se pudo cargar ${nombre}.html (${respuesta.status}).`);
     }
 
+    // El módulo de la página determina qué enlace se marca como activo en el menú.
     const html = (await respuesta.text())
       .replaceAll("{{raiz}}", raiz.href)
       .replace(/\{\{activo:([a-z0-9-]+)\}\}/g, (_, modulo) =>
@@ -60,12 +62,14 @@
         area.className = "area";
         marco.append(sidebar, area);
         contenido.replaceWith(marco);
+        // Se mueve el main original para conservar su contenido y los destinos de enlaces internos.
         area.append(encabezado, contenido, pie);
       } else {
         throw new Error("La página debe indicar un layout de acceso o gestion.");
       }
       cuerpo.dataset.layoutEstado = "listo";
     } catch (error) {
+      // Sitúa el aviso fuera del main para mantener disponible el contenido de la pantalla.
       cuerpo.dataset.layoutEstado = "error";
       cuerpo.classList.add("layout-error");
       const aviso = document.createElement("p");

@@ -1,3 +1,4 @@
+/* layout.js crea .marco y .area alrededor de main#contenido en las páginas de gestión. */
 .marco {
   display: grid;
   grid-template-columns: 15.5rem minmax(0, 1fr);
@@ -113,6 +114,7 @@
   .lateral .marca {
     margin: 0;
   }
+  /* El control queda oculto a la vista y sigue disponible para el teclado. */
   .control-menu {
     display: block;
     position: absolute;

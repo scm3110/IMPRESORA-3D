@@ -6,7 +6,7 @@
     <title>Ficha de cotización | Laboratorio 3D SENA</title>
     <link rel="stylesheet" href="../../../vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../../shared/styles/base.css">
-    <link rel="stylesheet" href="../../../shared/styles/componentes.css">
+    <link rel="stylesheet" href="../../../shared/styles/components.css">
     <link rel="stylesheet" href="../../../shared/styles/layouts/gestion.css">
     <link rel="stylesheet" href="../../../shared/styles/reportes.css">
     <script src="../../../shared/scripts/layout.js" defer></script>
@@ -14,6 +14,7 @@
   <body class="gestion" data-layout="gestion" data-modulo="costeo">
     <a class="salto" href="#contenido">Saltar al contenido</a>
     <noscript><p class="error-layout">Activa JavaScript para mostrar el menú y los bloques compartidos.</p></noscript>
+    <!-- data-cotizacion y data-campo marcan los datos de la ficha común para una futura carga por registro. -->
     <main data-cotizacion="COT-017" class="vista-reportes vista-costeo" id="contenido" tabindex="-1">
       <nav class="migas" aria-label="Ruta">
         <a href="../../acceso/pages/index.html">Inicio</a>
@@ -42,6 +43,7 @@
           <button type="button" class="btn secundaria" disabled aria-describedby="ayuda-descarga">Exportar CSV</button>
         </div>
       </section>
+      <!-- Los enlaces Ver comprobante y los estilos de impresión dependen de esta sección. -->
       <article id="comprobante" class="comprobante-integrado" aria-labelledby="titulo-comprobante" tabindex="-1">
         <header class="cabecera-comprobante">
           <h2 id="titulo-comprobante">Comprobante de cotización</h2>
