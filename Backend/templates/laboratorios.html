@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Laboratorios – Impresión 3D SENA</title>
+  <style>
+    :root {
+      --verde: #39a900;
+      --verde-oscuro: #2d8500;
+      --fondo: #f4f6f9;
+      --tarjeta: #ffffff;
+      --borde: #dce1e7;
+      --texto: #1e293b;
+      --secundario: #64748b;
+      --rojo: #dc2626;
+      --azul: #2563eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      padding: 24px;
+    }
+    .contenedor { max-width: 1000px; margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    h1 { font-size: 1.5rem; color: var(--texto); }
+    .subtitulo { font-size: 0.9rem; color: var(--secundario); }
+    .tarjeta {
+      background: var(--tarjeta);
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .tarjeta h2 { font-size: 1.1rem; margin-bottom: 14px; }
+    .fila-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--secundario);
+    }
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--borde);
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+    input:focus { outline: 2px solid var(--verde); border-color: transparent; }
+    .acciones-form { display: flex; gap: 10px; flex-wrap: wrap; }
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-primario { background: var(--verde); color: #fff; }
+    .btn-primario:hover { background: var(--verde-oscuro); }
+    .btn-secundario { background: #e2e8f0; color: var(--texto); }
+    .btn-editar { background: var(--azul); color: #fff; padding: 5px 10px; font-size: 0.8rem; }
+    .btn-eliminar { background: var(--rojo); color: #fff; padding: 5px 10px; font-size: 0.8rem; }
+    .barra-consulta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .barra-consulta input { max-width: 220px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--borde);
+      font-size: 0.92rem;
+    }
+    th { background: #f8fafc; color: var(--secundario); font-weight: 600; }
+    .celda-acciones { display: flex; gap: 6px; }
+    .alerta {
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .alerta.ok { background: #dcfce7; color: #166534; border: 1px solid #86efac; display: block; }
+    .alerta.error { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; display: block; }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <header>
+      <div>
+        <h1>Gestión de Laboratorios (CRUD Python + MariaDB)</h1>
+        <p class="subtitulo">Base de datos: <strong>impresion3d_db</strong> · API: <code>/api/laboratorios</code></p>
+      </div>
+    </header>
+
+    <div id="alerta" class="alerta"></div>
+
+    <!-- Formulario Crear / Editar -->
+    <section class="tarjeta">
+      <h2 id="titulo-form">Crear nuevo laboratorio</h2>
+      <form id="form-lab">
+        <input type="hidden" id="id_laboratorio">
+        <div class="fila-form">
+          <div>
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" required placeholder="Ej: Lab SENA Medellín">
+          </div>
+          <div>
+            <label for="pais">País *</label>
+            <input type="text" id="pais" required placeholder="Ej: Colombia">
+          </div>
+          <div>
+            <label for="ciudad">Ciudad *</label>
+            <input type="text" id="ciudad" required placeholder="Ej: Medellín">
+          </div>
+          <div>
+            <label for="moneda">Moneda (3 letras) *</label>
+            <input type="text" id="moneda" required maxlength="3" minlength="3" placeholder="COP" style="text-transform:uppercase;">
+          </div>
+        </div>
+        <div class="acciones-form">
+          <button type="submit" class="btn-primario" id="btn-guardar">Guardar laboratorio</button>
+          <button type="button" class="btn-secundario" id="btn-cancelar" style="display:none;" onclick="cancelarEdicion()">Cancelar edición</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Consulta y Tabla -->
+    <section class="tarjeta">
+      <h2>Listado de laboratorios</h2>
+      <div class="barra-consulta">
+        <input type="number" id="buscar-id" min="1" placeholder="Consultar por ID...">
+        <button type="button" class="btn-secundario" onclick="consultarPorId()">Consultar</button>
+        <button type="button" class="btn-secundario" onclick="cargarTodos()">Ver todos</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>País</th>
+            <th>Ciudad</th>
+            <th>Moneda</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-body">
+          <tr><td colspan="6">Cargando...</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script>
+    const API = "/api/laboratorios";
+
+    function mostrarAlerta(mensaje, tipo = "ok") {
+      const el = document.getElementById("alerta");
+      el.textContent = mensaje;
+      el.className = "alerta " + tipo;
+      setTimeout(() => { el.className = "alerta"; }, 4000);
+    }
+
+    function renderizarTabla(lista) {
+      const tbody = document.getElementById("tabla-body");
+      if (!lista.length) {
+        tbody.innerHTML = '<tr><td colspan="6">No hay registros para mostrar.</td></tr>';
+        return;
+      }
+      tbody.innerHTML = lista.map(lab => `
+        <tr>
+          <td>${lab.id_laboratorio}</td>
+          <td>${lab.nombre}</td>
+          <td>${lab.pais}</td>
+          <td>${lab.ciudad}</td>
+          <td>${lab.moneda}</td>
+          <td class="celda-acciones">
+            <button class="btn-editar" onclick='prepararEdicion(${JSON.stringify(lab)})'>Editar</button>
+            <button class="btn-eliminar" onclick="eliminar(${lab.id_laboratorio})">Eliminar</button>
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    async function cargarTodos() {
+      document.getElementById("buscar-id").value = "";
+      const res = await fetch(API);
+      const data = await res.json();
+      if (!res.ok) return mostrarAlerta(data.error || "Error al listar", "error");
+      renderizarTabla(data);
+    }
+
+    async function consultarPorId() {
+      const id = document.getElementById("buscar-id").value.trim();
+      if (!id) return cargarTodos();
+      const res = await fetch(`${API}/${id}`);
+      const data = await res.json();
+      if (!res.ok) {
+        mostrarAlerta(data.error || "No encontrado", "error");
+        renderizarTabla([]);
+        return;
+      }
+      renderizarTabla([data]);
+    }
+
+    function prepararEdicion(lab) {
+      document.getElementById("id_laboratorio").value = lab.id_laboratorio;
+      document.getElementById("nombre").value = lab.nombre;
+      document.getElementById("pais").value = lab.pais;
+      document.getElementById("ciudad").value = lab.ciudad;
+      document.getElementById("moneda").value = lab.moneda;
+      document.getElementById("titulo-form").textContent = `Editando laboratorio #${lab.id_laboratorio}`;
+      document.getElementById("btn-guardar").textContent = "Actualizar laboratorio";
+      document.getElementById("btn-cancelar").style.display = "inline-block";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function cancelarEdicion() {
+      document.getElementById("form-lab").reset();
+      document.getElementById("id_laboratorio").value = "";
+      document.getElementById("titulo-form").textContent = "Crear nuevo laboratorio";
+      document.getElementById("btn-guardar").textContent = "Guardar laboratorio";
+      document.getElementById("btn-cancelar").style.display = "none";
+    }
+
+    document.getElementById("form-lab").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const id = document.getElementById("id_laboratorio").value;
+      const payload = {
+        nombre: document.getElementById("nombre").value.trim(),
+        pais: document.getElementById("pais").value.trim(),
+        ciudad: document.getElementById("ciudad").value.trim(),
+        moneda: document.getElementById("moneda").value.trim().toUpperCase()
+      };
+
+      const url = id ? `${API}/${id}` : API;
+      const method = id ? "PUT" : "POST";
+
+      const res = await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (!res.ok) return mostrarAlerta(data.error || "Error al guardar", "error");
+
+      mostrarAlerta(data.mensaje || "Operación exitosa", "ok");
+      cancelarEdicion();
+      cargarTodos();
+    });
+
+    async function eliminar(id) {
+      if (!confirm(`¿Seguro que deseas eliminar el laboratorio #${id}?`)) return;
+      const res = await fetch(`${API}/${id}`, { method: "DELETE" });
+      const data = await res.json();
+      if (!res.ok) return mostrarAlerta(data.error || "No se pudo eliminar", "error");
+      mostrarAlerta(data.mensaje || "Eliminado", "ok");
+      cargarTodos();
+    }
+
+    cargarTodos();
+  </script>
+</body>
+</html>
